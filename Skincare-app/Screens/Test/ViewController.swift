@@ -11,7 +11,8 @@ import SnapKit
 class ViewController: UIViewController {
     private let testLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "Welcome to Skincare✌️✌️"
+        lb.text = NSLocalizedString("test", comment: "")
+        lb.font = UIFont(name: "Sacramento-Regular", size: 36)
         return lb
     }()
     override func viewDidLoad() {
