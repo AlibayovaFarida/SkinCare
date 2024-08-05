@@ -10,9 +10,11 @@
 		182B5BAB2C60A9E900F7E85D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B5BAA2C60A9E900F7E85D /* AppDelegate.swift */; };
 		182B5BAD2C60A9E900F7E85D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B5BAC2C60A9E900F7E85D /* SceneDelegate.swift */; };
 		182B5BAF2C60A9E900F7E85D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B5BAE2C60A9E900F7E85D /* ViewController.swift */; };
-		182B5BB22C60A9E900F7E85D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BB12C60A9E900F7E85D /* Base */; };
 		182B5BB42C60A9EB00F7E85D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BB32C60A9EB00F7E85D /* Assets.xcassets */; };
 		182B5BB72C60A9EB00F7E85D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BB62C60A9EB00F7E85D /* Base */; };
+		182B5BC02C60AAC800F7E85D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 182B5BBF2C60AAC800F7E85D /* SnapKit */; };
+		182B5BC22C60AAC800F7E85D /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 182B5BC12C60AAC800F7E85D /* SnapKit-Dynamic */; };
+		182B5BC52C60AB3300F7E85D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 182B5BC42C60AB3300F7E85D /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +22,6 @@
 		182B5BAA2C60A9E900F7E85D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		182B5BAC2C60A9E900F7E85D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		182B5BAE2C60A9E900F7E85D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		182B5BB12C60A9E900F7E85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		182B5BB32C60A9EB00F7E85D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		182B5BB62C60A9EB00F7E85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		182B5BB82C60A9EB00F7E85D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,6 +32,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182B5BC52C60AB3300F7E85D /* Kingfisher in Frameworks */,
+				182B5BC02C60AAC800F7E85D /* SnapKit in Frameworks */,
+				182B5BC22C60AAC800F7E85D /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +63,6 @@
 				182B5BAA2C60A9E900F7E85D /* AppDelegate.swift */,
 				182B5BAC2C60A9E900F7E85D /* SceneDelegate.swift */,
 				182B5BAE2C60A9E900F7E85D /* ViewController.swift */,
-				182B5BB02C60A9E900F7E85D /* Main.storyboard */,
 				182B5BB32C60A9EB00F7E85D /* Assets.xcassets */,
 				182B5BB52C60A9EB00F7E85D /* LaunchScreen.storyboard */,
 				182B5BB82C60A9EB00F7E85D /* Info.plist */,
@@ -83,6 +86,11 @@
 			dependencies = (
 			);
 			name = "Skincare-app";
+			packageProductDependencies = (
+				182B5BBF2C60AAC800F7E85D /* SnapKit */,
+				182B5BC12C60AAC800F7E85D /* SnapKit-Dynamic */,
+				182B5BC42C60AB3300F7E85D /* Kingfisher */,
+			);
 			productName = "Skincare-app";
 			productReference = 182B5BA72C60A9E900F7E85D /* Skincare-app.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,10 @@
 				Base,
 			);
 			mainGroup = 182B5B9E2C60A9E900F7E85D;
+			packageReferences = (
+				182B5BBE2C60AAC800F7E85D /* XCRemoteSwiftPackageReference "SnapKit" */,
+				182B5BC32C60AB3300F7E85D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 182B5BA82C60A9E900F7E85D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +139,6 @@
 			files = (
 				182B5BB42C60A9EB00F7E85D /* Assets.xcassets in Resources */,
 				182B5BB72C60A9EB00F7E85D /* Base in Resources */,
-				182B5BB22C60A9E900F7E85D /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +158,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		182B5BB02C60A9E900F7E85D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				182B5BB12C60A9E900F7E85D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		182B5BB52C60A9EB00F7E85D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,7 +299,6 @@
 				INFOPLIST_FILE = "Skincare-app/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -323,7 +325,6 @@
 				INFOPLIST_FILE = "Skincare-app/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -361,6 +362,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		182B5BBE2C60AAC800F7E85D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		182B5BC32C60AB3300F7E85D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		182B5BBF2C60AAC800F7E85D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 182B5BBE2C60AAC800F7E85D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		182B5BC12C60AAC800F7E85D /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 182B5BBE2C60AAC800F7E85D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+		182B5BC42C60AB3300F7E85D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 182B5BC32C60AB3300F7E85D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 182B5B9F2C60A9E900F7E85D /* Project object */;
 }
