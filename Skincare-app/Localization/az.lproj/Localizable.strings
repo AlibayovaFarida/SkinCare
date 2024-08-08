@@ -7,3 +7,9 @@
 */
 
 "test" = "Skincare Xoş Gəlmisiniz";
+"appleButtonRegisterTitle" = "Apple ilə qeydiyyatdan keç";
+"googleButtonRegisterTitle" = "Google ilə qeydiyyatdan keç";
+"mailButtonLoginTitle" = "Mail ilə qeydiyyatdan keç";
+"appleButtonLoginTitle" = "Apple ilə daxil ol";
+"googleButtonLoginTitle" = "Google ilə daxil ol";
+"mailButtonLoginTitle" = "Mail ilə daxil ol";
