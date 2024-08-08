@@ -7,3 +7,9 @@
 */
 
 "test" = "Welcome To Skincare";
+"appleButtonRegisterTitle" = "Sign up with Apple";
+"googleButtonRegisterTitle" = "Sign up with Google";
+"mailButtonLoginTitle" = "Sign up with Email";
+"appleButtonLoginTitle" = "Sign In with Apple";
+"googleButtonLoginTitle" = "Sign In with Google";
+"mailButtonLoginTitle" = "Sign In with Email";
