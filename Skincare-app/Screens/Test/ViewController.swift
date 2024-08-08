@@ -59,6 +59,7 @@ class ViewController: UIViewController {
         
         appleButton.action = {
             print("Apple 🍎🍎")
+            print("Apple 🍎")
         }
         
         googleButton.action = {
