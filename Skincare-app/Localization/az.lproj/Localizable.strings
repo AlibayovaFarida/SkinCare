@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Skincare-app
 
@@ -13,3 +13,9 @@
 "appleButtonLoginTitle" = "Apple ilə daxil ol";
 "googleButtonLoginTitle" = "Google ilə daxil ol";
 "mailButtonLoginTitle" = "Mail ilə daxil ol";
+
+"signInButtonStaticText" = "Hesabın var?";
+"signInButtonTitle" = "Daxil ol";
+"registerButtonStaticText" = "ya da";
+"registerButtonTitle" = "Qeydiyyatdan keç";
+
