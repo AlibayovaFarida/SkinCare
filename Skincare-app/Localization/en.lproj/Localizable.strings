@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Skincare-app
 
@@ -13,3 +13,9 @@
 "appleButtonLoginTitle" = "Sign In with Apple";
 "googleButtonLoginTitle" = "Sign In with Google";
 "mailButtonLoginTitle" = "Sign In with Email";
+
+"signInButtonStaticText" = "Have an account?";
+"signInButtonTitle" = "Login";
+"registerButtonStaticText" = "or";
+"registerButtonTitle" = "Register";
+

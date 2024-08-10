@@ -13,7 +13,6 @@
 		182B5BB42C60A9EB00F7E85D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BB32C60A9EB00F7E85D /* Assets.xcassets */; };
 		182B5BB72C60A9EB00F7E85D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BB62C60A9EB00F7E85D /* Base */; };
 		182B5BC02C60AAC800F7E85D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 182B5BBF2C60AAC800F7E85D /* SnapKit */; };
-		182B5BC22C60AAC800F7E85D /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 182B5BC12C60AAC800F7E85D /* SnapKit-Dynamic */; };
 		182B5BC52C60AB3300F7E85D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 182B5BC42C60AB3300F7E85D /* Kingfisher */; };
 		182B5BCA2C60BC1D00F7E85D /* Sacramento-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BC92C60BC1D00F7E85D /* Sacramento-Regular.ttf */; };
 		182B5BDE2C60BCA800F7E85D /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BCC2C60BCA800F7E85D /* Montserrat-BoldItalic.ttf */; };
@@ -37,6 +36,8 @@
 		182B5BFE2C60DC8900F7E85D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BFC2C60DC8900F7E85D /* Localizable.strings */; };
 		18936EC72C62B637006A8683 /* IconTitleBgColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18936EC62C62B637006A8683 /* IconTitleBgColorButton.swift */; };
 		18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD65192C63AA250071C597 /* CustomTextField.swift */; };
+		F0EAC6DD2C674A10006DE3E1 /* TitleBgColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EAC6DC2C674A10006DE3E1 /* TitleBgColorButton.swift */; };
+		F0EAC6DF2C674A2A006DE3E1 /* OnboardingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EAC6DE2C674A2A006DE3E1 /* OnboardingImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,8 @@
 		182B5BFF2C60DC8C00F7E85D /* az */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = az; path = az.lproj/Localizable.strings; sourceTree = "<group>"; };
 		18936EC62C62B637006A8683 /* IconTitleBgColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTitleBgColorButton.swift; sourceTree = "<group>"; };
 		18BD65192C63AA250071C597 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		F0EAC6DC2C674A10006DE3E1 /* TitleBgColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBgColorButton.swift; sourceTree = "<group>"; };
+		F0EAC6DE2C674A2A006DE3E1 /* OnboardingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +82,6 @@
 			files = (
 				182B5BC52C60AB3300F7E85D /* Kingfisher in Frameworks */,
 				182B5BC02C60AAC800F7E85D /* SnapKit in Frameworks */,
-				182B5BC22C60AAC800F7E85D /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +199,8 @@
 			children = (
 				18936EC62C62B637006A8683 /* IconTitleBgColorButton.swift */,
 				18BD65192C63AA250071C597 /* CustomTextField.swift */,
+				F0EAC6DC2C674A10006DE3E1 /* TitleBgColorButton.swift */,
+				F0EAC6DE2C674A2A006DE3E1 /* OnboardingImageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -219,7 +223,6 @@
 			name = "Skincare-app";
 			packageProductDependencies = (
 				182B5BBF2C60AAC800F7E85D /* SnapKit */,
-				182B5BC12C60AAC800F7E85D /* SnapKit-Dynamic */,
 				182B5BC42C60AB3300F7E85D /* Kingfisher */,
 			);
 			productName = "Skincare-app";
@@ -302,10 +305,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				182B5BAF2C60A9E900F7E85D /* ViewController.swift in Sources */,
+				F0EAC6DF2C674A2A006DE3E1 /* OnboardingImageView.swift in Sources */,
 				182B5BAB2C60A9E900F7E85D /* AppDelegate.swift in Sources */,
 				18936EC72C62B637006A8683 /* IconTitleBgColorButton.swift in Sources */,
 				182B5BAD2C60A9E900F7E85D /* SceneDelegate.swift in Sources */,
 				18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */,
+				F0EAC6DD2C674A10006DE3E1 /* TitleBgColorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,11 +559,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 182B5BBE2C60AAC800F7E85D /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		182B5BC12C60AAC800F7E85D /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 182B5BBE2C60AAC800F7E85D /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 		182B5BC42C60AB3300F7E85D /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
