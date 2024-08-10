@@ -31,9 +31,9 @@ class ViewController: UIViewController {
     
     private let mailButton = IconTitleBgColorButton(bgColor: "white", icon: "mail-icon", iconWidth: 17.18, iconHeight: 14.7, title: NSLocalizedString("mailButtonLoginTitle", comment: ""), titleColor: "black")
     
-    private let emailTextField = CustomTextField(placeholder: "Email")
+    private let emailTextField = CustomTextField(placeholder: "Email", title: "Email", textFieldWidth: (UIScreen.main.bounds.width - (UIScreen.main.bounds.width * 0.28)))
     
-    private let passwordTextField = CustomTextField(placeholder: "Password")
+    private let passwordTextField = CustomTextField(placeholder: "Password", title: "Şifrə", textFieldWidth: (UIScreen.main.bounds.width - (UIScreen.main.bounds.width * 0.28)))
     
     let signUpButton = TitleBgColorButton(staticText: NSLocalizedString("registerButtonStaticText", comment: ""), staticTextColor: .black, title: NSLocalizedString("registerButtonTitle", comment: ""), titleColor: .customBlue)
     

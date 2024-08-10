@@ -36,6 +36,11 @@
 		182B5BFE2C60DC8900F7E85D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BFC2C60DC8900F7E85D /* Localizable.strings */; };
 		18936EC72C62B637006A8683 /* IconTitleBgColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18936EC62C62B637006A8683 /* IconTitleBgColorButton.swift */; };
 		18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD65192C63AA250071C597 /* CustomTextField.swift */; };
+		18ED7A032C67DEC8000F03C3 /* Cell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A022C67DEC8000F03C3 /* Cell+Ext.swift */; };
+		18ED7A062C67DEE9000F03C3 /* DropdownButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A052C67DEE9000F03C3 /* DropdownButtonView.swift */; };
+		18ED7A082C67DF04000F03C3 /* DropdownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A072C67DF04000F03C3 /* DropdownTableViewCell.swift */; };
+		18ED7A0E2C67DFA6000F03C3 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A0D2C67DFA6000F03C3 /* RegisterViewModel.swift */; };
+		18ED7A102C67DFBB000F03C3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A0F2C67DFBB000F03C3 /* RegisterViewController.swift */; };
 		F0EAC6DD2C674A10006DE3E1 /* TitleBgColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EAC6DC2C674A10006DE3E1 /* TitleBgColorButton.swift */; };
 		F0EAC6DF2C674A2A006DE3E1 /* OnboardingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EAC6DE2C674A2A006DE3E1 /* OnboardingImageView.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +76,11 @@
 		182B5BFF2C60DC8C00F7E85D /* az */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = az; path = az.lproj/Localizable.strings; sourceTree = "<group>"; };
 		18936EC62C62B637006A8683 /* IconTitleBgColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTitleBgColorButton.swift; sourceTree = "<group>"; };
 		18BD65192C63AA250071C597 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		18ED7A022C67DEC8000F03C3 /* Cell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Ext.swift"; sourceTree = "<group>"; };
+		18ED7A052C67DEE9000F03C3 /* DropdownButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButtonView.swift; sourceTree = "<group>"; };
+		18ED7A072C67DF04000F03C3 /* DropdownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownTableViewCell.swift; sourceTree = "<group>"; };
+		18ED7A0D2C67DFA6000F03C3 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		18ED7A0F2C67DFBB000F03C3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F0EAC6DC2C674A10006DE3E1 /* TitleBgColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBgColorButton.swift; sourceTree = "<group>"; };
 		F0EAC6DE2C674A2A006DE3E1 /* OnboardingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +117,7 @@
 		182B5BA92C60A9E900F7E85D /* Skincare-app */ = {
 			isa = PBXGroup;
 			children = (
+				18ED7A012C67DEB8000F03C3 /* Extensions */,
 				18936EC52C62B404006A8683 /* Components */,
 				182B5BF22C60DB5100F7E85D /* Localization */,
 				182B5BC62C60BBD900F7E85D /* Resources */,
@@ -173,6 +184,7 @@
 		182B5BF02C60D2DE00F7E85D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				18ED7A092C67DF6C000F03C3 /* Register */,
 				182B5BF12C60D30E00F7E85D /* Test */,
 			);
 			path = Screens;
@@ -197,12 +209,63 @@
 		18936EC52C62B404006A8683 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				18ED7A042C67DED6000F03C3 /* Dropdown */,
 				18936EC62C62B637006A8683 /* IconTitleBgColorButton.swift */,
 				18BD65192C63AA250071C597 /* CustomTextField.swift */,
 				F0EAC6DC2C674A10006DE3E1 /* TitleBgColorButton.swift */,
 				F0EAC6DE2C674A2A006DE3E1 /* OnboardingImageView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		18ED7A012C67DEB8000F03C3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				18ED7A022C67DEC8000F03C3 /* Cell+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		18ED7A042C67DED6000F03C3 /* Dropdown */ = {
+			isa = PBXGroup;
+			children = (
+				18ED7A052C67DEE9000F03C3 /* DropdownButtonView.swift */,
+				18ED7A072C67DF04000F03C3 /* DropdownTableViewCell.swift */,
+			);
+			path = Dropdown;
+			sourceTree = "<group>";
+		};
+		18ED7A092C67DF6C000F03C3 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				18ED7A0C2C67DF92000F03C3 /* Model */,
+				18ED7A0B2C67DF8B000F03C3 /* View */,
+				18ED7A0A2C67DF82000F03C3 /* ViewModel */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		18ED7A0A2C67DF82000F03C3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18ED7A0D2C67DFA6000F03C3 /* RegisterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18ED7A0B2C67DF8B000F03C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18ED7A0F2C67DFBB000F03C3 /* RegisterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18ED7A0C2C67DF92000F03C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,12 +367,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18ED7A062C67DEE9000F03C3 /* DropdownButtonView.swift in Sources */,
 				182B5BAF2C60A9E900F7E85D /* ViewController.swift in Sources */,
 				F0EAC6DF2C674A2A006DE3E1 /* OnboardingImageView.swift in Sources */,
+				18ED7A102C67DFBB000F03C3 /* RegisterViewController.swift in Sources */,
 				182B5BAB2C60A9E900F7E85D /* AppDelegate.swift in Sources */,
+				18ED7A0E2C67DFA6000F03C3 /* RegisterViewModel.swift in Sources */,
 				18936EC72C62B637006A8683 /* IconTitleBgColorButton.swift in Sources */,
 				182B5BAD2C60A9E900F7E85D /* SceneDelegate.swift in Sources */,
+				18ED7A032C67DEC8000F03C3 /* Cell+Ext.swift in Sources */,
 				18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */,
+				18ED7A082C67DF04000F03C3 /* DropdownTableViewCell.swift in Sources */,
 				F0EAC6DD2C674A10006DE3E1 /* TitleBgColorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

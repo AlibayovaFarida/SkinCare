@@ -6,6 +6,7 @@
   
 */
 
+// Onboarding
 "test" = "Welcome To Skincare";
 "appleButtonRegisterTitle" = "Sign up with Apple";
 "googleButtonRegisterTitle" = "Sign up with Google";
@@ -13,6 +14,12 @@
 "appleButtonLoginTitle" = "Sign In with Apple";
 "googleButtonLoginTitle" = "Sign In with Google";
 "mailButtonLoginTitle" = "Sign In with Email";
+
+// Login and Register
+"nameTextField" = "Name";
+"surnameTextField" = "Surname";
+"emailTextField" = "Email";
+"passwordTextField" = "Password";
 
 "signInButtonStaticText" = "Have an account?";
 "signInButtonTitle" = "Login";

@@ -13,7 +13,27 @@ class CustomTextField: UIView {
         let sv = UIStackView()
         sv.axis = .vertical
         sv.spacing = 4
+        sv.alignment = .leading
         return sv
+    }()
+    private let headerStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .horizontal
+        sv.spacing = 2
+        return sv
+    }()
+    private let headerLabel: UILabel = {
+        let lb = UILabel()
+        lb.font = UIFont(name: "Montserrat-Medium", size: 16)
+        lb.textColor = UIColor(named: "black")
+        return lb
+    }()
+    private let starLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "*"
+        lb.textColor = UIColor(named: "threatening_red")
+        lb.font = UIFont(name: "Montserrat-Regular", size: 14)
+        return lb
     }()
     let textFieldView: UIView = {
         let view = UIView()
@@ -24,7 +44,8 @@ class CustomTextField: UIView {
     
     let textField: UITextField = {
         let tf = UITextField()
-        tf.textColor = UIColor(named: "gray")
+        tf.isUserInteractionEnabled = true
+        tf.textColor = UIColor(named: "customGray")
         tf.font = UIFont(name: "Montserrat-Medium", size: 14)
         return tf
     }()
@@ -35,10 +56,11 @@ class CustomTextField: UIView {
         lb.isHidden = true
         return lb
     }()
-    init(placeholder: String){
+    init(placeholder: String, title: String, textFieldWidth: CGFloat){
         super.init(frame: .zero)
         self.textField.placeholder = placeholder
-        setupUI()
+        self.headerLabel.text = title
+        setupUI(textFieldWidth: textFieldWidth)
         setupShadows()
     }
     
@@ -46,13 +68,18 @@ class CustomTextField: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupUI(){
+    private func setupUI(textFieldWidth: CGFloat){
         addSubview(stackView)
         [
+            headerStackView,
             textFieldView,
             errorLabel
         ].forEach(stackView.addArrangedSubview)
         
+        [
+            headerLabel,
+            starLabel
+        ].forEach(headerStackView.addArrangedSubview)
         textFieldView.addSubview(textField)
         
         stackView.snp.makeConstraints { make in
@@ -60,7 +87,7 @@ class CustomTextField: UIView {
         }
         
         textFieldView.snp.makeConstraints { make in
-            make.width.equalTo(270)
+            make.width.equalTo(textFieldWidth)
             make.height.equalTo(44)
             make.leading.equalToSuperview().offset(0)
         }
