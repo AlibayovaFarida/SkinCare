@@ -20,6 +20,21 @@
 "surnameTextField" = "Surname";
 "emailTextField" = "Email";
 "passwordTextField" = "Password";
+"birthDateTextField" = "Birthdate";
+
+// Mounth
+"january" = "January";
+"february" = "February";
+"march" = "March";
+"april" = "April";
+"may" = "May";
+"june" = "June";
+"july" = "July";
+"august" = "August";
+"september" = "September";
+"october" = "October";
+"november" = "November";
+"december" = "December";
 
 "signInButtonStaticText" = "Have an account?";
 "signInButtonTitle" = "Login";

@@ -20,6 +20,21 @@
 "surnameTextField" = "Soyad";
 "emailTextField" = "Email";
 "passwordTextField" = "Şifrə";
+"birthDateTextField" = "Doğum tarixi";
+
+// Mounth
+"january" = "Yanvar";
+"february" = "Fevral";
+"march" = "Mart";
+"april" = "Aprel";
+"may" = "May";
+"june" = "İyun";
+"july" = "İyul";
+"august" = "Avqust";
+"september" = "Sentyabr";
+"october" = "Oktyabr";
+"november" = "Noyabr";
+"december" = "Dekabr";
 
 "signInButtonStaticText" = "Hesabın var?";
 "signInButtonTitle" = "Daxil ol";

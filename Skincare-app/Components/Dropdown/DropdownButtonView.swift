@@ -1,16 +1,13 @@
-//
-//  DropdownButtonView.swift
-//  Skincare-app
-//
-//  Created by Apple on 10.08.24.
-//
 
 import Foundation
 import UIKit
 
-
-class DropdownButtonView: UIView {
+class DropdownButtonView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     var dataSource: [String] = []
+    var dropdownTitle: String = ""
+    private let pickerView = UIPickerView()
+    private let toolbar = UIToolbar()
+    
     private let buttonView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(named: "white")
@@ -27,103 +24,106 @@ class DropdownButtonView: UIView {
         return sv
     }()
     
-    private let dropdownLabel: UILabel = {
-        let lb = UILabel()
-        lb.font = UIFont(name: "Montserrat-Medium", size: 13)
-        lb.textColor = UIColor(named: "black")
-//        lb.text = "Gün"
-        return lb
+    private let dropdownTextField: UITextField = {
+        let tf = UITextField()
+        tf.font = UIFont(name: "Montserrat-Medium", size: 13)
+        tf.textColor = UIColor(named: "black")
+        return tf
     }()
+    
     private let arrowImageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "arrow")
         return iv
     }()
-    let tableView: UITableView = {
-        let tv = UITableView()
-        tv.layer.borderWidth = 1
-        tv.layer.borderColor = UIColor(named: "customGray")?.cgColor
-        tv.layer.cornerRadius = 8
-        tv.register(DropdownTableViewCell.self, forCellReuseIdentifier: DropdownTableViewCell.identifier)
-        return tv
-    }()
     
-    
-    init(dataSource: [String], dropdownTitle: String){
+    init(dataSource: [String], dropdownTitle: String) {
         self.dataSource = dataSource
-        self.dropdownLabel.text = dropdownTitle
+        self.dropdownTitle = dropdownTitle
+        self.dropdownTextField.placeholder = dropdownTitle
         super.init(frame: .zero)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.isHidden = true
-        setupGesture()
         setupUI()
+        configurePicker()
+        setupGestureRecognizer()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupUI(){
+    private func setupUI() {
         addSubview(buttonView)
-        addSubview(tableView)
         buttonView.addSubview(stackView)
         [
-            dropdownLabel,
+            dropdownTextField,
             arrowImageView
         ].forEach(buttonView.addSubview)
         
         buttonView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-            make.width.equalTo(75)
-            make.height.equalTo(28)
+            make.width.equalTo(90)
+            make.height.equalTo(30)
         }
         
-        dropdownLabel.snp.makeConstraints { make in
+        dropdownTextField.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(8)
             make.centerY.equalToSuperview()
         }
         
         arrowImageView.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(8)
+            make.trailing.equalToSuperview().inset(5)
             make.centerY.equalToSuperview()
             make.size.equalTo(24)
         }
         
-        tableView.snp.makeConstraints { make in
-            make.top.equalTo(buttonView.snp.bottom).offset(2)
-            make.width.equalTo(75)
-            make.height.equalTo(150)
-        }
-        
+        dropdownTextField.inputView = pickerView
+        dropdownTextField.inputAccessoryView = toolbar
     }
     
-    private func setupGesture(){
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleDropdown))
+    private func configurePicker() {
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbar.setItems([flexibleSpace, doneButton], animated: false)
+    }
+    
+    private func setupGestureRecognizer() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showPicker))
         buttonView.addGestureRecognizer(tapGesture)
     }
     
-    @objc func toggleDropdown() {
-        tableView.layer.zPosition = 1
-        tableView.isHidden = !tableView.isHidden
+    @objc private func showPicker() {
+        dropdownTextField.becomeFirstResponder()
     }
-}
-
-extension DropdownButtonView: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    @objc private func doneButtonTapped() {
+        dropdownTextField.resignFirstResponder()
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return dataSource.count
     }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DropdownTableViewCell.identifier, for: indexPath) as! DropdownTableViewCell
-        cell.configure(dataSource[indexPath.row])
-        return cell
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return dataSource[row]
     }
-}
-
-extension DropdownButtonView: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        dropdownLabel.text = dataSource[indexPath.row]
-        tableView.isHidden = true
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if dropdownTitle == "Ay"{
+            if dataSource[row].count > 5{
+                dropdownTextField.text = String(dataSource[row].prefix(3))
+            } else {
+                dropdownTextField.text = dataSource[row]
+            }
+        } else {
+            dropdownTextField.text = dataSource[row]
+        }
     }
 }

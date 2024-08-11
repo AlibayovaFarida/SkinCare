@@ -33,6 +33,36 @@ class RegisterViewController: UIViewController {
     private let emailTextField = CustomTextField(placeholder: NSLocalizedString("emailTextField", comment: ""), title: NSLocalizedString("emailTextField", comment: ""), textFieldWidth: (UIScreen.main.bounds.width - (UIScreen.main.bounds.width * 0.16)))
     private let passwordTextField = CustomTextField(placeholder: NSLocalizedString("passwordTextField", comment: ""), title: NSLocalizedString("passwordTextField", comment: ""), textFieldWidth: (UIScreen.main.bounds.width - (UIScreen.main.bounds.width * 0.16)))
     private let passwordTestTextField = CustomTextField(placeholder: NSLocalizedString("passwordTextField", comment: ""), title: NSLocalizedString("passwordTextField", comment: ""), textFieldWidth: (UIScreen.main.bounds.width - (UIScreen.main.bounds.width * 0.16)))
+    
+    private let titleBirthDateStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .vertical
+        sv.spacing = 8
+        sv.alignment = .leading
+        return sv
+    }()
+    
+    private let birthDateHeaderStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .horizontal
+        sv.spacing = 2
+        return sv
+    }()
+    private let headerLabel: UILabel = {
+        let lb = UILabel()
+        lb.font = UIFont(name: "Montserrat-Medium", size: 16)
+        lb.textColor = UIColor(named: "black")
+        lb.text = NSLocalizedString("birthDateTextField", comment: "")
+        return lb
+    }()
+    private let starLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "*"
+        lb.textColor = UIColor(named: "threatening_red")
+        lb.font = UIFont(name: "Montserrat-Regular", size: 14)
+        return lb
+    }()
+    
     private let birthDateStackView: UIStackView = {
         let sv = UIStackView()
         sv.axis = .horizontal
@@ -42,8 +72,8 @@ class RegisterViewController: UIViewController {
     }()
     
     private let dayDropdown = DropdownButtonView(dataSource:["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"], dropdownTitle: "Gün")
-    private let mounthDropdown = DropdownButtonView(dataSource:["Yanvar", "Fevral", "Mart", "Aprel", "May", "İyun", "İyul", "Avqust", "Sentyabr", "Oktyabr", "Noyabr", "Dekabr"], dropdownTitle: "Ay")
-    private let yearDropdown = DropdownButtonView(dataSource: ["1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"].reversed(), dropdownTitle: "İl")
+    private let mounthDropdown = DropdownButtonView(dataSource:[NSLocalizedString("january", comment: ""), NSLocalizedString("february", comment: ""), NSLocalizedString("march", comment: ""), NSLocalizedString("april", comment: ""), NSLocalizedString("may", comment: ""), NSLocalizedString("june", comment: ""), NSLocalizedString("july", comment: ""), NSLocalizedString("august", comment: ""), NSLocalizedString("september", comment: ""), NSLocalizedString("october", comment: ""), NSLocalizedString("november", comment: ""), NSLocalizedString("december", comment: "")], dropdownTitle: "Ay")
+    private let yearDropdown = DropdownButtonView(dataSource: Array(1950...2024).map {String($0)}, dropdownTitle: "İl")
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -61,8 +91,18 @@ class RegisterViewController: UIViewController {
          surnameTextField,
          emailTextField,
          passwordTextField,
-         birthDateStackView
+         titleBirthDateStackView
         ].forEach(formStackView.addArrangedSubview)
+        
+        [
+            birthDateHeaderStackView,
+            birthDateStackView
+        ].forEach(titleBirthDateStackView.addArrangedSubview)
+        
+        [
+            headerLabel,
+            starLabel
+        ].forEach(birthDateHeaderStackView.addArrangedSubview)
         
         [
             dayDropdown,
@@ -83,15 +123,11 @@ class RegisterViewController: UIViewController {
         }
 
         formStackView.snp.makeConstraints { make in
-//            make.top.equalTo(view.safeAreaLayoutGuide).inset(28)
-//            make.centerX.equalTo(view.safeAreaLayoutGuide)
-//            make.bottom.equalTo(view.safeAreaLayoutGuide)
             make.top.equalToSuperview().inset(28)
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().inset(100) // Add some bottom inset
+            make.bottom.equalToSuperview().inset(100)
         }
 
-//        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
     }
 
     private func setupActions() {
@@ -178,3 +214,4 @@ class RegisterViewController: UIViewController {
         textField.textFieldView.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
     }
 }
+
