@@ -56,10 +56,14 @@ class CustomTextField: UIView {
         lb.isHidden = true
         return lb
     }()
-    init(placeholder: String, title: String, textFieldWidth: CGFloat){
+    init(placeholder: String, title: String?, textFieldWidth: CGFloat){
         super.init(frame: .zero)
         self.textField.placeholder = placeholder
         self.headerLabel.text = title
+        if title == ""{
+            headerLabel.isHidden = true
+            starLabel.isHidden = true
+        }
         setupUI(textFieldWidth: textFieldWidth)
         setupShadows()
     }

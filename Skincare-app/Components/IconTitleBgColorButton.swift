@@ -35,15 +35,18 @@ class IconTitleBgColorButton: UIView {
         return lb
     }()
     
-    init(bgColor: String, icon: String, iconWidth: CGFloat, iconHeight: CGFloat, title: String, titleColor: String){
+    init(bgColor: String, icon: String?, iconWidth: CGFloat?, iconHeight: CGFloat?, title: String, titleColor: String){
         super.init(frame: .zero)
         self.bgView.backgroundColor = UIColor(named: bgColor)
-        self.iconImageView.image = UIImage(named: icon)
+        self.iconImageView.image = UIImage(named: icon ?? "")
         self.titleLabel.text = title
         self.titleLabel.textColor = UIColor(named: titleColor)
-        setupView(iconWidth: iconWidth, iconHeight: iconHeight)
+        setupView(iconWidth: iconWidth ?? 0, iconHeight: iconHeight ?? 0)
         setupShadows(bgColor: bgColor)
         setupGesture()
+        if icon == ""{
+            iconImageView.isHidden = true
+        }
     }
     
     required init?(coder: NSCoder) {
