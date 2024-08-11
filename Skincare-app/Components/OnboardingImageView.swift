@@ -72,7 +72,7 @@ class OnboardingImageView: UIView {
         
         backgroundView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(imageView.snp.bottom).offset(0)
+            make.bottom.equalTo(imageView.snp.bottom)
         }
         
         label1.snp.makeConstraints { make in
@@ -94,7 +94,7 @@ class OnboardingImageView: UIView {
         }
         
         bottomLabel.snp.makeConstraints { make in
-            make.top.equalTo(backgroundView.snp.bottom).offset(12)
+            make.top.equalTo(backgroundView.snp.bottom).offset(20)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().inset(30)
             make.bottom.equalToSuperview()
