@@ -41,6 +41,8 @@
 		18ED7A082C67DF04000F03C3 /* DropdownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A072C67DF04000F03C3 /* DropdownTableViewCell.swift */; };
 		18ED7A0E2C67DFA6000F03C3 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A0D2C67DFA6000F03C3 /* RegisterViewModel.swift */; };
 		18ED7A102C67DFBB000F03C3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A0F2C67DFBB000F03C3 /* RegisterViewController.swift */; };
+		F0DD68EE2C68CAF200C11ECF /* OnboardingLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DD68ED2C68CAF200C11ECF /* OnboardingLoginViewController.swift */; };
+		F0DD68F42C68CF0700C11ECF /* OnboardingRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DD68F32C68CF0700C11ECF /* OnboardingRegisterViewController.swift */; };
 		F0EAC6DD2C674A10006DE3E1 /* TitleBgColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EAC6DC2C674A10006DE3E1 /* TitleBgColorButton.swift */; };
 		F0EAC6DF2C674A2A006DE3E1 /* OnboardingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EAC6DE2C674A2A006DE3E1 /* OnboardingImageView.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +83,8 @@
 		18ED7A072C67DF04000F03C3 /* DropdownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownTableViewCell.swift; sourceTree = "<group>"; };
 		18ED7A0D2C67DFA6000F03C3 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		18ED7A0F2C67DFBB000F03C3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		F0DD68ED2C68CAF200C11ECF /* OnboardingLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLoginViewController.swift; sourceTree = "<group>"; };
+		F0DD68F32C68CF0700C11ECF /* OnboardingRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRegisterViewController.swift; sourceTree = "<group>"; };
 		F0EAC6DC2C674A10006DE3E1 /* TitleBgColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBgColorButton.swift; sourceTree = "<group>"; };
 		F0EAC6DE2C674A2A006DE3E1 /* OnboardingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +188,8 @@
 		182B5BF02C60D2DE00F7E85D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F0DD68EF2C68CECA00C11ECF /* OnboardingRegister */,
+				F0DD68E72C68CA7D00C11ECF /* OnboardingLogin */,
 				18ED7A092C67DF6C000F03C3 /* Register */,
 				182B5BF12C60D30E00F7E85D /* Test */,
 			);
@@ -266,6 +272,70 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F0DD68E72C68CA7D00C11ECF /* OnboardingLogin */ = {
+			isa = PBXGroup;
+			children = (
+				F0DD68E82C68CA8E00C11ECF /* Model */,
+				F0DD68EB2C68CAA700C11ECF /* View */,
+				F0DD68EC2C68CAAC00C11ECF /* ViewModel */,
+			);
+			path = OnboardingLogin;
+			sourceTree = "<group>";
+		};
+		F0DD68E82C68CA8E00C11ECF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0DD68EB2C68CAA700C11ECF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0DD68ED2C68CAF200C11ECF /* OnboardingLoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0DD68EC2C68CAAC00C11ECF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F0DD68EF2C68CECA00C11ECF /* OnboardingRegister */ = {
+			isa = PBXGroup;
+			children = (
+				F0DD68F02C68CEDA00C11ECF /* Model */,
+				F0DD68F12C68CEE000C11ECF /* View */,
+				F0DD68F22C68CEE500C11ECF /* ViewModel */,
+			);
+			path = OnboardingRegister;
+			sourceTree = "<group>";
+		};
+		F0DD68F02C68CEDA00C11ECF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0DD68F12C68CEE000C11ECF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0DD68F32C68CF0700C11ECF /* OnboardingRegisterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0DD68F22C68CEE500C11ECF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +444,8 @@
 				182B5BAB2C60A9E900F7E85D /* AppDelegate.swift in Sources */,
 				18ED7A0E2C67DFA6000F03C3 /* RegisterViewModel.swift in Sources */,
 				18936EC72C62B637006A8683 /* IconTitleBgColorButton.swift in Sources */,
+				F0DD68EE2C68CAF200C11ECF /* OnboardingLoginViewController.swift in Sources */,
+				F0DD68F42C68CF0700C11ECF /* OnboardingRegisterViewController.swift in Sources */,
 				182B5BAD2C60A9E900F7E85D /* SceneDelegate.swift in Sources */,
 				18ED7A032C67DEC8000F03C3 /* Cell+Ext.swift in Sources */,
 				18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */,

@@ -55,16 +55,15 @@ class TitleBgColorButton: UIView {
         addSubview(stackView)
         
         stackView.addArrangedSubview(staticLabel)
-      
+        
         stackView.addArrangedSubview(titleLabel)
         
         stackView.snp.makeConstraints { make in
-              make.center.equalToSuperview()
-              make.leading.greaterThanOrEqualToSuperview().offset(8)
-              make.trailing.lessThanOrEqualToSuperview().offset(-8)
-              make.top.greaterThanOrEqualToSuperview().offset(8)
-              make.bottom.lessThanOrEqualToSuperview().offset(-8)
-          }
+            make.leading.greaterThanOrEqualToSuperview().offset(8)
+            make.trailing.lessThanOrEqualToSuperview().offset(-8)
+            make.top.equalToSuperview().offset(20)  
+            make.bottom.lessThanOrEqualToSuperview().offset(-8)
+        }
     }
     
     private func setupGesture(){
