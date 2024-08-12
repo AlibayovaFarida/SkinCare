@@ -74,7 +74,7 @@ class RegisterViewController: UIViewController {
     private let dayDropdown = DropdownButtonView(
         dataSource: Array(1...31).map {String($0)},
         dropdownTitle: NSLocalizedString("day", comment: ""))
-    private let mounthDropdown = DropdownButtonView(
+    private let monthDropdown = DropdownButtonView(
         dataSource:[
             NSLocalizedString("january", comment: ""),
             NSLocalizedString("february", comment: ""),
@@ -88,7 +88,7 @@ class RegisterViewController: UIViewController {
             NSLocalizedString("october", comment: ""),
             NSLocalizedString("november", comment: ""),
             NSLocalizedString("december", comment: "")],
-        dropdownTitle: NSLocalizedString("mounth", comment: ""))
+        dropdownTitle: NSLocalizedString("month", comment: ""))
     private let yearDropdown = DropdownButtonView(dataSource: Array(1950...2024).map {String($0)}, dropdownTitle: NSLocalizedString("year", comment: ""))
     
     private let genderStackView: UIStackView = {
@@ -213,7 +213,7 @@ class RegisterViewController: UIViewController {
         
         [
             dayDropdown,
-            mounthDropdown,
+            monthDropdown,
             yearDropdown
         ].forEach(birthdateStackView.addArrangedSubview)
         
@@ -239,7 +239,7 @@ class RegisterViewController: UIViewController {
         ].forEach(femaleOptionStackView.addArrangedSubview)
         
         view.bringSubviewToFront(dayDropdown)
-        view.bringSubviewToFront(mounthDropdown)
+        view.bringSubviewToFront(monthDropdown)
         view.bringSubviewToFront(yearDropdown)
         scrollView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)

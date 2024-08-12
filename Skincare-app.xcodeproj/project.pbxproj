@@ -45,6 +45,7 @@
 		F0D38DDA2C69FFEA007E35ED /* AnswerBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D38DD92C69FFEA007E35ED /* AnswerBoxView.swift */; };
 		F0DD68EE2C68CAF200C11ECF /* OnboardingLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DD68ED2C68CAF200C11ECF /* OnboardingLoginViewController.swift */; };
 		F0DD68F42C68CF0700C11ECF /* OnboardingRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DD68F32C68CF0700C11ECF /* OnboardingRegisterViewController.swift */; };
+		F0E07E292C6A453D00BD410A /* CompleteTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E07E282C6A453D00BD410A /* CompleteTestViewController.swift */; };
 		F0EAC6DD2C674A10006DE3E1 /* TitleBgColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EAC6DC2C674A10006DE3E1 /* TitleBgColorButton.swift */; };
 		F0EAC6DF2C674A2A006DE3E1 /* OnboardingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EAC6DE2C674A2A006DE3E1 /* OnboardingImageView.swift */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		F0D38DD92C69FFEA007E35ED /* AnswerBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerBoxView.swift; sourceTree = "<group>"; };
 		F0DD68ED2C68CAF200C11ECF /* OnboardingLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLoginViewController.swift; sourceTree = "<group>"; };
 		F0DD68F32C68CF0700C11ECF /* OnboardingRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRegisterViewController.swift; sourceTree = "<group>"; };
+		F0E07E282C6A453D00BD410A /* CompleteTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTestViewController.swift; sourceTree = "<group>"; };
 		F0EAC6DC2C674A10006DE3E1 /* TitleBgColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBgColorButton.swift; sourceTree = "<group>"; };
 		F0EAC6DE2C674A2A006DE3E1 /* OnboardingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,6 +226,7 @@
 		182B5BF02C60D2DE00F7E85D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F0E07E242C6A44F500BD410A /* CompleteTest */,
 				F0D38DD32C69FD55007E35ED /* DetectProblem */,
 				181FEA5D2C69115B00B9AAE6 /* Login */,
 				F0DD68E72C68CA7D00C11ECF /* OnboardingLogin */,
@@ -400,6 +403,38 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F0E07E242C6A44F500BD410A /* CompleteTest */ = {
+			isa = PBXGroup;
+			children = (
+				F0E07E252C6A450E00BD410A /* Model */,
+				F0E07E262C6A451F00BD410A /* View */,
+				F0E07E272C6A452300BD410A /* ViewModel */,
+			);
+			path = CompleteTest;
+			sourceTree = "<group>";
+		};
+		F0E07E252C6A450E00BD410A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0E07E262C6A451F00BD410A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0E07E282C6A453D00BD410A /* CompleteTestViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0E07E272C6A452300BD410A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -507,6 +542,7 @@
 				F0D38DDA2C69FFEA007E35ED /* AnswerBoxView.swift in Sources */,
 				182B5BAB2C60A9E900F7E85D /* AppDelegate.swift in Sources */,
 				18ED7A0E2C67DFA6000F03C3 /* RegisterViewModel.swift in Sources */,
+				F0E07E292C6A453D00BD410A /* CompleteTestViewController.swift in Sources */,
 				18936EC72C62B637006A8683 /* IconTitleBgColorButton.swift in Sources */,
 				F0DD68EE2C68CAF200C11ECF /* OnboardingLoginViewController.swift in Sources */,
 				F0DD68F42C68CF0700C11ECF /* OnboardingRegisterViewController.swift in Sources */,

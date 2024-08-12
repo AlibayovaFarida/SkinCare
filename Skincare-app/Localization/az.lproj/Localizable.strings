@@ -22,14 +22,14 @@
 "passwordTextField" = "Şifrə";
 "birthdateTextField" = "Doğum tarixi";
 "day" = "Gün";
-"mounth" = "Ay";
+"month" = "Ay";
 "year" = "İl";
 "genderTextField" = "Cinsiniz";
 "male" = "Kişi";
 "female" = "Qadın";
 "submit" = "Təsdiq";
 
-// Mounth
+// Month
 "january" = "Yanvar";
 "february" = "Fevral";
 "march" = "Mart";

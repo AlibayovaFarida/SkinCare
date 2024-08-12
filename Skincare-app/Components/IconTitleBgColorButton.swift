@@ -80,11 +80,11 @@ class IconTitleBgColorButton: UIView {
     }
     
     private func setupShadows(bgColor: String) {
-        guard bgColor == "white" else { return }
+        guard bgColor == "customWhite" else { return }
                 
-        applyShadow(to: bgView, color: "black", opacity: 0.04, offset: CGSize(width: 0, height: 0), radius: 1)
-        applyShadow(to: bgView, color: "black", opacity: 0.04, offset: CGSize(width: 0, height: 2), radius: 6)
-        applyShadow(to: bgView, color: "black", opacity: 0.05, offset: CGSize(width: 0, height: 16), radius: 24)
+        applyShadow(to: bgView, color: "customBlack", opacity: 0.04, offset: CGSize(width: 0, height: 0), radius: 1)
+        applyShadow(to: bgView, color: "customBlack", opacity: 0.04, offset: CGSize(width: 0, height: 2), radius: 6)
+        applyShadow(to: bgView, color: "customBlack", opacity: 0.05, offset: CGSize(width: 0, height: 16), radius: 24)
     }
     
     private func applyShadow(to view: UIView, color: String, opacity: Float, offset: CGSize, radius: CGFloat) {

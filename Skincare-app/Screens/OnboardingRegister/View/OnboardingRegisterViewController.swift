@@ -83,7 +83,7 @@ class OnboardingRegisterViewController: UIViewController {
     private func redirectionOnboardingLogin(){
         let vc = OnboardingLoginViewController()
         vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .flipHorizontal
+        vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true)
     }
 }
