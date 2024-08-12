@@ -25,7 +25,7 @@ class CustomTextField: UIView {
     private let headerLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-Medium", size: 16)
-        lb.textColor = UIColor(named: "black")
+        lb.textColor = UIColor(named: "customBlack")
         return lb
     }()
     private let starLabel: UILabel = {
@@ -38,7 +38,7 @@ class CustomTextField: UIView {
     let textFieldView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 16
-        view.backgroundColor = UIColor(named: "white")
+        view.backgroundColor = UIColor(named: "customWhite")
         return view
     }()
     
@@ -108,9 +108,9 @@ class CustomTextField: UIView {
     
     private func setupShadows() {
                 
-        applyShadow(to: textFieldView, color: UIColor.black, opacity: 0.04, offset: CGSize(width: 0, height: 0), radius: 1)
-        applyShadow(to: textFieldView, color: UIColor.black, opacity: 0.04, offset: CGSize(width: 0, height: 2), radius: 6)
-        applyShadow(to: textFieldView, color: UIColor.black, opacity: 0.05, offset: CGSize(width: 0, height: 16), radius: 24)
+        applyShadow(to: textFieldView, color: UIColor.customBlack, opacity: 0.04, offset: CGSize(width: 0, height: 0), radius: 1)
+        applyShadow(to: textFieldView, color: UIColor.customBlack, opacity: 0.04, offset: CGSize(width: 0, height: 2), radius: 6)
+        applyShadow(to: textFieldView, color: UIColor.customBlack, opacity: 0.05, offset: CGSize(width: 0, height: 16), radius: 24)
     }
     
     private func applyShadow(to view: UIView, color: UIColor, opacity: Float, offset: CGSize, radius: CGFloat) {

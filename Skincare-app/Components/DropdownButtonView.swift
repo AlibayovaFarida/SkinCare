@@ -116,7 +116,7 @@ class DropdownButtonView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if dropdownTitle == NSLocalizedString("mounth", comment: ""){
+        if dropdownTitle == NSLocalizedString("month", comment: ""){
             if dataSource[row].count > 5{
                 dropdownTextField.text = String(dataSource[row].prefix(3))
             } else {
