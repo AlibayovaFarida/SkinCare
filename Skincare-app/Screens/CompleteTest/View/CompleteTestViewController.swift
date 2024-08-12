@@ -109,7 +109,7 @@ class CompleteTestViewController: UIViewController
         iconLabelStackView.axis = .vertical
         iconLabelStackView.spacing = 12
         
-        let iconImageView = UIImageView(image: UIImage(named: "check"))
+        let iconImageView = UIImageView(image: UIImage(named: "Check"))
         iconImageView.contentMode = .scaleAspectFit
         iconLabelStackView.addArrangedSubview(iconImageView)
         
@@ -127,7 +127,7 @@ class CompleteTestViewController: UIViewController
     }
 
     private func configureLineView() {
-        let lineView = UIImageView(image: UIImage(named: "line"))
+        let lineView = UIImageView(image: UIImage(named: "Line"))
         lineView.contentMode = .scaleAspectFit
         stackView.addArrangedSubview(lineView)
         
@@ -197,7 +197,7 @@ class CompleteTestViewController: UIViewController
         iconLabelStackViewBottom.axis = .horizontal
         iconLabelStackViewBottom.spacing = 10
         
-        let iconImageViewBottom = UIImageView(image: UIImage(named: "oilyFace"))
+        let iconImageViewBottom = UIImageView(image: UIImage(named: "OilyFace"))
         iconImageViewBottom.contentMode = .scaleAspectFit
         iconLabelStackViewBottom.addArrangedSubview(iconImageViewBottom)
         
