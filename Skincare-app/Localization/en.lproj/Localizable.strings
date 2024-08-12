@@ -20,7 +20,14 @@
 "surnameTextField" = "Surname";
 "emailTextField" = "Email";
 "passwordTextField" = "Password";
-"birthDateTextField" = "Birthdate";
+"birthdateTextField" = "Birthdate";
+"day" = "Day";
+"mounth" = "Mounth";
+"year" = "Year";
+"genderTextField" = "Gender";
+"male" = "Male";
+"female" = "Female";
+"submit" = "Submit";
 
 // Mounth
 "january" = "January";

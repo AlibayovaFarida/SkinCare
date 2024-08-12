@@ -8,7 +8,7 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    
     private let scrollView: UIScrollView = {
         let sv = UIScrollView()
         sv.showsVerticalScrollIndicator = false
@@ -42,20 +42,20 @@ class RegisterViewController: UIViewController {
         return sv
     }()
     
-    private let birthDateHeaderStackView: UIStackView = {
+    private let birthdateHeaderStackView: UIStackView = {
         let sv = UIStackView()
         sv.axis = .horizontal
         sv.spacing = 2
         return sv
     }()
-    private let headerLabel: UILabel = {
+    private let birthdateHeaderLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-Medium", size: 16)
         lb.textColor = UIColor(named: "black")
-        lb.text = NSLocalizedString("birthDateTextField", comment: "")
+        lb.text = NSLocalizedString("birthdateTextField", comment: "")
         return lb
     }()
-    private let starLabel: UILabel = {
+    private let birthdateStarLabel: UILabel = {
         let lb = UILabel()
         lb.text = "*"
         lb.textColor = UIColor(named: "threatening_red")
@@ -63,7 +63,7 @@ class RegisterViewController: UIViewController {
         return lb
     }()
     
-    private let birthDateStackView: UIStackView = {
+    private let birthdateStackView: UIStackView = {
         let sv = UIStackView()
         sv.axis = .horizontal
         sv.spacing = 2
@@ -71,44 +71,172 @@ class RegisterViewController: UIViewController {
         return sv
     }()
     
-    private let dayDropdown = DropdownButtonView(dataSource:["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"], dropdownTitle: "Gün")
-    private let mounthDropdown = DropdownButtonView(dataSource:[NSLocalizedString("january", comment: ""), NSLocalizedString("february", comment: ""), NSLocalizedString("march", comment: ""), NSLocalizedString("april", comment: ""), NSLocalizedString("may", comment: ""), NSLocalizedString("june", comment: ""), NSLocalizedString("july", comment: ""), NSLocalizedString("august", comment: ""), NSLocalizedString("september", comment: ""), NSLocalizedString("october", comment: ""), NSLocalizedString("november", comment: ""), NSLocalizedString("december", comment: "")], dropdownTitle: "Ay")
-    private let yearDropdown = DropdownButtonView(dataSource: Array(1950...2024).map {String($0)}, dropdownTitle: "İl")
+    private let dayDropdown = DropdownButtonView(
+        dataSource: Array(1...31).map {String($0)},
+        dropdownTitle: NSLocalizedString("day", comment: ""))
+    private let mounthDropdown = DropdownButtonView(
+        dataSource:[
+            NSLocalizedString("january", comment: ""),
+            NSLocalizedString("february", comment: ""),
+            NSLocalizedString("march", comment: ""),
+            NSLocalizedString("april", comment: ""),
+            NSLocalizedString("may", comment: ""),
+            NSLocalizedString("june", comment: ""),
+            NSLocalizedString("july", comment: ""),
+            NSLocalizedString("august", comment: ""),
+            NSLocalizedString("september", comment: ""),
+            NSLocalizedString("october", comment: ""),
+            NSLocalizedString("november", comment: ""),
+            NSLocalizedString("december", comment: "")],
+        dropdownTitle: NSLocalizedString("mounth", comment: ""))
+    private let yearDropdown = DropdownButtonView(dataSource: Array(1950...2024).map {String($0)}, dropdownTitle: NSLocalizedString("year", comment: ""))
+    
+    private let genderStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .vertical
+        sv.spacing = 8
+        sv.alignment = .leading
+        return sv
+    }()
+    
+    private let genderHeaderStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .horizontal
+        sv.spacing = 2
+        return sv
+    }()
+    private let genderHeaderLabel: UILabel = {
+        let lb = UILabel()
+        lb.font = UIFont(name: "Montserrat-Medium", size: 16)
+        lb.textColor = UIColor(named: "black")
+        lb.text = NSLocalizedString("genderTextField", comment: "")
+        return lb
+    }()
+    private let genderStarLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "*"
+        lb.textColor = UIColor(named: "threatening_red")
+        lb.font = UIFont(name: "Montserrat-Regular", size: 14)
+        return lb
+    }()
+    
+    private let maleOptionStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .horizontal
+        sv.spacing = 8
+        sv.alignment = .center
+        return sv
+    }()
+    private let maleRadioButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setImage(UIImage(named: "unselected-radio-btn"), for: .normal)
+        btn.tag = 1
+        return btn
+    }()
+    
+    private let maleLabel: UILabel = {
+        let lb = UILabel()
+        lb.font = UIFont(name: "Montserrat-Regular", size: 14)
+        lb.textColor = UIColor(named: "black")
+        lb.text = NSLocalizedString("male", comment: "")
+        return lb
+    }()
+    private let femaleOptionStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .horizontal
+        sv.spacing = 8
+        sv.alignment = .center
+        return sv
+    }()
+    private let femaleRadioButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setImage(UIImage(named: "unselected-radio-btn"), for: .normal)
+        btn.tag = 2
+        return btn
+    }()
+    
+    private let femaleLabel: UILabel = {
+        let lb = UILabel()
+        lb.font = UIFont(name: "Montserrat-Regular", size: 14)
+        lb.textColor = UIColor(named: "black")
+        lb.text = NSLocalizedString("female", comment: "")
+        return lb
+    }()
+    private let submitButton: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.backgroundColor = UIColor(named: "mainColor")
+        btn.layer.cornerRadius = 16
+        btn.setTitle(NSLocalizedString("submit", comment: ""), for: .normal)
+        btn.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 14)
+        btn.tintColor = UIColor(named: "white")
+        return btn
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Qeydiyyat"
+        if let navigationBar = self.navigationController?.navigationBar {
+            let textAttributes: [NSAttributedString.Key: Any] = [
+                .foregroundColor: UIColor(named: "black")!,
+                .font: UIFont(name: "Montserrat-SemiBold", size: 20)!
+            ]
+            navigationBar.titleTextAttributes = textAttributes
+        }
+        setupCustomBackButton()
         setupUI()
         setupActions()
     }
     
     private func setupUI() {
-       
-        birthDateStackView.layer.zPosition = 1
+        birthdateStackView.layer.zPosition = 1
         view.backgroundColor = UIColor(named: "white")
         view.addSubview(scrollView)
         scrollView.addSubview(contentViewInScroll)
         contentViewInScroll.addSubview(formStackView)
+        contentViewInScroll.addSubview(submitButton)
         [nameTextField,
          surnameTextField,
          emailTextField,
          passwordTextField,
-         titleBirthDateStackView
+         titleBirthDateStackView,
+         genderStackView
         ].forEach(formStackView.addArrangedSubview)
         
         [
-            birthDateHeaderStackView,
-            birthDateStackView
+            birthdateHeaderStackView,
+            birthdateStackView
         ].forEach(titleBirthDateStackView.addArrangedSubview)
         
         [
-            headerLabel,
-            starLabel
-        ].forEach(birthDateHeaderStackView.addArrangedSubview)
+            birthdateHeaderLabel,
+            birthdateStarLabel
+        ].forEach(birthdateHeaderStackView.addArrangedSubview)
         
         [
             dayDropdown,
             mounthDropdown,
             yearDropdown
-        ].forEach(birthDateStackView.addArrangedSubview)
+        ].forEach(birthdateStackView.addArrangedSubview)
+        
+        [
+            genderHeaderStackView,
+            maleOptionStackView,
+            femaleOptionStackView
+        ].forEach(genderStackView.addArrangedSubview)
+        
+        [
+            genderHeaderLabel,
+            genderStarLabel
+        ].forEach(genderHeaderStackView.addArrangedSubview)
+        
+        [
+            maleRadioButton,
+            maleLabel
+        ].forEach(maleOptionStackView.addArrangedSubview)
+        
+        [
+            femaleRadioButton,
+            femaleLabel
+        ].forEach(femaleOptionStackView.addArrangedSubview)
         
         view.bringSubviewToFront(dayDropdown)
         view.bringSubviewToFront(mounthDropdown)
@@ -125,7 +253,13 @@ class RegisterViewController: UIViewController {
         formStackView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(28)
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().inset(100)
+        }
+        submitButton.snp.makeConstraints { make in
+            make.top.equalTo(formStackView.snp.bottom).offset(68)
+            make.trailing.equalToSuperview().inset(20)
+            make.bottom.equalToSuperview().inset(5)
+            make.width.equalTo(106)
+            make.height.equalTo(44)
         }
 
     }
@@ -135,8 +269,33 @@ class RegisterViewController: UIViewController {
         surnameTextField.textField.addTarget(self, action: #selector(didTapSurnameValidate), for: .editingChanged)
         emailTextField.textField.addTarget(self, action: #selector(didTapEmailValidate), for: .editingChanged)
         passwordTextField.textField.addTarget(self, action: #selector(didTapPasswordValidate), for: .editingChanged)
+        
+        maleRadioButton.addTarget(self, action: #selector(didTapGenderOption), for: .touchUpInside)
+        femaleRadioButton.addTarget(self, action: #selector(didTapGenderOption), for: .touchUpInside)
     }
-
+    
+    private func setupCustomBackButton() {
+        guard let backButtonImage = UIImage(named: "back-button") else {
+            print("Error: Back button image not found.")
+            return
+        }
+                
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(backButtonImage, for: .normal)
+        backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
+                
+        let backBarButtonItem = UIBarButtonItem(customView: backButton)
+        navigationItem.leftBarButtonItem = backBarButtonItem
+                
+        backButton.snp.makeConstraints { make in
+            make.width.equalTo(24)
+            make.height.equalTo(24)
+        }
+    }
+    @objc
+    private func didTapBackButton() {
+        navigationController?.popViewController(animated: true)
+    }
    
     @objc
     private func didTapNameValidate() {
@@ -182,6 +341,20 @@ class RegisterViewController: UIViewController {
         }
     }
 
+    @objc
+    private func didTapGenderOption(_ sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            maleRadioButton.setImage(UIImage(named: "selected-radio-btn"), for: .normal)
+            femaleRadioButton.setImage(UIImage(named: "unselected-radio-btn"), for: .normal)
+        case 2:
+            femaleRadioButton.setImage(UIImage(named: "selected-radio-btn"), for: .normal)
+            maleRadioButton.setImage(UIImage(named: "unselected-radio-btn"), for: .normal)
+        default:
+            break
+        }
+    }
+    
     func isValidNameSurname(name: String) -> Bool {
         let nameRegex = "^[A-Za-z\\s-]+$"
         let namePredicate = NSPredicate(format: "SELF MATCHES %@", nameRegex)

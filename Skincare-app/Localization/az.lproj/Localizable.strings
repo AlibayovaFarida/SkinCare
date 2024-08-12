@@ -10,7 +10,7 @@
 "test" = "Skincare Xoş Gəlmisiniz";
 "appleButtonRegisterTitle" = "Apple ilə qeydiyyatdan keç";
 "googleButtonRegisterTitle" = "Google ilə qeydiyyatdan keç";
-"mailButtonLoginTitle" = "Mail ilə qeydiyyatdan keç";
+"mailButtonRegisterTitle" = "Mail ilə qeydiyyatdan keç";
 "appleButtonLoginTitle" = "Apple ilə daxil ol";
 "googleButtonLoginTitle" = "Google ilə daxil ol";
 "mailButtonLoginTitle" = "Mail ilə daxil ol";
@@ -20,7 +20,14 @@
 "surnameTextField" = "Soyad";
 "emailTextField" = "Email";
 "passwordTextField" = "Şifrə";
-"birthDateTextField" = "Doğum tarixi";
+"birthdateTextField" = "Doğum tarixi";
+"day" = "Gün";
+"mounth" = "Ay";
+"year" = "İl";
+"genderTextField" = "Cinsiniz";
+"male" = "Kişi";
+"female" = "Qadın";
+"submit" = "Təsdiq";
 
 // Mounth
 "january" = "Yanvar";

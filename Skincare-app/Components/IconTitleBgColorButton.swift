@@ -103,15 +103,15 @@ class IconTitleBgColorButton: UIView {
     
     @objc private func handleLongPress(_ gesture: UILongPressGestureRecognizer) {
         switch gesture.state {
-            case .began:
-                animate(scale: 0.95)
-            case .ended, .cancelled:
-                animate(scale: 1.0)
-                action?()
-            default:
-                break
-            }
+        case .began:
+            animate(scale: 0.95)
+        case .ended, .cancelled:
+            animate(scale: 1.0)
+            action?()
+        default:
+            break
         }
+    }
         
     private func animate(scale: CGFloat) {
         UIView.animate(withDuration: 0.1, animations: {
