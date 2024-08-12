@@ -36,6 +36,7 @@ class OnboardingRegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupActions()
     }
     
     private func setupUI() {
@@ -67,4 +68,23 @@ class OnboardingRegisterViewController: UIViewController {
             make.trailing.equalTo(view.snp.trailing)
         }
     }
+    
+    private func setupActions(){
+        mailButton.action = redirectionSignUp
+        signInButton.action = redirectionOnboardingLogin
+    }
+    
+    @objc
+    private func redirectionSignUp(){
+        let vc = RegisterViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @objc
+    private func redirectionOnboardingLogin(){
+        let vc = OnboardingLoginViewController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .flipHorizontal
+        self.present(vc, animated: true)
+    }
 }
+

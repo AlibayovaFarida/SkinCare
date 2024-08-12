@@ -39,7 +39,6 @@
 		18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD65192C63AA250071C597 /* CustomTextField.swift */; };
 		18ED7A032C67DEC8000F03C3 /* Cell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A022C67DEC8000F03C3 /* Cell+Ext.swift */; };
 		18ED7A062C67DEE9000F03C3 /* DropdownButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A052C67DEE9000F03C3 /* DropdownButtonView.swift */; };
-		18ED7A082C67DF04000F03C3 /* DropdownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A072C67DF04000F03C3 /* DropdownTableViewCell.swift */; };
 		18ED7A0E2C67DFA6000F03C3 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A0D2C67DFA6000F03C3 /* RegisterViewModel.swift */; };
 		18ED7A102C67DFBB000F03C3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A0F2C67DFBB000F03C3 /* RegisterViewController.swift */; };
 		F0D38DD82C69FDA3007E35ED /* DetectProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D38DD72C69FDA3007E35ED /* DetectProblemViewController.swift */; };
@@ -84,7 +83,6 @@
 		18BD65192C63AA250071C597 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		18ED7A022C67DEC8000F03C3 /* Cell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Ext.swift"; sourceTree = "<group>"; };
 		18ED7A052C67DEE9000F03C3 /* DropdownButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButtonView.swift; sourceTree = "<group>"; };
-		18ED7A072C67DF04000F03C3 /* DropdownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownTableViewCell.swift; sourceTree = "<group>"; };
 		18ED7A0D2C67DFA6000F03C3 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		18ED7A0F2C67DFBB000F03C3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F0D38DD72C69FDA3007E35ED /* DetectProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectProblemViewController.swift; sourceTree = "<group>"; };
@@ -255,7 +253,7 @@
 		18936EC52C62B404006A8683 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				18ED7A042C67DED6000F03C3 /* Dropdown */,
+				18ED7A052C67DEE9000F03C3 /* DropdownButtonView.swift */,
 				18936EC62C62B637006A8683 /* IconTitleBgColorButton.swift */,
 				18BD65192C63AA250071C597 /* CustomTextField.swift */,
 				F0EAC6DC2C674A10006DE3E1 /* TitleBgColorButton.swift */,
@@ -271,15 +269,6 @@
 				18ED7A022C67DEC8000F03C3 /* Cell+Ext.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		18ED7A042C67DED6000F03C3 /* Dropdown */ = {
-			isa = PBXGroup;
-			children = (
-				18ED7A052C67DEE9000F03C3 /* DropdownButtonView.swift */,
-				18ED7A072C67DF04000F03C3 /* DropdownTableViewCell.swift */,
-			);
-			path = Dropdown;
 			sourceTree = "<group>";
 		};
 		18ED7A092C67DF6C000F03C3 /* Register */ = {
@@ -524,7 +513,6 @@
 				182B5BAD2C60A9E900F7E85D /* SceneDelegate.swift in Sources */,
 				18ED7A032C67DEC8000F03C3 /* Cell+Ext.swift in Sources */,
 				18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */,
-				18ED7A082C67DF04000F03C3 /* DropdownTableViewCell.swift in Sources */,
 				F0EAC6DD2C674A10006DE3E1 /* TitleBgColorButton.swift in Sources */,
 				F0D38DD82C69FDA3007E35ED /* DetectProblemViewController.swift in Sources */,
 			);
