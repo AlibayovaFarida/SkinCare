@@ -48,3 +48,17 @@
 "registerButtonStaticText" = "or";
 "registerButtonTitle" = "Sign Up";
 
+// Home
+"welcome" = "Welcome,";
+"detectProblemDescription" = "Brighter, Healthier Skin Every Day.";
+"detectProblemButton" = "Determine your skin type";
+"searchTitle" = "Skin problems";
+"searchDescription" = "Investigate the skin problem you are facing and find the cause of the problem.";
+"redirectionSearch" = "Search now";
+"popularProblemsTitle" = "Most searched problems";
+
+// Tabbar items
+"home" = "Home";
+"therapy" = "Therapy";
+"search" = "Search";
+"consultation" = "Consultation";

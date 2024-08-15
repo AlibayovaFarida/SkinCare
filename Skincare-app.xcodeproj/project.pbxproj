@@ -35,8 +35,21 @@
 		182B5BEE2C60BCA800F7E85D /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BDC2C60BCA800F7E85D /* Montserrat-LightItalic.ttf */; };
 		182B5BEF2C60BCA800F7E85D /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BDD2C60BCA800F7E85D /* Montserrat-SemiBoldItalic.ttf */; };
 		182B5BFE2C60DC8900F7E85D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BFC2C60DC8900F7E85D /* Localizable.strings */; };
+		1883F8382C6B3A79005ED089 /* CustomTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F8372C6B3A79005ED089 /* CustomTabbarController.swift */; };
+		1883F8462C6B3B44005ED089 /* TherapyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F8452C6B3B44005ED089 /* TherapyViewController.swift */; };
+		1883F8482C6B3B4F005ED089 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F8472C6B3B4F005ED089 /* SearchViewController.swift */; };
+		1883F84A2C6B3B62005ED089 /* ConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F8492C6B3B62005ED089 /* ConsultationViewController.swift */; };
+		1884E9A92C6C89BC00E40A3D /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884E9A82C6C89BC00E40A3D /* HeaderTableViewCell.swift */; };
+		1884E9AC2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884E9AB2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift */; };
 		18936EC72C62B637006A8683 /* IconTitleBgColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18936EC62C62B637006A8683 /* IconTitleBgColorButton.swift */; };
 		18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD65192C63AA250071C597 /* CustomTextField.swift */; };
+		18C53DBA2C6A9346004FA52B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C53DB92C6A9346004FA52B /* HomeViewController.swift */; };
+		18DE779D2C6DEBFF000B321C /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE779C2C6DEBFE000B321C /* SearchTableViewCell.swift */; };
+		18DE77A02C6DF98E000B321C /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE779F2C6DF98E000B321C /* UIView+Ext.swift */; };
+		18DE77A22C6E0A0F000B321C /* UIResponder+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE77A12C6E0A0F000B321C /* UIResponder+Ext.swift */; };
+		18DE77A52C6E0C3D000B321C /* PopularProblemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE77A42C6E0C3D000B321C /* PopularProblemsTableViewCell.swift */; };
+		18DE77A82C6E1478000B321C /* PopularProblemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE77A72C6E1478000B321C /* PopularProblemsCollectionViewCell.swift */; };
+		18DE77AA2C6E14CB000B321C /* PopularProblemsItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE77A92C6E14CB000B321C /* PopularProblemsItemModel.swift */; };
 		18ED7A032C67DEC8000F03C3 /* Cell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A022C67DEC8000F03C3 /* Cell+Ext.swift */; };
 		18ED7A062C67DEE9000F03C3 /* DropdownButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A052C67DEE9000F03C3 /* DropdownButtonView.swift */; };
 		18ED7A0E2C67DFA6000F03C3 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A0D2C67DFA6000F03C3 /* RegisterViewModel.swift */; };
@@ -80,8 +93,21 @@
 		182B5BDD2C60BCA800F7E85D /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		182B5BFD2C60DC8900F7E85D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		182B5BFF2C60DC8C00F7E85D /* az */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = az; path = az.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1883F8372C6B3A79005ED089 /* CustomTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarController.swift; sourceTree = "<group>"; };
+		1883F8452C6B3B44005ED089 /* TherapyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyViewController.swift; sourceTree = "<group>"; };
+		1883F8472C6B3B4F005ED089 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		1883F8492C6B3B62005ED089 /* ConsultationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationViewController.swift; sourceTree = "<group>"; };
+		1884E9A82C6C89BC00E40A3D /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		1884E9AB2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectProblemTableViewCell.swift; sourceTree = "<group>"; };
 		18936EC62C62B637006A8683 /* IconTitleBgColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTitleBgColorButton.swift; sourceTree = "<group>"; };
 		18BD65192C63AA250071C597 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		18C53DB92C6A9346004FA52B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "Skincare-app/Screens/Login/View/HomeViewController.swift"; sourceTree = SOURCE_ROOT; };
+		18DE779C2C6DEBFE000B321C /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		18DE779F2C6DF98E000B321C /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		18DE77A12C6E0A0F000B321C /* UIResponder+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Ext.swift"; sourceTree = "<group>"; };
+		18DE77A42C6E0C3D000B321C /* PopularProblemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularProblemsTableViewCell.swift; sourceTree = "<group>"; };
+		18DE77A72C6E1478000B321C /* PopularProblemsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularProblemsCollectionViewCell.swift; sourceTree = "<group>"; };
+		18DE77A92C6E14CB000B321C /* PopularProblemsItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularProblemsItemModel.swift; sourceTree = "<group>"; };
 		18ED7A022C67DEC8000F03C3 /* Cell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Ext.swift"; sourceTree = "<group>"; };
 		18ED7A052C67DEE9000F03C3 /* DropdownButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButtonView.swift; sourceTree = "<group>"; };
 		18ED7A0D2C67DFA6000F03C3 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -159,6 +185,7 @@
 		182B5BA92C60A9E900F7E85D /* Skincare-app */ = {
 			isa = PBXGroup;
 			children = (
+				18C53DBB2C6A936A004FA52B /* CustomTabbar */,
 				18ED7A012C67DEB8000F03C3 /* Extensions */,
 				18936EC52C62B404006A8683 /* Components */,
 				182B5BF22C60DB5100F7E85D /* Localization */,
@@ -226,6 +253,10 @@
 		182B5BF02C60D2DE00F7E85D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				1883F83B2C6B3AF4005ED089 /* Consultation */,
+				1883F83A2C6B3ADE005ED089 /* Search */,
+				1883F8392C6B3AD3005ED089 /* Therapy */,
+				18C53DB52C6A9324004FA52B /* Home */,
 				F0E07E242C6A44F500BD410A /* CompleteTest */,
 				F0D38DD32C69FD55007E35ED /* DetectProblem */,
 				181FEA5D2C69115B00B9AAE6 /* Login */,
@@ -253,6 +284,129 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		1883F8392C6B3AD3005ED089 /* Therapy */ = {
+			isa = PBXGroup;
+			children = (
+				1883F83E2C6B3B0A005ED089 /* Model */,
+				1883F83D2C6B3B05005ED089 /* View */,
+				1883F83C2C6B3AFD005ED089 /* ViewModel */,
+			);
+			path = Therapy;
+			sourceTree = "<group>";
+		};
+		1883F83A2C6B3ADE005ED089 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1883F8412C6B3B21005ED089 /* Model */,
+				1883F8402C6B3B1C005ED089 /* View */,
+				1883F83F2C6B3B10005ED089 /* ViewModel */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		1883F83B2C6B3AF4005ED089 /* Consultation */ = {
+			isa = PBXGroup;
+			children = (
+				1883F8442C6B3B31005ED089 /* Model */,
+				1883F8432C6B3B2C005ED089 /* View */,
+				1883F8422C6B3B27005ED089 /* ViewModel */,
+			);
+			path = Consultation;
+			sourceTree = "<group>";
+		};
+		1883F83C2C6B3AFD005ED089 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1883F83D2C6B3B05005ED089 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1883F8452C6B3B44005ED089 /* TherapyViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1883F83E2C6B3B0A005ED089 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1883F83F2C6B3B10005ED089 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1883F8402C6B3B1C005ED089 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1883F8472C6B3B4F005ED089 /* SearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1883F8412C6B3B21005ED089 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1883F8422C6B3B27005ED089 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1883F8432C6B3B2C005ED089 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1883F8492C6B3B62005ED089 /* ConsultationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1883F8442C6B3B31005ED089 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1884E9A62C6C899800E40A3D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				18DE77A32C6E0C1C000B321C /* PopularProblems */,
+				18DE779E2C6DEC04000B321C /* SearchCell */,
+				1884E9AA2C6C938C00E40A3D /* DetectProblemCell */,
+				1884E9A72C6C89A700E40A3D /* HeaderCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1884E9A72C6C89A700E40A3D /* HeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				1884E9A82C6C89BC00E40A3D /* HeaderTableViewCell.swift */,
+			);
+			path = HeaderCell;
+			sourceTree = "<group>";
+		};
+		1884E9AA2C6C938C00E40A3D /* DetectProblemCell */ = {
+			isa = PBXGroup;
+			children = (
+				1884E9AB2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift */,
+			);
+			path = DetectProblemCell;
+			sourceTree = "<group>";
+		};
 		18936EC52C62B404006A8683 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,10 +420,79 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		18C53DB52C6A9324004FA52B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				18C53DB82C6A9335004FA52B /* Model */,
+				18C53DB72C6A9331004FA52B /* View */,
+				18C53DB62C6A932A004FA52B /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		18C53DB62C6A932A004FA52B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18C53DB72C6A9331004FA52B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1884E9A62C6C899800E40A3D /* Cells */,
+				18C53DB92C6A9346004FA52B /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18C53DB82C6A9335004FA52B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18C53DBB2C6A936A004FA52B /* CustomTabbar */ = {
+			isa = PBXGroup;
+			children = (
+				1883F8372C6B3A79005ED089 /* CustomTabbarController.swift */,
+			);
+			path = CustomTabbar;
+			sourceTree = "<group>";
+		};
+		18DE779E2C6DEC04000B321C /* SearchCell */ = {
+			isa = PBXGroup;
+			children = (
+				18DE779C2C6DEBFE000B321C /* SearchTableViewCell.swift */,
+			);
+			path = SearchCell;
+			sourceTree = "<group>";
+		};
+		18DE77A32C6E0C1C000B321C /* PopularProblems */ = {
+			isa = PBXGroup;
+			children = (
+				18DE77A62C6E145D000B321C /* PopularCollectionCell */,
+				18DE77A42C6E0C3D000B321C /* PopularProblemsTableViewCell.swift */,
+			);
+			path = PopularProblems;
+			sourceTree = "<group>";
+		};
+		18DE77A62C6E145D000B321C /* PopularCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				18DE77A72C6E1478000B321C /* PopularProblemsCollectionViewCell.swift */,
+				18DE77A92C6E14CB000B321C /* PopularProblemsItemModel.swift */,
+			);
+			path = PopularCollectionCell;
+			sourceTree = "<group>";
+		};
 		18ED7A012C67DEB8000F03C3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				18ED7A022C67DEC8000F03C3 /* Cell+Ext.swift */,
+				18DE779F2C6DF98E000B321C /* UIView+Ext.swift */,
+				18DE77A12C6E0A0F000B321C /* UIResponder+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -537,19 +760,32 @@
 				18ED7A062C67DEE9000F03C3 /* DropdownButtonView.swift in Sources */,
 				182B5BAF2C60A9E900F7E85D /* ViewController.swift in Sources */,
 				F0EAC6DF2C674A2A006DE3E1 /* OnboardingImageView.swift in Sources */,
+				1883F8382C6B3A79005ED089 /* CustomTabbarController.swift in Sources */,
 				181FEA622C69118700B9AAE6 /* LoginViewController.swift in Sources */,
 				18ED7A102C67DFBB000F03C3 /* RegisterViewController.swift in Sources */,
+				18C53DBA2C6A9346004FA52B /* HomeViewController.swift in Sources */,
+				18DE77A52C6E0C3D000B321C /* PopularProblemsTableViewCell.swift in Sources */,
+				18DE77AA2C6E14CB000B321C /* PopularProblemsItemModel.swift in Sources */,
 				F0D38DDA2C69FFEA007E35ED /* AnswerBoxView.swift in Sources */,
+				1883F84A2C6B3B62005ED089 /* ConsultationViewController.swift in Sources */,
 				182B5BAB2C60A9E900F7E85D /* AppDelegate.swift in Sources */,
 				18ED7A0E2C67DFA6000F03C3 /* RegisterViewModel.swift in Sources */,
 				F0E07E292C6A453D00BD410A /* CompleteTestViewController.swift in Sources */,
 				18936EC72C62B637006A8683 /* IconTitleBgColorButton.swift in Sources */,
+				18DE77A22C6E0A0F000B321C /* UIResponder+Ext.swift in Sources */,
 				F0DD68EE2C68CAF200C11ECF /* OnboardingLoginViewController.swift in Sources */,
 				F0DD68F42C68CF0700C11ECF /* OnboardingRegisterViewController.swift in Sources */,
 				182B5BAD2C60A9E900F7E85D /* SceneDelegate.swift in Sources */,
+				1884E9AC2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift in Sources */,
+				1883F8482C6B3B4F005ED089 /* SearchViewController.swift in Sources */,
 				18ED7A032C67DEC8000F03C3 /* Cell+Ext.swift in Sources */,
+				18DE779D2C6DEBFF000B321C /* SearchTableViewCell.swift in Sources */,
 				18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */,
 				F0EAC6DD2C674A10006DE3E1 /* TitleBgColorButton.swift in Sources */,
+				18DE77A02C6DF98E000B321C /* UIView+Ext.swift in Sources */,
+				1883F8462C6B3B44005ED089 /* TherapyViewController.swift in Sources */,
+				1884E9A92C6C89BC00E40A3D /* HeaderTableViewCell.swift in Sources */,
+				18DE77A82C6E1478000B321C /* PopularProblemsCollectionViewCell.swift in Sources */,
 				F0D38DD82C69FDA3007E35ED /* DetectProblemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
