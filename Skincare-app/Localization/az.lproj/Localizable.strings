@@ -48,3 +48,17 @@
 "registerButtonStaticText" = "ya da";
 "registerButtonTitle" = "Qeydiyyatdan keç";
 
+// Home
+"welcome" = "Xoş gördük,";
+"detectProblemDescription" = "Hər Gün Daha Parlaq, Daha Sağlam Dəri.";
+"detectProblemButton" = "Dəri tipini müəyyən et";
+"searchTitle" = "Dəri problemləri";
+"searchDescription" = "Qarşılaşdığın dəri problemini araşdır və problemin səbəbini tap.";
+"redirectionSearch" = "İndi axtar";
+"popularProblemsTitle" = "Ən çox axtarılan problemlər";
+
+// Tabbar items
+"home" = "Ana səhifə";
+"therapy" = "Müalicə";
+"search" = "Axtarış";
+"consultation" = "Konsultasiya";

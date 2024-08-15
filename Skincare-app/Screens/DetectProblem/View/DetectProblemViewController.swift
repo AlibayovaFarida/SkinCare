@@ -139,6 +139,7 @@ class DetectProblemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupCustomBackButton()
         setupGesture()
     }
     
@@ -178,7 +179,7 @@ class DetectProblemViewController: UIViewController {
         }
         
         formStackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(28)
+            make.top.equalToSuperview().inset(16)
             make.leading.trailing.equalToSuperview().inset(20)
             make.bottom.equalToSuperview().inset(100)
         }
@@ -197,7 +198,28 @@ class DetectProblemViewController: UIViewController {
             make.height.equalTo(44)
         }
     }
-    
+    private func setupCustomBackButton() {
+        guard let backButtonImage = UIImage(named: "back-button") else {
+            print("Error: Back button image not found.")
+            return
+        }
+                
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(backButtonImage, for: .normal)
+        backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
+                
+        let backBarButtonItem = UIBarButtonItem(customView: backButton)
+        navigationItem.leftBarButtonItem = backBarButtonItem
+                
+        backButton.snp.makeConstraints { make in
+            make.width.equalTo(24)
+            make.height.equalTo(24)
+        }
+    }
+    @objc
+    private func didTapBackButton() {
+        navigationController?.popViewController(animated: true)
+    }
     private func setupGesture() {
         let infoButtonLongPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleInfoButtonLongPress))
         infoButtonLongPressGesture.minimumPressDuration = 0
