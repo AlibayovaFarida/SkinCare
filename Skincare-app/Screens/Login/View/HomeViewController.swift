@@ -41,6 +41,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.additionalSafeAreaInsets.top = -28
         tableView.dataSource = homeDataSource
         view.backgroundColor = UIColor(named: "white")
         setupUI()
