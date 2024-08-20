@@ -26,7 +26,7 @@ class PopularProblemsCollectionViewCell: UICollectionViewCell {
     
     private let imageBackgroundView: UIView = {
         let view = UIImageView()
-        view.backgroundColor = UIColor(named: "customMediumBlue")
+        view.backgroundColor = UIColor(named: "customLightBlue")
         view.layer.cornerRadius = 16
         return view
     }()
@@ -67,7 +67,7 @@ class PopularProblemsCollectionViewCell: UICollectionViewCell {
     }()
     private let descriptionTextLabel: UILabel = {
         let lb = UILabel()
-        lb.font = UIFont(name: "Montserrat-Medium", size: 12)
+        lb.font = UIFont(name: "Montserrat-Regular", size: 12)
         lb.textColor = UIColor(named: "black")
         lb.numberOfLines = 0
         return lb
