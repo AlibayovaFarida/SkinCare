@@ -42,14 +42,14 @@ class DetectProblemTableViewCell: UITableViewCell {
     private let logoLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Sacramento-Regular", size: 36)
-        lb.textColor = UIColor(named: "black")
+        lb.textColor = UIColor(named: "customBlack")
         lb.text = "SkinCare"
         return lb
     }()
     private let mottoLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-Medium", size: 12)
-        lb.textColor = UIColor(named: "black")
+        lb.textColor = UIColor(named: "customBlack")
         lb.numberOfLines = 2
         lb.text = NSLocalizedString("detectProblemDescription", comment: "")
         return lb
@@ -58,7 +58,7 @@ class DetectProblemTableViewCell: UITableViewCell {
         let btn = UIButton(type: .custom)
         btn.isUserInteractionEnabled = true
         btn.setTitle(NSLocalizedString("detectProblemButton", comment: ""), for: .normal)
-        btn.setTitleColor(UIColor(named: "black"), for: .normal)
+        btn.setTitleColor(UIColor(named: "customBlack"), for: .normal)
         btn.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 12)
         btn.backgroundColor = UIColor(named: "customLightGreen")
         btn.layer.cornerRadius = 17
@@ -80,12 +80,22 @@ class DetectProblemTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     @objc
-    private func didTapDetectProblem(){
-        if let viewCotroller = self.findViewController() {
-            let vc = DetectProblemViewController()
-            viewCotroller.navigationController?.pushViewController(vc, animated: true)
+    private func didTapDetectProblem() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.detectProblemButton.alpha = 0.5
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.2) {
+                self.detectProblemButton.alpha = 1.0
+            }
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            if let viewController = self.findViewController() {
+                let vc = DetectProblemViewController()
+                viewController.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
+
     private func setupUI() {
         contentView.addSubview(bgView)
         bgView.addSubview(generalStackView)

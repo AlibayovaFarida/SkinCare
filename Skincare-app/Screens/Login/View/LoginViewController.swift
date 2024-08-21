@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
     }()
     private let emailTextField = CustomTextField(placeholder: "Email", title: "", textFieldWidth: 270)
     private let passwordTextField = CustomTextField(placeholder: "Password", title: "", textFieldWidth: 270)
-    private let loginButton = IconTitleBgColorButton(bgColor: "mainColor", icon: "", iconWidth: 0, iconHeight: 0, title: "Daxil ol", titleColor: "white")
+    private let loginButton = IconTitleBgColorButton(bgColor: "mainColor", icon: "", iconWidth: 0, iconHeight: 0, title: "Daxil ol", titleColor: "customWhite")
     
     let forgotPasswordButton = TitleBgColorButton(staticText:"", staticTextColor: .black, title: "Şifrəni unutmusan?", titleColor: .customBlue)
     

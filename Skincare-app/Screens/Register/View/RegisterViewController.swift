@@ -51,7 +51,7 @@ class RegisterViewController: UIViewController {
     private let birthdateHeaderLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-Medium", size: 16)
-        lb.textColor = UIColor(named: "black")
+        lb.textColor = .black
         lb.text = NSLocalizedString("birthdateTextField", comment: "")
         return lb
     }()
@@ -108,7 +108,7 @@ class RegisterViewController: UIViewController {
     private let genderHeaderLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-Medium", size: 16)
-        lb.textColor = UIColor(named: "black")
+        lb.textColor = .black
         lb.text = NSLocalizedString("genderTextField", comment: "")
         return lb
     }()
@@ -137,7 +137,7 @@ class RegisterViewController: UIViewController {
     private let maleLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-Regular", size: 14)
-        lb.textColor = UIColor(named: "black")
+        lb.textColor = .black
         lb.text = NSLocalizedString("male", comment: "")
         return lb
     }()
@@ -158,7 +158,7 @@ class RegisterViewController: UIViewController {
     private let femaleLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-Regular", size: 14)
-        lb.textColor = UIColor(named: "black")
+        lb.textColor = .black
         lb.text = NSLocalizedString("female", comment: "")
         return lb
     }()
@@ -168,15 +168,16 @@ class RegisterViewController: UIViewController {
         btn.layer.cornerRadius = 16
         btn.setTitle(NSLocalizedString("submit", comment: ""), for: .normal)
         btn.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 14)
-        btn.tintColor = UIColor(named: "white")
+        btn.tintColor = .white
         return btn
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Qeydiyyat"
         if let navigationBar = self.navigationController?.navigationBar {
-            let textAttributes: [NSAttributedString.Key: Any] = [
-                .foregroundColor: UIColor(named: "black")!,
+            let textAttributes: [NSAttributedString.Key: Any] =
+            [
+                .foregroundColor: UIColor.black,
                 .font: UIFont(name: "Montserrat-SemiBold", size: 20)!
             ]
             navigationBar.titleTextAttributes = textAttributes
@@ -188,7 +189,7 @@ class RegisterViewController: UIViewController {
     
     private func setupUI() {
         birthdateStackView.layer.zPosition = 1
-        view.backgroundColor = UIColor(named: "white")
+        view.backgroundColor = .white
         view.addSubview(scrollView)
         scrollView.addSubview(contentViewInScroll)
         contentViewInScroll.addSubview(formStackView)
