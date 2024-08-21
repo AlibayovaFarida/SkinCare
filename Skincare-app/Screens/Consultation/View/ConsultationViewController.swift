@@ -55,8 +55,8 @@ class ConsultationViewController: UIViewController {
     
     private let items: [(nameTitle: String, positionTitle: String, ratingLabel: String, patientCountLabel: String, priceLabel: String, experienceLabel: String, image: UIImage?)] = [
         (nameTitle: "Dr. Stanford", positionTitle: "Dermatologist", ratingLabel: "4.2", patientCountLabel: "100", priceLabel: "20", experienceLabel: "5", image: UIImage(named: "youngMan")),
-        (nameTitle: "Dr. Laura", positionTitle: "Cosmetologist", ratingLabel: "4.9", patientCountLabel: "140", priceLabel: "18", experienceLabel: "3", image: UIImage(named: "youngWoman")),
-        (nameTitle: "Dr. Edwards", positionTitle: "Cosmetologist", ratingLabel: "4.5", patientCountLabel: "230", priceLabel: "30", experienceLabel: "18", image: UIImage(named: "oldMan")),
+        (nameTitle: "Dr. Laura", positionTitle: "Dermatologist", ratingLabel: "4.9", patientCountLabel: "140", priceLabel: "18", experienceLabel: "3", image: UIImage(named: "youngWoman")),
+        (nameTitle: "Dr. Edwards", positionTitle: "Dermatologist", ratingLabel: "4.5", patientCountLabel: "230", priceLabel: "30", experienceLabel: "18", image: UIImage(named: "oldMan")),
         (nameTitle: "Dr. Stanford", positionTitle: "Dermatologist", ratingLabel: "4.2", patientCountLabel: "100", priceLabel: "20", experienceLabel: "5", image: UIImage(named: "youngMan")),
         (nameTitle: "Dr. Stanford", positionTitle: "Dermatologist", ratingLabel: "4.2", patientCountLabel: "100", priceLabel: "20", experienceLabel: "5", image: UIImage(named: "youngMan")),
         (nameTitle: "Dr. Stanford", positionTitle: "Dermatologist", ratingLabel: "4.2", patientCountLabel: "100", priceLabel: "20", experienceLabel: "5", image: UIImage(named: "youngMan")),]
