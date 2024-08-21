@@ -56,7 +56,7 @@ class PopularProblemsCollectionViewCell: UICollectionViewCell {
     private let headerTitleLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-Bold", size: 16)
-        lb.textColor = UIColor(named: "black")
+        lb.textColor = UIColor(named: "customBlack")
         return lb
     }()
     
@@ -68,7 +68,7 @@ class PopularProblemsCollectionViewCell: UICollectionViewCell {
     private let descriptionTextLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-Regular", size: 12)
-        lb.textColor = UIColor(named: "black")
+        lb.textColor = UIColor(named: "customBlack")
         lb.numberOfLines = 0
         return lb
     }()

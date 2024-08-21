@@ -19,7 +19,7 @@ class PopularProblemsTableViewCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-Bold", size: 20)
-        lb.textColor = UIColor(named: "black")
+        lb.textColor = UIColor(named: "customBlack")
         lb.text = NSLocalizedString("popularProblemsTitle", comment: "")
         return lb
     }()

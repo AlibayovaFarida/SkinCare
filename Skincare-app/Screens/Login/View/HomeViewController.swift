@@ -24,7 +24,7 @@ struct HomeModel: Hashable {
 
 typealias HomeDataSource = UITableViewDiffableDataSource<HomeSection, HomeModel>
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, SearchTableViewCellDelegate {
     
     private lazy var homeDataSource: HomeDataSource = makeHomeDataSource()
     
@@ -43,7 +43,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.additionalSafeAreaInsets.top = -28
         tableView.dataSource = homeDataSource
-        view.backgroundColor = UIColor(named: "white")
+        view.backgroundColor = UIColor(named: "customWhite")
         setupUI()
         applySnapshot()
     }
@@ -53,6 +53,22 @@ class HomeViewController: UIViewController {
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
+    
+    func didTapLightBlueView() {
+        guard let tabBarController = self.tabBarController as? CustomTabBarController else { return }
+        let targetIndex = 2
+        
+        guard tabBarController.selectedIndex != targetIndex else { return }
+        
+        UIView.transition(with: tabBarController.view,
+                          duration: 0.3,
+                          options: .transitionCrossDissolve,
+                          animations: {
+            tabBarController.selectedIndex = targetIndex
+        },
+                          completion: nil)
+    }
+    
     private func makeHomeDataSource() -> HomeDataSource {
         return HomeDataSource(tableView: tableView) { tableView, indexPath, itemIdentifier in
             if indexPath.section == 0{
@@ -63,6 +79,7 @@ class HomeViewController: UIViewController {
                 return cell
             } else if indexPath.section == 2 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier) as! SearchTableViewCell
+                cell.delegate = self
                 return cell
             } else if indexPath.section == 3 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: PopularProblemsTableViewCell.identifier) as! PopularProblemsTableViewCell

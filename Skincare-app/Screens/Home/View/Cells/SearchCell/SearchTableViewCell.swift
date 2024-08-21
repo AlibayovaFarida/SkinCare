@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol SearchTableViewCellDelegate: AnyObject {
+    func didTapLightBlueView()
+}
+
 class SearchTableViewCell: UITableViewCell {
+    
+    weak var delegate: SearchTableViewCellDelegate?
+    
     private let darkBlueView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(named: "customBlue")
@@ -33,14 +40,14 @@ class SearchTableViewCell: UITableViewCell {
     private let headerTitleLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-SemiBold", size: 16)
-        lb.textColor = UIColor(named: "white")
+        lb.textColor = UIColor(named: "customWhite")
         lb.text = NSLocalizedString("searchTitle", comment: "")
         return lb
     }()
     private let skinProblemsDescriptionLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-Medium", size: 14)
-        lb.textColor = UIColor(named: "white")
+        lb.textColor = UIColor(named: "customWhite")
         lb.text = NSLocalizedString("searchDescription", comment: "")
         lb.numberOfLines = 0
         return lb
@@ -60,7 +67,7 @@ class SearchTableViewCell: UITableViewCell {
     private let searchLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-Medium", size: 14)
-        lb.textColor = UIColor(named: "white")
+        lb.textColor = UIColor(named: "customWhite")
         lb.text = NSLocalizedString("redirectionSearch", comment: "")
         return lb
     }()
@@ -73,7 +80,27 @@ class SearchTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
         setupUI()
+        addTapGesture()
     }
+    
+    private func addTapGesture() {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleLightBlueViewTap))
+            lightBlueView.addGestureRecognizer(tapGesture)
+            lightBlueView.isUserInteractionEnabled = true
+    }
+    
+    @objc private func handleLightBlueViewTap() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.lightBlueView.alpha = 0.8
+        }) { _ in
+            UIView.animate(withDuration: 0.1, animations: {
+                self.lightBlueView.alpha = 1.0
+            }) { _ in
+                self.delegate?.didTapLightBlueView()
+            }
+        }
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         darkBlueView.layoutIfNeeded()

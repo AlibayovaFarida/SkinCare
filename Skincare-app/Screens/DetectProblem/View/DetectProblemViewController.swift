@@ -32,7 +32,7 @@ class DetectProblemViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Bold", size: 20)
-        label.textColor = UIColor(named: "black")
+        label.textColor = UIColor(named: "customBlack")
         label.text = "Dəri tipini müəyyən et"
         label.textAlignment = .center
         return label
@@ -78,7 +78,7 @@ class DetectProblemViewController: UIViewController {
         
         let questionLabel = UILabel()
         questionLabel.font = UIFont(name: "Montserrat-Regular", size: 14)
-        questionLabel.textColor = UIColor(named: "black")
+        questionLabel.textColor = UIColor(named: "customBlack")
         questionLabel.numberOfLines = 0
         
         let attributedString = NSMutableAttributedString(string: questionText)
@@ -144,7 +144,7 @@ class DetectProblemViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = UIColor(named: "white")
+        view.backgroundColor = UIColor(named: "customWhite")
         view.addSubview(scrollView)
         scrollView.addSubview(contentViewInScroll)
         contentViewInScroll.addSubview(formStackView)
@@ -207,7 +207,12 @@ class DetectProblemViewController: UIViewController {
         let backButton = UIButton(type: .custom)
         backButton.setImage(backButtonImage, for: .normal)
         backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
-                
+        
+        let backButtonLongPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleBackButtonLongPress))
+        backButtonLongPressGesture.minimumPressDuration = 0
+        backButtonLongPressGesture.cancelsTouchesInView = false
+        backButton.addGestureRecognizer(backButtonLongPressGesture)
+        
         let backBarButtonItem = UIBarButtonItem(customView: backButton)
         navigationItem.leftBarButtonItem = backBarButtonItem
                 
@@ -216,10 +221,19 @@ class DetectProblemViewController: UIViewController {
             make.height.equalTo(24)
         }
     }
-    @objc
-    private func didTapBackButton() {
-        navigationController?.popViewController(animated: true)
+    
+    @objc private func didTapBackButton() {
+        UIView.animate(withDuration: 0.1, animations: {
+            self.navigationItem.leftBarButtonItem?.customView?.alpha = 0.5
+        }) { _ in
+            UIView.animate(withDuration: 0.1, animations: {
+                self.navigationItem.leftBarButtonItem?.customView?.alpha = 1.0
+            }) { _ in
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
+
     private func setupGesture() {
         let infoButtonLongPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleInfoButtonLongPress))
         infoButtonLongPressGesture.minimumPressDuration = 0
@@ -254,6 +268,17 @@ class DetectProblemViewController: UIViewController {
         }
     }
     
+    @objc private func handleBackButtonLongPress(_ gesture: UILongPressGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            animateBackButton(scale: 0.9)
+        case .ended, .cancelled:
+            animateBackButton(scale: 1.0)
+        default:
+            break
+        }
+    }
+    
     private func animateInfoButton(scale: CGFloat) {
         UIView.animate(withDuration: 0.1, animations: {
             self.infoButton.transform = CGAffineTransform(scaleX: scale, y: scale)
@@ -265,6 +290,13 @@ class DetectProblemViewController: UIViewController {
             self.submitButton.transform = CGAffineTransform(scaleX: scale, y: scale)
         })
     }
+    
+    private func animateBackButton(scale: CGFloat) {
+        UIView.animate(withDuration: 0.1, animations: {
+            self.navigationItem.leftBarButtonItem?.customView?.transform = CGAffineTransform(scaleX: scale, y: scale)
+        })
+    }
+
     
     @objc private func infoButtonTapped() {
         print("Info button tapped")

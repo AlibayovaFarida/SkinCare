@@ -25,7 +25,7 @@ class CustomTextField: UIView {
     private let headerLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-Medium", size: 16)
-        lb.textColor = UIColor(named: "black")
+        lb.textColor = UIColor(named: "customBlack")
         return lb
     }()
     private let starLabel: UILabel = {
@@ -38,7 +38,7 @@ class CustomTextField: UIView {
     let textFieldView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 16
-        view.backgroundColor = UIColor(named: "white")
+        view.backgroundColor = UIColor(named: "customWhite")
         return view
     }()
     

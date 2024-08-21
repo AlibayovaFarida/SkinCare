@@ -25,11 +25,11 @@ class OnboardingRegisterViewController: UIViewController {
         bgColor: UIColor.red
     )
     
-    private let appleButton = IconTitleBgColorButton(bgColor: "black", icon: "apple-icon", iconWidth: 18, iconHeight: 22.5, title: NSLocalizedString("appleButtonRegisterTitle", comment: ""), titleColor: "white")
+    private let appleButton = IconTitleBgColorButton(bgColor: "customBlack", icon: "apple-icon", iconWidth: 18, iconHeight: 22.5, title: NSLocalizedString("appleButtonRegisterTitle", comment: ""), titleColor: "customWhite")
     
-    private let googleButton = IconTitleBgColorButton(bgColor: "white", icon: "google-icon", iconWidth: 18, iconHeight: 18, title: NSLocalizedString("googleButtonRegisterTitle", comment: ""), titleColor: "black")
+    private let googleButton = IconTitleBgColorButton(bgColor: "customWhite", icon: "google-icon", iconWidth: 18, iconHeight: 18, title: NSLocalizedString("googleButtonRegisterTitle", comment: ""), titleColor: "customBlack")
     
-    private let mailButton = IconTitleBgColorButton(bgColor: "white", icon: "mail-icon", iconWidth: 17.18, iconHeight: 14.7, title: NSLocalizedString("mailButtonRegisterTitle", comment: ""), titleColor: "black")
+    private let mailButton = IconTitleBgColorButton(bgColor: "customWhite", icon: "mail-icon", iconWidth: 17.18, iconHeight: 14.7, title: NSLocalizedString("mailButtonRegisterTitle", comment: ""), titleColor: "customBlack")
     
     let signInButton = TitleBgColorButton(staticText: NSLocalizedString("signInButtonStaticText", comment: ""), staticTextColor: .black, title: NSLocalizedString("signInButtonTitle", comment: ""), titleColor: .customBlue)
     

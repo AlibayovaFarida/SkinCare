@@ -24,14 +24,14 @@ class HeaderTableViewCell: UITableViewCell {
     private let welcomeLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-Regular", size: 12)
-        lb.textColor = UIColor(named: "black")
+        lb.textColor = UIColor(named: "customBlack")
         lb.text = NSLocalizedString("welcome", comment: "")
         return lb
     }()
     private let usernameLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-SemiBold", size: 12)
-        lb.textColor = UIColor(named: "black")
+        lb.textColor = UIColor(named: "customBlack")
         lb.text = "Ayla"
         return lb
     }()
