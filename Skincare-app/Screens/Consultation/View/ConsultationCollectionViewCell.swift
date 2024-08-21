@@ -185,20 +185,15 @@ class ConsultationCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-        applyBottomCornerRadius()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private func applyBottomCornerRadius() {
-        let path = UIBezierPath(roundedRect: bottomStackView.bounds,
-                                byRoundingCorners: [.bottomLeft, .bottomRight],
-                                cornerRadii: CGSize(width: 16, height: 16))
-        let maskLayer = CAShapeLayer()
-        maskLayer.path = path.cgPath
-        bottomStackView.layer.mask = maskLayer
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        bottomStackView.layoutIfNeeded()
+        bottomStackView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 16)
     }
     
     private func setupViews() {
@@ -270,9 +265,6 @@ class ConsultationCollectionViewCell: UICollectionViewCell {
             make.height.equalTo(40)
         }
         
-        contentView.layoutIfNeeded()
-        applyBottomCornerRadius()
-        
         bottomLeftLabel.snp.makeConstraints { make in
             make.leading.equalTo(contentView).inset(12)
             make.bottom.equalTo(contentView).inset(8)
@@ -316,14 +308,14 @@ class ConsultationCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configure(with nameTitlee: String, positionTitlee: String, ratingLabell: String, patientCountLabell: String, priceLabel: String, experienceLabel: String, image: UIImage?) {
-        nameTitle.text = nameTitlee
-        positionTitle.text = positionTitlee
-        ratingLabel.text = ratingLabell
-        patientCountLabel.text = patientCountLabell
-        priceLabel2.text = priceLabel
-        experienceLabel1.text = experienceLabel
-        backgroundImageView.image = image
+    func configure(_ item: DermatologistModel) {
+        nameTitle.text = "Dr. \(item.name)"
+        positionTitle.text = item.profession
+        ratingLabel.text = "\(item.rating)"
+        patientCountLabel.text = "\(item.patientCount)"
+        priceLabel2.text = "\(item.price)"
+        experienceLabel1.text = "\(item.experience)"
+        backgroundImageView.image = UIImage(named: item.image)
     }
 }
 

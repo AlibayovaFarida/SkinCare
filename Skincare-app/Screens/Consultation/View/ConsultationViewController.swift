@@ -10,15 +10,13 @@ import SnapKit
 
 class ConsultationViewController: UIViewController {
     
-    private let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .systemBackground
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
-        return collectionView
-    }()
+    private let items: [DermatologistModel] = [
+        .init(name: "Stanford", profession: "Dermatologist", rating: 4.2, patientCount: 100, price: 20, experience: 5, image: "youngMan"),
+        .init(name: "Laura", profession: "Dermatologist", rating: 4.9, patientCount: 140, price: 18, experience: 3, image: "youngWoman"),
+        .init(name: "Edwards", profession: "Dermatologist", rating: 4.5, patientCount: 230, price: 30, experience: 18, image: "oldMan"),
+        .init(name: "Stanford", profession: "Dermatologist", rating: 4.2, patientCount: 100, price: 20, experience: 5, image: "youngMan"),
+        .init(name: "Stanford", profession: "Dermatologist", rating: 4.2, patientCount: 100, price: 20, experience: 5, image: "youngMan"),
+        .init(name: "Stanford", profession: "Dermatologist", rating: 4.2, patientCount: 100, price: 20, experience: 5, image: "youngMan"),]
     
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -52,14 +50,15 @@ class ConsultationViewController: UIViewController {
         button.tintColor = .black
         return button
     }()
-    
-    private let items: [(nameTitle: String, positionTitle: String, ratingLabel: String, patientCountLabel: String, priceLabel: String, experienceLabel: String, image: UIImage?)] = [
-        (nameTitle: "Dr. Stanford", positionTitle: "Dermatologist", ratingLabel: "4.2", patientCountLabel: "100", priceLabel: "20", experienceLabel: "5", image: UIImage(named: "youngMan")),
-        (nameTitle: "Dr. Laura", positionTitle: "Dermatologist", ratingLabel: "4.9", patientCountLabel: "140", priceLabel: "18", experienceLabel: "3", image: UIImage(named: "youngWoman")),
-        (nameTitle: "Dr. Edwards", positionTitle: "Dermatologist", ratingLabel: "4.5", patientCountLabel: "230", priceLabel: "30", experienceLabel: "18", image: UIImage(named: "oldMan")),
-        (nameTitle: "Dr. Stanford", positionTitle: "Dermatologist", ratingLabel: "4.2", patientCountLabel: "100", priceLabel: "20", experienceLabel: "5", image: UIImage(named: "youngMan")),
-        (nameTitle: "Dr. Stanford", positionTitle: "Dermatologist", ratingLabel: "4.2", patientCountLabel: "100", priceLabel: "20", experienceLabel: "5", image: UIImage(named: "youngMan")),
-        (nameTitle: "Dr. Stanford", positionTitle: "Dermatologist", ratingLabel: "4.2", patientCountLabel: "100", priceLabel: "20", experienceLabel: "5", image: UIImage(named: "youngMan")),]
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .systemBackground
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        return collectionView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,8 +125,7 @@ extension ConsultationViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ConsultationCollectionViewCell", for: indexPath) as! ConsultationCollectionViewCell
-        let item = items[indexPath.item]
-        cell.configure(with: item.nameTitle, positionTitlee: item.positionTitle, ratingLabell: item.ratingLabel, patientCountLabell: item.patientCountLabel, priceLabel: item.priceLabel, experienceLabel: item.experienceLabel, image: item.image)
+        cell.configure(items[indexPath.row])
         return cell
     }
 }
