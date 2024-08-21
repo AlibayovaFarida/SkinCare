@@ -9,15 +9,16 @@ import UIKit
 import SnapKit
 
 class SearchViewController: UIViewController {
-    
-    private let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 8
-        layout.minimumInteritemSpacing = 8
-        return UICollectionView(frame: .zero, collectionViewLayout: layout)
-    }()
-    
+    private let items: [PopularProblemsItemModel] = [
+        .init(image: "acne", title: "Acne", solutions: ["Kimyəvi peeling", "lazer Terapiyası", "işıq Terapiyası"]),
+        .init(image: "rosacea", title: "Rosacea", solutions: ["Günəşdən Qorunma", "lazer Terapiyası", "Soyuq Kompreslər"]),
+        .init(image: "psoriasis", title: "Psoriasis", solutions: ["Sağlam Pəhriz", "Kömür Tüstüsü", "Topikal Kalkineurin İnibitorlar"]),
+        .init(image: "acne", title: "Acne", solutions: ["Kimyəvi peeling", "lazer Terapiyası", "işıq Terapiyası"]),
+        .init(image: "acne", title: "Acne", solutions: ["Kimyəvi peeling", "lazer Terapiyası", "işıq Terapiyası"]),
+        .init(image: "acne", title: "Acne", solutions: ["Kimyəvi peeling", "lazer Terapiyası", "işıq Terapiyası"]),
+        .init(image: "acne", title: "Acne", solutions: ["Kimyəvi peeling", "lazer Terapiyası", "işıq Terapiyası"]),
+        .init(image: "acne", title: "Acne", solutions: ["Kimyəvi peeling", "lazer Terapiyası", "işıq Terapiyası"])
+    ]
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.setImage(UIImage(named: "Search"), for: .search, state: .normal)
@@ -51,22 +52,23 @@ class SearchViewController: UIViewController {
         return button
     }()
     
-    private var items: [(title: String, subtitle: String, leftImage: UIImage?, rightImage: UIImage?)] = [
-        (title: "Acne", subtitle: "Həll yolları: Kimyəvi peeling, lazer Terapiyası, işıq Terapiyası və.s.", leftImage: UIImage(named: "acne"), rightImage: UIImage(named: "redirection-black")),
-        (title: "Rosacea", subtitle: "Həll Yolları; Günəşdən Qorunma, lazer Terapiyası, Soyuq Kompreslər və.s.", leftImage: UIImage(named: "rosacea"), rightImage: UIImage(named: "redirection-black")),
-        (title: "Psoriasis", subtitle: "Həll Yolları; Sağlam Pəhriz, Kömür Tüstüsü, Topikal Kalkineurin İnibitorlar", leftImage: UIImage(named: "acne2"), rightImage: UIImage(named: "redirection-black")),
-        (title: "Acne", subtitle: "Həll yolları: Kimyəvi peeling, lazer Terapiyası, işıq Terapiyası və.s.", leftImage: UIImage(named: "acne"), rightImage: UIImage(named: "redirection-black")),
-        (title: "Acne", subtitle: "Həll yolları: Kimyəvi peeling, lazer Terapiyası, işıq Terapiyası və.s.", leftImage: UIImage(named: "acne"), rightImage: UIImage(named: "redirection-black")),
-        (title: "Acne", subtitle: "Həll yolları: Kimyəvi peeling, lazer Terapiyası, işıq Terapiyası və.s.", leftImage: UIImage(named: "acne"), rightImage: UIImage(named: "redirection-black")),
-        (title: "Acne", subtitle: "Həll yolları: Kimyəvi peeling, lazer Terapiyası, işıq Terapiyası və.s.", leftImage: UIImage(named: "acne"), rightImage: UIImage(named: "redirection-black")),
-        (title: "Acne", subtitle: "Həll yolları: Kimyəvi peeling, lazer Terapiyası, işıq Terapiyası və.s.", leftImage: UIImage(named: "acne"), rightImage: UIImage(named: "redirection-black")),
-        (title: "Acne", subtitle: "Həll yolları: Kimyəvi peeling, lazer Terapiyası, işıq Terapiyası və.s.", leftImage: UIImage(named: "acne"), rightImage: UIImage(named: "redirection-black")),]
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 8
+        let screenWidth = UIScreen.main.bounds.width
+        layout.itemSize = .init(width: (screenWidth - 16), height: 100)
+        layout.sectionInset = .init(top: 0, left: 8, bottom: 0, right: 8)
+        cv.showsVerticalScrollIndicator = false
+        cv.register(PopularProblemsCollectionViewCell.self, forCellWithReuseIdentifier: PopularProblemsCollectionViewCell.identifier)
+        return cv
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
         setupViews()
         setupConstraints()    }
     
@@ -76,9 +78,7 @@ class SearchViewController: UIViewController {
         view.addSubview(collectionView)
         
         collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.backgroundColor = .white
-        collectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "SearchCollectionViewCell")
+        collectionView.backgroundColor = .clear
     }
     
     private func setupConstraints() {
@@ -96,7 +96,7 @@ class SearchViewController: UIViewController {
         }
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom).offset(10)
+            make.top.equalTo(searchBar.snp.bottom).offset(13)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
@@ -109,32 +109,8 @@ extension SearchViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as! SearchCollectionViewCell
-        let item = items[indexPath.item]
-        cell.configure(with: item.title, subtitle: item.subtitle, leftImage: item.leftImage, rightImage: item.rightImage)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularProblemsCollectionViewCell.identifier, for: indexPath) as! PopularProblemsCollectionViewCell
+        cell.configure(items[indexPath.row])
         return cell
     }
 }
-
-extension SearchViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width - 15, height: 100)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .zero
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
-    }
-}
-
-
-
-
-

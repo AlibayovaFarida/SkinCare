@@ -83,6 +83,17 @@ class SearchTableViewCell: UITableViewCell {
         addTapGesture()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        darkBlueView.layoutIfNeeded()
+        darkBlueView.roundCorners(corners: [.topLeft, .topRight], radius:16)
+        lightBlueView.layoutIfNeeded()
+        lightBlueView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 16)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func addTapGesture() {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleLightBlueViewTap))
             lightBlueView.addGestureRecognizer(tapGesture)
@@ -99,17 +110,6 @@ class SearchTableViewCell: UITableViewCell {
                 self.delegate?.didTapLightBlueView()
             }
         }
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        darkBlueView.layoutIfNeeded()
-        darkBlueView.roundCorners(corners: [.topLeft, .topRight], radius:16)
-        lightBlueView.layoutIfNeeded()
-        lightBlueView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 16)
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     private func setupUI(){

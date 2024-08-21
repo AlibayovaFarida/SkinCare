@@ -54,7 +54,6 @@
 		18ED7A062C67DEE9000F03C3 /* DropdownButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A052C67DEE9000F03C3 /* DropdownButtonView.swift */; };
 		18ED7A0E2C67DFA6000F03C3 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A0D2C67DFA6000F03C3 /* RegisterViewModel.swift */; };
 		18ED7A102C67DFBB000F03C3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A0F2C67DFBB000F03C3 /* RegisterViewController.swift */; };
-		F058042F2C74F9AA003AE03E /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F058042E2C74F9AA003AE03E /* SearchCollectionViewCell.swift */; };
 		F05804312C7518FA003AE03E /* ConsultationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05804302C7518FA003AE03E /* ConsultationCollectionViewCell.swift */; };
 		F0D38DD82C69FDA3007E35ED /* DetectProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D38DD72C69FDA3007E35ED /* DetectProblemViewController.swift */; };
 		F0D38DDA2C69FFEA007E35ED /* AnswerBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D38DD92C69FFEA007E35ED /* AnswerBoxView.swift */; };
@@ -114,7 +113,6 @@
 		18ED7A052C67DEE9000F03C3 /* DropdownButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButtonView.swift; sourceTree = "<group>"; };
 		18ED7A0D2C67DFA6000F03C3 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		18ED7A0F2C67DFBB000F03C3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		F058042E2C74F9AA003AE03E /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		F05804302C7518FA003AE03E /* ConsultationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationCollectionViewCell.swift; sourceTree = "<group>"; };
 		F0D38DD72C69FDA3007E35ED /* DetectProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectProblemViewController.swift; sourceTree = "<group>"; };
 		F0D38DD92C69FFEA007E35ED /* AnswerBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerBoxView.swift; sourceTree = "<group>"; };
@@ -351,7 +349,6 @@
 			isa = PBXGroup;
 			children = (
 				1883F8472C6B3B4F005ED089 /* SearchViewController.swift */,
-				F058042E2C74F9AA003AE03E /* SearchCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -784,7 +781,6 @@
 				182B5BAD2C60A9E900F7E85D /* SceneDelegate.swift in Sources */,
 				1884E9AC2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift in Sources */,
 				1883F8482C6B3B4F005ED089 /* SearchViewController.swift in Sources */,
-				F058042F2C74F9AA003AE03E /* SearchCollectionViewCell.swift in Sources */,
 				18ED7A032C67DEC8000F03C3 /* Cell+Ext.swift in Sources */,
 				18DE779D2C6DEBFF000B321C /* SearchTableViewCell.swift in Sources */,
 				18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */,
