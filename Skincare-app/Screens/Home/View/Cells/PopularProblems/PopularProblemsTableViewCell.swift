@@ -42,6 +42,7 @@ class PopularProblemsTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
+        selectionStyle = .none
         collectionView.backgroundColor = .clear
         setupUI()
     }
