@@ -10,7 +10,7 @@ import SnapKit
 
 class ConsultationViewController: UIViewController {
     
-    private let items: [DermatologistModel] = [
+    private var items: [DermatologistModel] = [
         .init(name: "Stanford", profession: "Dermatologist", rating: 4.2, patientCount: 100, price: 20, experience: 5, image: "youngMan"),
         .init(name: "Laura", profession: "Dermatologist", rating: 4.9, patientCount: 140, price: 18, experience: 3, image: "youngWoman"),
         .init(name: "Edwards", profession: "Dermatologist", rating: 4.5, patientCount: 230, price: 30, experience: 18, image: "oldMan"),
@@ -125,6 +125,13 @@ extension ConsultationViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ConsultationCollectionViewCell", for: indexPath) as! ConsultationCollectionViewCell
+        if !items[indexPath.row].isAnimatedDone {
+            cell.alpha = 0
+            UIView.animate(withDuration: 0.3, delay: 0.3*Double(indexPath.row),animations: {
+                cell.alpha = 1
+            })
+            items[indexPath.row].isAnimatedDone = true
+        }
         cell.configure(items[indexPath.row])
         return cell
     }

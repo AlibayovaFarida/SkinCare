@@ -13,4 +13,5 @@ struct DermatologistModel{
     let price: Int
     let experience: Int
     let image: String
+    var isAnimatedDone: Bool = false
 }

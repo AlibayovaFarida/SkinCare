@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class SearchViewController: UIViewController {
-    private let items: [PopularProblemsItemModel] = [
+    private var items: [PopularProblemsItemModel] = [
         .init(image: "acne", title: "Acne", solutions: ["Kimyəvi peeling", "lazer Terapiyası", "işıq Terapiyası"]),
         .init(image: "rosacea", title: "Rosacea", solutions: ["Günəşdən Qorunma", "lazer Terapiyası", "Soyuq Kompreslər"]),
         .init(image: "psoriasis", title: "Psoriasis", solutions: ["Sağlam Pəhriz", "Kömür Tüstüsü", "Topikal Kalkineurin İnibitorlar"]),
@@ -110,6 +110,13 @@ extension SearchViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularProblemsCollectionViewCell.identifier, for: indexPath) as! PopularProblemsCollectionViewCell
+        if !items[indexPath.row].isAnimatedDone {
+            cell.alpha = 0
+            UIView.animate(withDuration: 0.3, delay: 0.3*Double(indexPath.row),animations: {
+                cell.alpha = 1
+            })
+            items[indexPath.row].isAnimatedDone = true
+        }
         cell.configure(items[indexPath.row])
         return cell
     }
