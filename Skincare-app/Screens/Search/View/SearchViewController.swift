@@ -30,7 +30,7 @@ class SearchViewController: UIViewController {
             searchTextField.layer.borderWidth = 1
             searchTextField.layer.borderColor = UIColor.customGray.cgColor
             searchTextField.layer.cornerRadius = 19
-            searchTextField.placeholder = "Search"
+            searchTextField.placeholder = NSLocalizedString("searchTextField", comment: "")
             
             let placeholderColor = UIColor.customGray
             let placeholderFont = UIFont(name: "Montserrat-Regular", size: 16) ?? UIFont.systemFont(ofSize: 16)

@@ -62,3 +62,17 @@
 "therapy" = "Müalicə";
 "search" = "Axtarış";
 "consultation" = "Konsultasiya";
+"searchTextField" = "Axtar";
+
+// Consultation
+"consultationScreenTitle" = "Öz həkimini seç";
+"filterTitle" = "Sırala";
+"filterChoise1" = "Ərazi";
+"filterChoise2" = "Təcrübə";
+"filterChoise3" = "Yüksək qiymət";
+"filterChoise4" = "Aşağı qiymət";
+"filterChoise5" = "Rəy";
+"filterPriceTitle" = "Qiymət aralığı (hər saat üçün)";
+"price1" = "Minimum qiymət";
+"price2" = "Maximum qiymət";
+"filterButton" = "Filtr tətbiq edin";

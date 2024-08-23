@@ -41,6 +41,27 @@
 		1883F84A2C6B3B62005ED089 /* ConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F8492C6B3B62005ED089 /* ConsultationViewController.swift */; };
 		1884E9A92C6C89BC00E40A3D /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884E9A82C6C89BC00E40A3D /* HeaderTableViewCell.swift */; };
 		1884E9AC2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884E9AB2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift */; };
+		1886EB5A2C77515D00EBAD95 /* ConsultationFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886EB592C77515D00EBAD95 /* ConsultationFilterViewController.swift */; };
+		1886EB5D2C77683A00EBAD95 /* ConsultationFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886EB5C2C77683A00EBAD95 /* ConsultationFilterCollectionViewCell.swift */; };
+		1886EB5F2C776E6200EBAD95 /* ConsultationFilterItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886EB5E2C776E6200EBAD95 /* ConsultationFilterItemModel.swift */; };
+		1886EBA92C777B1A00EBAD95 /* DMSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB612C777B1700EBAD95 /* DMSans-Italic.ttf */; };
+		1886EBAA2C777B1A00EBAD95 /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB622C777B1700EBAD95 /* DMSans-Medium.ttf */; };
+		1886EBB22C777B1A00EBAD95 /* DMSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB6A2C777B1800EBAD95 /* DMSans-ExtraLight.ttf */; };
+		1886EBB32C777B1A00EBAD95 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB6B2C777B1800EBAD95 /* DMSans-Bold.ttf */; };
+		1886EBB42C777B1A00EBAD95 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB6C2C777B1800EBAD95 /* DMSans-Regular.ttf */; };
+		1886EBB52C777B1A00EBAD95 /* DMSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB6D2C777B1800EBAD95 /* DMSans-BoldItalic.ttf */; };
+		1886EBC22C777B1A00EBAD95 /* DMSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB7A2C777B1800EBAD95 /* DMSans-MediumItalic.ttf */; };
+		1886EBC52C777B1A00EBAD95 /* DMSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB7D2C777B1800EBAD95 /* DMSans-SemiBold.ttf */; };
+		1886EBD02C777B1A00EBAD95 /* DMSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB882C777B1900EBAD95 /* DMSans-ExtraLightItalic.ttf */; };
+		1886EBD22C777B1A00EBAD95 /* DMSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB8A2C777B1900EBAD95 /* DMSans-ExtraBoldItalic.ttf */; };
+		1886EBD32C777B1A00EBAD95 /* DMSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB8B2C777B1900EBAD95 /* DMSans-SemiBoldItalic.ttf */; };
+		1886EBD52C777B1A00EBAD95 /* DMSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB8D2C777B1900EBAD95 /* DMSans-Black.ttf */; };
+		1886EBD72C777B1A00EBAD95 /* DMSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB8F2C777B1900EBAD95 /* DMSans-Thin.ttf */; };
+		1886EBE42C777B1A00EBAD95 /* DMSans-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB9C2C777B1A00EBAD95 /* DMSans-BlackItalic.ttf */; };
+		1886EBE52C777B1A00EBAD95 /* DMSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB9D2C777B1A00EBAD95 /* DMSans-Light.ttf */; };
+		1886EBE82C777B1A00EBAD95 /* DMSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EBA02C777B1A00EBAD95 /* DMSans-LightItalic.ttf */; };
+		1886EBEA2C777B1A00EBAD95 /* DMSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EBA22C777B1A00EBAD95 /* DMSans-ExtraBold.ttf */; };
+		1886EBED2C777B1A00EBAD95 /* DMSans-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EBA52C777B1A00EBAD95 /* DMSans-ThinItalic.ttf */; };
 		18936EC72C62B637006A8683 /* IconTitleBgColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18936EC62C62B637006A8683 /* IconTitleBgColorButton.swift */; };
 		18A1EBA92C766B81008AAD5F /* DermatologistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1EBA82C766B81008AAD5F /* DermatologistModel.swift */; };
 		18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD65192C63AA250071C597 /* CustomTextField.swift */; };
@@ -101,6 +122,27 @@
 		1883F8492C6B3B62005ED089 /* ConsultationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationViewController.swift; sourceTree = "<group>"; };
 		1884E9A82C6C89BC00E40A3D /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		1884E9AB2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectProblemTableViewCell.swift; sourceTree = "<group>"; };
+		1886EB592C77515D00EBAD95 /* ConsultationFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFilterViewController.swift; sourceTree = "<group>"; };
+		1886EB5C2C77683A00EBAD95 /* ConsultationFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		1886EB5E2C776E6200EBAD95 /* ConsultationFilterItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConsultationFilterItemModel.swift; path = "Skincare-app/Screens/Consultation/View/ConsultationFilter/ConsultationFilterItemModel.swift"; sourceTree = SOURCE_ROOT; };
+		1886EB612C777B1700EBAD95 /* DMSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Italic.ttf"; sourceTree = "<group>"; };
+		1886EB622C777B1700EBAD95 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
+		1886EB6A2C777B1800EBAD95 /* DMSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-ExtraLight.ttf"; sourceTree = "<group>"; };
+		1886EB6B2C777B1800EBAD95 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
+		1886EB6C2C777B1800EBAD95 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
+		1886EB6D2C777B1800EBAD95 /* DMSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		1886EB7A2C777B1800EBAD95 /* DMSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		1886EB7D2C777B1800EBAD95 /* DMSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		1886EB882C777B1900EBAD95 /* DMSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		1886EB8A2C777B1900EBAD95 /* DMSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		1886EB8B2C777B1900EBAD95 /* DMSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		1886EB8D2C777B1900EBAD95 /* DMSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Black.ttf"; sourceTree = "<group>"; };
+		1886EB8F2C777B1900EBAD95 /* DMSans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Thin.ttf"; sourceTree = "<group>"; };
+		1886EB9C2C777B1A00EBAD95 /* DMSans-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-BlackItalic.ttf"; sourceTree = "<group>"; };
+		1886EB9D2C777B1A00EBAD95 /* DMSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Light.ttf"; sourceTree = "<group>"; };
+		1886EBA02C777B1A00EBAD95 /* DMSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		1886EBA22C777B1A00EBAD95 /* DMSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		1886EBA52C777B1A00EBAD95 /* DMSans-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-ThinItalic.ttf"; sourceTree = "<group>"; };
 		18936EC62C62B637006A8683 /* IconTitleBgColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTitleBgColorButton.swift; sourceTree = "<group>"; };
 		18A1EBA82C766B81008AAD5F /* DermatologistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DermatologistModel.swift; path = "Skincare-app/Screens/Home/View/Cells/PopularProblems/PopularCollectionCell/DermatologistModel.swift"; sourceTree = SOURCE_ROOT; };
 		18BD65192C63AA250071C597 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -215,6 +257,7 @@
 		182B5BC72C60BBE100F7E85D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				1886EB602C777B0100EBAD95 /* DM Sans */,
 				182B5BCB2C60BC9300F7E85D /* Montserrat */,
 				182B5BC82C60BBEB00F7E85D /* Sacramento */,
 			);
@@ -372,6 +415,7 @@
 		1883F8432C6B3B2C005ED089 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1886EB5B2C7764AD00EBAD95 /* ConsultationFilter */,
 				1883F8492C6B3B62005ED089 /* ConsultationViewController.swift */,
 				F05804302C7518FA003AE03E /* ConsultationCollectionViewCell.swift */,
 			);
@@ -382,6 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				18A1EBA82C766B81008AAD5F /* DermatologistModel.swift */,
+				1886EB5E2C776E6200EBAD95 /* ConsultationFilterItemModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -411,6 +456,40 @@
 				1884E9AB2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift */,
 			);
 			path = DetectProblemCell;
+			sourceTree = "<group>";
+		};
+		1886EB5B2C7764AD00EBAD95 /* ConsultationFilter */ = {
+			isa = PBXGroup;
+			children = (
+				1886EB592C77515D00EBAD95 /* ConsultationFilterViewController.swift */,
+				1886EB5C2C77683A00EBAD95 /* ConsultationFilterCollectionViewCell.swift */,
+			);
+			path = ConsultationFilter;
+			sourceTree = "<group>";
+		};
+		1886EB602C777B0100EBAD95 /* DM Sans */ = {
+			isa = PBXGroup;
+			children = (
+				1886EB8D2C777B1900EBAD95 /* DMSans-Black.ttf */,
+				1886EB9C2C777B1A00EBAD95 /* DMSans-BlackItalic.ttf */,
+				1886EB6B2C777B1800EBAD95 /* DMSans-Bold.ttf */,
+				1886EB6D2C777B1800EBAD95 /* DMSans-BoldItalic.ttf */,
+				1886EBA22C777B1A00EBAD95 /* DMSans-ExtraBold.ttf */,
+				1886EB8A2C777B1900EBAD95 /* DMSans-ExtraBoldItalic.ttf */,
+				1886EB6A2C777B1800EBAD95 /* DMSans-ExtraLight.ttf */,
+				1886EB882C777B1900EBAD95 /* DMSans-ExtraLightItalic.ttf */,
+				1886EB612C777B1700EBAD95 /* DMSans-Italic.ttf */,
+				1886EB9D2C777B1A00EBAD95 /* DMSans-Light.ttf */,
+				1886EBA02C777B1A00EBAD95 /* DMSans-LightItalic.ttf */,
+				1886EB622C777B1700EBAD95 /* DMSans-Medium.ttf */,
+				1886EB7A2C777B1800EBAD95 /* DMSans-MediumItalic.ttf */,
+				1886EB6C2C777B1800EBAD95 /* DMSans-Regular.ttf */,
+				1886EB7D2C777B1800EBAD95 /* DMSans-SemiBold.ttf */,
+				1886EB8B2C777B1900EBAD95 /* DMSans-SemiBoldItalic.ttf */,
+				1886EB8F2C777B1900EBAD95 /* DMSans-Thin.ttf */,
+				1886EBA52C777B1A00EBAD95 /* DMSans-ThinItalic.ttf */,
+			);
+			path = "DM Sans";
 			sourceTree = "<group>";
 		};
 		18936EC52C62B404006A8683 /* Components */ = {
@@ -731,26 +810,44 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1886EBB22C777B1A00EBAD95 /* DMSans-ExtraLight.ttf in Resources */,
 				182B5BEF2C60BCA800F7E85D /* Montserrat-SemiBoldItalic.ttf in Resources */,
+				1886EBD22C777B1A00EBAD95 /* DMSans-ExtraBoldItalic.ttf in Resources */,
 				182B5BDF2C60BCA800F7E85D /* Montserrat-Thin.ttf in Resources */,
+				1886EBE82C777B1A00EBAD95 /* DMSans-LightItalic.ttf in Resources */,
 				182B5BE62C60BCA800F7E85D /* Montserrat-ExtraBold.ttf in Resources */,
+				1886EBC52C777B1A00EBAD95 /* DMSans-SemiBold.ttf in Resources */,
 				182B5BE82C60BCA800F7E85D /* Montserrat-MediumItalic.ttf in Resources */,
 				182B5BE52C60BCA800F7E85D /* Montserrat-Regular.ttf in Resources */,
+				1886EBD32C777B1A00EBAD95 /* DMSans-SemiBoldItalic.ttf in Resources */,
 				182B5BE22C60BCA800F7E85D /* Montserrat-Black.ttf in Resources */,
+				1886EBB32C777B1A00EBAD95 /* DMSans-Bold.ttf in Resources */,
+				1886EBA92C777B1A00EBAD95 /* DMSans-Italic.ttf in Resources */,
 				182B5BEA2C60BCA800F7E85D /* Montserrat-BlackItalic.ttf in Resources */,
 				182B5BE02C60BCA800F7E85D /* Montserrat-ExtraLight.ttf in Resources */,
+				1886EBE42C777B1A00EBAD95 /* DMSans-BlackItalic.ttf in Resources */,
 				182B5BDE2C60BCA800F7E85D /* Montserrat-BoldItalic.ttf in Resources */,
+				1886EBED2C777B1A00EBAD95 /* DMSans-ThinItalic.ttf in Resources */,
+				1886EBD52C777B1A00EBAD95 /* DMSans-Black.ttf in Resources */,
+				1886EBD72C777B1A00EBAD95 /* DMSans-Thin.ttf in Resources */,
 				182B5BEE2C60BCA800F7E85D /* Montserrat-LightItalic.ttf in Resources */,
 				182B5BE42C60BCA800F7E85D /* Montserrat-SemiBold.ttf in Resources */,
 				182B5BB42C60A9EB00F7E85D /* Assets.xcassets in Resources */,
+				1886EBD02C777B1A00EBAD95 /* DMSans-ExtraLightItalic.ttf in Resources */,
+				1886EBB42C777B1A00EBAD95 /* DMSans-Regular.ttf in Resources */,
 				182B5BE32C60BCA800F7E85D /* Montserrat-ThinItalic.ttf in Resources */,
 				182B5BFE2C60DC8900F7E85D /* Localizable.strings in Resources */,
 				182B5BCA2C60BC1D00F7E85D /* Sacramento-Regular.ttf in Resources */,
 				182B5BE72C60BCA800F7E85D /* Montserrat-Medium.ttf in Resources */,
+				1886EBAA2C777B1A00EBAD95 /* DMSans-Medium.ttf in Resources */,
 				182B5BE92C60BCA800F7E85D /* Montserrat-ExtraBoldItalic.ttf in Resources */,
 				182B5BEC2C60BCA800F7E85D /* Montserrat-Bold.ttf in Resources */,
+				1886EBB52C777B1A00EBAD95 /* DMSans-BoldItalic.ttf in Resources */,
 				182B5BEB2C60BCA800F7E85D /* Montserrat-ExtraLightItalic.ttf in Resources */,
+				1886EBEA2C777B1A00EBAD95 /* DMSans-ExtraBold.ttf in Resources */,
 				182B5BED2C60BCA800F7E85D /* Montserrat-Light.ttf in Resources */,
+				1886EBE52C777B1A00EBAD95 /* DMSans-Light.ttf in Resources */,
+				1886EBC22C777B1A00EBAD95 /* DMSans-MediumItalic.ttf in Resources */,
 				182B5BB72C60A9EB00F7E85D /* Base in Resources */,
 				182B5BE12C60BCA800F7E85D /* Montserrat-Italic.ttf in Resources */,
 			);
@@ -771,6 +868,7 @@
 				181FEA622C69118700B9AAE6 /* LoginViewController.swift in Sources */,
 				18ED7A102C67DFBB000F03C3 /* RegisterViewController.swift in Sources */,
 				18C53DBA2C6A9346004FA52B /* HomeViewController.swift in Sources */,
+				1886EB5A2C77515D00EBAD95 /* ConsultationFilterViewController.swift in Sources */,
 				18DE77A52C6E0C3D000B321C /* PopularProblemsTableViewCell.swift in Sources */,
 				18DE77AA2C6E14CB000B321C /* PopularProblemsItemModel.swift in Sources */,
 				F0D38DDA2C69FFEA007E35ED /* AnswerBoxView.swift in Sources */,
@@ -782,7 +880,9 @@
 				18DE77A22C6E0A0F000B321C /* UIResponder+Ext.swift in Sources */,
 				F0DD68EE2C68CAF200C11ECF /* OnboardingLoginViewController.swift in Sources */,
 				F0DD68F42C68CF0700C11ECF /* OnboardingRegisterViewController.swift in Sources */,
+				1886EB5F2C776E6200EBAD95 /* ConsultationFilterItemModel.swift in Sources */,
 				182B5BAD2C60A9E900F7E85D /* SceneDelegate.swift in Sources */,
+				1886EB5D2C77683A00EBAD95 /* ConsultationFilterCollectionViewCell.swift in Sources */,
 				1884E9AC2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift in Sources */,
 				1883F8482C6B3B4F005ED089 /* SearchViewController.swift in Sources */,
 				18ED7A032C67DEC8000F03C3 /* Cell+Ext.swift in Sources */,

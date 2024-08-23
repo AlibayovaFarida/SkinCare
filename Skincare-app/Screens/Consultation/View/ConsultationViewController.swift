@@ -29,7 +29,7 @@ class ConsultationViewController: UIViewController {
             searchTextField.layer.borderWidth = 1
             searchTextField.layer.borderColor = UIColor.customGray.cgColor
             searchTextField.layer.cornerRadius = 19
-            searchTextField.placeholder = "Search"
+            searchTextField.placeholder = NSLocalizedString("searchTextField", comment: "")
             
             let placeholderColor = UIColor.customGray
             let placeholderFont = UIFont(name: "Montserrat-Regular", size: 16) ?? UIFont.systemFont(ofSize: 16)
@@ -48,8 +48,15 @@ class ConsultationViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "sort"), for: .normal)
         button.tintColor = .black
+        button.addTarget(self, action: #selector(didTapPresentFilter), for: .touchUpInside)
         return button
     }()
+    @objc
+    private func didTapPresentFilter(){
+        let vc = ConsultationFilterViewController()
+        vc.sheetPresentationController?.detents = [.medium()]
+        present(vc, animated: true)
+    }
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -65,7 +72,7 @@ class ConsultationViewController: UIViewController {
         view.backgroundColor = .white
         setupViews()
         setupConstraints()
-        setLeftAlignTitleView(font: UIFont(name: "Montserrat-SemiBold", size: 20)!, text: "Öz həkimini seç", textColor: .black)
+        setLeftAlignTitleView(font: UIFont(name: "Montserrat-SemiBold", size: 20)!, text: NSLocalizedString("consultationScreenTitle", comment: ""), textColor: .black)
     }
     
     func setLeftAlignTitleView(font: UIFont, text: String, textColor: UIColor) {

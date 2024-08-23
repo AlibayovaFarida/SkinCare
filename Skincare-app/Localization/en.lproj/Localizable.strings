@@ -57,8 +57,22 @@
 "redirectionSearch" = "Search now";
 "popularProblemsTitle" = "Most searched problems";
 
-// Tabbar items
+// Tabbar items and globals
 "home" = "Home";
 "therapy" = "Therapy";
 "search" = "Search";
 "consultation" = "Consultation";
+"searchTextField" = "Search";
+
+// Consultation
+"consultationScreenTitle" = "Choose your doctor";
+"filterTitle" = "Sort By";
+"filterChoise1" = "Location";
+"filterChoise2" = "Popularity";
+"filterChoise3" = "High price";
+"filterChoise4" = "Low price";
+"filterChoise5" = "Review";
+"filterPriceTitle" = "Price Range (per hour)";
+"price1" = "Min price";
+"price2" = "Max price";
+"filterButton" = "Apply filter";
