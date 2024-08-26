@@ -62,6 +62,7 @@
 		1886EBE82C777B1A00EBAD95 /* DMSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EBA02C777B1A00EBAD95 /* DMSans-LightItalic.ttf */; };
 		1886EBEA2C777B1A00EBAD95 /* DMSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EBA22C777B1A00EBAD95 /* DMSans-ExtraBold.ttf */; };
 		1886EBED2C777B1A00EBAD95 /* DMSans-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EBA52C777B1A00EBAD95 /* DMSans-ThinItalic.ttf */; };
+		188931D42C7C6B3400088C9E /* FilterItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188931D32C7C6B3400088C9E /* FilterItemCollectionViewCell.swift */; };
 		18936EC72C62B637006A8683 /* IconTitleBgColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18936EC62C62B637006A8683 /* IconTitleBgColorButton.swift */; };
 		18A1EBA92C766B81008AAD5F /* DermatologistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1EBA82C766B81008AAD5F /* DermatologistModel.swift */; };
 		18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD65192C63AA250071C597 /* CustomTextField.swift */; };
@@ -143,6 +144,7 @@
 		1886EBA02C777B1A00EBAD95 /* DMSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-LightItalic.ttf"; sourceTree = "<group>"; };
 		1886EBA22C777B1A00EBAD95 /* DMSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		1886EBA52C777B1A00EBAD95 /* DMSans-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-ThinItalic.ttf"; sourceTree = "<group>"; };
+		188931D32C7C6B3400088C9E /* FilterItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		18936EC62C62B637006A8683 /* IconTitleBgColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTitleBgColorButton.swift; sourceTree = "<group>"; };
 		18A1EBA82C766B81008AAD5F /* DermatologistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DermatologistModel.swift; path = "Skincare-app/Screens/Home/View/Cells/PopularProblems/PopularCollectionCell/DermatologistModel.swift"; sourceTree = SOURCE_ROOT; };
 		18BD65192C63AA250071C597 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 				1886EB5B2C7764AD00EBAD95 /* ConsultationFilter */,
 				1883F8492C6B3B62005ED089 /* ConsultationViewController.swift */,
 				F05804302C7518FA003AE03E /* ConsultationCollectionViewCell.swift */,
+				188931D32C7C6B3400088C9E /* FilterItemCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -889,6 +892,7 @@
 				18DE779D2C6DEBFF000B321C /* SearchTableViewCell.swift in Sources */,
 				18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */,
 				F05804312C7518FA003AE03E /* ConsultationCollectionViewCell.swift in Sources */,
+				188931D42C7C6B3400088C9E /* FilterItemCollectionViewCell.swift in Sources */,
 				F0EAC6DD2C674A10006DE3E1 /* TitleBgColorButton.swift in Sources */,
 				18DE77A02C6DF98E000B321C /* UIView+Ext.swift in Sources */,
 				1883F8462C6B3B44005ED089 /* TherapyViewController.swift in Sources */,

@@ -8,6 +8,7 @@
 import UIKit
 
 class ConsultationFilterViewController: UIViewController {
+    var onApplyFilters: (([ConsultationFilterItemModel]) -> Void)?
     private var filterList: [ConsultationFilterItemModel] = [
         .init(title: NSLocalizedString("filterChoise1", comment: "")),
         .init(title: NSLocalizedString("filterChoise2", comment: "")),
@@ -142,8 +143,14 @@ class ConsultationFilterViewController: UIViewController {
         btn.setTitle(NSLocalizedString("filterButton", comment: ""), for: .normal)
         btn.setTitleColor(.black, for: .normal)
         btn.titleLabel?.font = UIFont(name: "DMSans-Bold", size: 16)
+        btn.addTarget(self, action: #selector(applyFilters), for: .touchUpInside)
         return btn
     }()
+    @objc
+    private func applyFilters() {
+        onApplyFilters?(selectedFilter)
+        dismiss(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
