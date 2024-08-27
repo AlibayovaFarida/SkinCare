@@ -8,8 +8,7 @@
 import UIKit
 import SnapKit
 
-class CompleteTestViewController: UIViewController
-{
+class CompleteTestViewController: UIViewController {
     private let stackView = UIStackView()
     
     override func viewDidLoad() {

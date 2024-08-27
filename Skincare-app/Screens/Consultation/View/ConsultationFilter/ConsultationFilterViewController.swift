@@ -148,6 +148,8 @@ class ConsultationFilterViewController: UIViewController {
     }()
     @objc
     private func applyFilters() {
+        let selectedFilterTitles = selectedFilter.map { $0.title }
+        UserDefaults.standard.set(selectedFilterTitles, forKey: "selectedFilters")
         onApplyFilters?(selectedFilter)
         dismiss(animated: true)
     }
@@ -158,6 +160,17 @@ class ConsultationFilterViewController: UIViewController {
         view.roundCorners(corners: [.topLeft, .topRight], radius: 30)
         filterCollectionView.dataSource = self
         filterCollectionView.delegate = self
+        
+        if let savedFilters = UserDefaults.standard.array(forKey: "selectedFilters") as? [String] {
+            for (index, var item) in filterList.enumerated() {
+                if savedFilters.contains(item.title) {
+                    item.isSelected = true
+                    selectedFilter.append(item)
+                    filterList[index] = item
+                }
+            }
+        }
+        
         setupUI()
         adjustCollectionViewHeight()
     }

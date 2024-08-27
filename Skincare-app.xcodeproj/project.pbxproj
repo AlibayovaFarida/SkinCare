@@ -333,6 +333,15 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		184CBD5C2C7DD5AD00D6F515 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				188931D32C7C6B3400088C9E /* FilterItemCollectionViewCell.swift */,
+				F05804302C7518FA003AE03E /* ConsultationCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		1883F8392C6B3AD3005ED089 /* Therapy */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,10 +426,9 @@
 		1883F8432C6B3B2C005ED089 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				184CBD5C2C7DD5AD00D6F515 /* Cells */,
 				1886EB5B2C7764AD00EBAD95 /* ConsultationFilter */,
 				1883F8492C6B3B62005ED089 /* ConsultationViewController.swift */,
-				F05804302C7518FA003AE03E /* ConsultationCollectionViewCell.swift */,
-				188931D32C7C6B3400088C9E /* FilterItemCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

@@ -80,6 +80,7 @@ class ConsultationViewController: UIViewController {
             self?.filterCountLabel.text = filters.count == 0 ? "" : "\(filters.count)"
             self?.filterCollectionView.reloadData()
         }
+        
         vc.sheetPresentationController?.detents = [.medium()]
         present(vc, animated: true)
     }
@@ -112,6 +113,12 @@ class ConsultationViewController: UIViewController {
         setupViews()
         setupConstraints()
         setLeftAlignTitleView(font: UIFont(name: "Montserrat-SemiBold", size: 20)!, text: NSLocalizedString("consultationScreenTitle", comment: ""), textColor: .black)
+        
+        if let savedFilters = UserDefaults.standard.array(forKey: "selectedFilters") as? [String] {
+                filterItems = savedFilters.map { ConsultationFilterItemModel(title: $0) }
+                filterCountLabel.text = filterItems.count == 0 ? "" : "\(filterItems.count)"
+            }
+        
         updateConstraints()
     }
     
@@ -178,26 +185,21 @@ class ConsultationViewController: UIViewController {
             }
             
             dermatologistCollectionView.snp.makeConstraints { make in
-                // İki fərqli constraint yaradılır
                 dermatologistCollectionViewTopConstraintWithFilter = make.top.equalTo(filterCollectionView.snp.bottom).offset(10).constraint
                 dermatologistCollectionViewTopConstraintWithoutFilter = make.top.equalTo(searchBar.snp.bottom).offset(10).constraint
                 make.leading.trailing.equalToSuperview()
                 make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             }
-            
-            // Əvvəlcə filter ilə olan constraint aktivdir, filterItems boşdursa dəyişdiriləcək
             dermatologistCollectionViewTopConstraintWithFilter?.activate()
             dermatologistCollectionViewTopConstraintWithoutFilter?.deactivate()
         }
         
         private func updateConstraints() {
             if filterItems.isEmpty {
-                // Əgər filterItems boşdursa, searchBar-a bağlanan constraint aktiv edilir
                 dermatologistCollectionViewTopConstraintWithFilter?.deactivate()
                 dermatologistCollectionViewTopConstraintWithoutFilter?.activate()
                 filterCollectionView.isHidden = true
             } else {
-                // Əks halda, filterCollectionView-un altına bağlanan constraint aktiv edilir
                 dermatologistCollectionViewTopConstraintWithFilter?.activate()
                 dermatologistCollectionViewTopConstraintWithoutFilter?.deactivate()
                 filterCollectionView.isHidden = false
@@ -233,9 +235,16 @@ extension ConsultationViewController: UICollectionViewDataSource {
         if collectionView == filterCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FilterItemCollectionViewCell.identifier, for: indexPath) as! FilterItemCollectionViewCell
             cell.configure(filterItems[indexPath.row])
-            cell.onRemoveFilter = {
-                self.filterItems.remove(at: indexPath.row)
+            cell.onRemoveFilter = { [weak self] in
+                guard let self = self else { return }
+                let removedFilter = self.filterItems.remove(at: indexPath.row)
                 self.filterCountLabel.text = self.filterItems.count == 0 ? "" : "\(self.filterItems.count)"
+                if var savedFilters = UserDefaults.standard.array(forKey: "selectedFilters") as? [String] {
+                    savedFilters.removeAll { $0 == removedFilter.title }
+                    UserDefaults.standard.set(savedFilters, forKey: "selectedFilters")
+                }
+                    
+                self.filterCollectionView.reloadData()
             }
             return cell
         }
