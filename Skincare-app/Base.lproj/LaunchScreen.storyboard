@@ -16,19 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="KLu-Ep-Th4">
-                                <rect key="frame" x="129" y="399" width="135" height="54"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="VCC-tn-S2t">
+                                <rect key="frame" x="105" y="390.66666666666669" width="183" height="71"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="135" id="8zM-O7-Yv6"/>
-                                    <constraint firstAttribute="height" constant="54" id="Op5-VE-y3A"/>
+                                    <constraint firstAttribute="width" constant="183" id="J4l-X7-Pd2"/>
+                                    <constraint firstAttribute="height" constant="71" id="VSX-gr-IzT"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="customLightGreen"/>
+                        <color key="backgroundColor" name="mainColor"/>
                         <constraints>
-                            <constraint firstItem="KLu-Ep-Th4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="YXZ-0P-S5N"/>
-                            <constraint firstItem="KLu-Ep-Th4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="j3J-Jt-0uU"/>
+                            <constraint firstItem="VCC-tn-S2t" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="giG-62-ms7"/>
+                            <constraint firstItem="VCC-tn-S2t" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ylz-Fb-7gS"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,9 +38,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launch" width="135" height="54"/>
-        <namedColor name="customLightGreen">
-            <color red="0.81960784313725488" green="0.99215686274509807" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="launch" width="183" height="71"/>
+        <namedColor name="mainColor">
+            <color red="0.16470588235294117" green="0.53333333333333333" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
