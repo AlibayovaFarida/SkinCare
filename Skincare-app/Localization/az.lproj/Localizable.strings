@@ -52,16 +52,19 @@
 "welcome" = "Xoş gördük,";
 "detectProblemDescription" = "Hər Gün Daha Parlaq, Daha Sağlam Dəri.";
 "detectProblemButton" = "Dəri tipini müəyyən et";
-"searchTitle" = "Dəri problemləri";
-"searchDescription" = "Qarşılaşdığın dəri problemini araşdır və problemin səbəbini tap.";
-"redirectionSearch" = "İndi axtar";
+"consultationTitle" = "Öz həkimini seç";
+"consultationDescription" = "Seçdiyiniz həkimlə dərhal əlaqə quraraq təhlükəsiz və real vaxtda tibbi məsləhət və  fərdi qayğı ala bilərsiniz.";
+"redirectionSearch" = "Söhbət başlat";
 "popularProblemsTitle" = "Ən çox axtarılan problemlər";
+"skinProblems" = "Dəri problemləri";
+"seeAll" = "Hamısına bax";
 
 // Tabbar items
 "home" = "Ana səhifə";
 "therapy" = "Müalicə";
 "search" = "Axtarış";
 "consultation" = "Konsultasiya";
+"profile" = "Profil";
 "searchTextField" = "Axtar";
 
 // Consultation

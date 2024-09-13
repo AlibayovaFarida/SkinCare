@@ -10,13 +10,13 @@ import UIKit
 enum HomeSection{
     case header
     case detectProblem
+    case skinProblems
     case search
-    case popularProblems
 }
 
 struct HomeModel: Hashable {
     let id: String = UUID().uuidString
-    let popularProblems: [PopularProblemsItemModel]
+    let skinProblems: [SkinProblemItemModel]
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
@@ -33,8 +33,8 @@ class HomeViewController: UIViewController, SearchTableViewCellDelegate {
         tv.separatorStyle = .none
         tv.register(HeaderTableViewCell.self, forCellReuseIdentifier: HeaderTableViewCell.identifier)
         tv.register(DetectProblemTableViewCell.self, forCellReuseIdentifier: DetectProblemTableViewCell.identifier)
+        tv.register(SkinProblemsTableViewCell.self, forCellReuseIdentifier: SkinProblemsTableViewCell.identifier)
         tv.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
-        tv.register(PopularProblemsTableViewCell.self, forCellReuseIdentifier: PopularProblemsTableViewCell.identifier)
         tv.showsVerticalScrollIndicator = false
         return tv
     }()
@@ -77,13 +77,15 @@ class HomeViewController: UIViewController, SearchTableViewCellDelegate {
             } else if indexPath.section == 1 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: DetectProblemTableViewCell.identifier) as! DetectProblemTableViewCell
                 return cell
-            } else if indexPath.section == 2 {
+            } 
+            else if indexPath.section == 2 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: SkinProblemsTableViewCell.identifier) as! SkinProblemsTableViewCell
+                cell.configure(itemIdentifier.skinProblems)
+                return cell
+            }
+            else if indexPath.section == 3 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier) as! SearchTableViewCell
                 cell.delegate = self
-                return cell
-            } else if indexPath.section == 3 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: PopularProblemsTableViewCell.identifier) as! PopularProblemsTableViewCell
-                cell.configure(itemIdentifier.popularProblems)
                 return cell
             }
             return UITableViewCell()
@@ -92,15 +94,22 @@ class HomeViewController: UIViewController, SearchTableViewCellDelegate {
     
     private func applySnapshot(){
         var snapshot = NSDiffableDataSourceSnapshot<HomeSection, HomeModel>()
-        snapshot.appendSections([.header, .detectProblem, .search, .popularProblems])
-        snapshot.appendItems([.init(popularProblems: [])], toSection: .header)
-        snapshot.appendItems([.init(popularProblems: [])], toSection: .detectProblem)
-        snapshot.appendItems([.init(popularProblems: [])], toSection: .search)
-        snapshot.appendItems([.init(popularProblems: [
-            .init(image: "acne", title: "Acne", solutions: ["Kimyəvi peeling", "lazer Terapiyası", "işıq Terapiyası"]),
-            .init(image: "rosacea", title: "Rosacea", solutions: ["Günəşdən Qorunma", "lazer Terapiyası", "Soyuq Kompreslər"]),
-            .init(image: "acne", title: "Acne", solutions: ["Kimyəvi peeling", "lazer Terapiyası", "işıq Terapiyası"]),
-            .init(image: "rosacea", title: "Rosacea", solutions: ["Günəşdən Qorunma", "lazer Terapiyası", "Soyuq Kompreslər"])])], toSection: .popularProblems)
+        snapshot.appendSections([
+            .header,
+            .detectProblem,
+            .skinProblems,
+            .search,
+        ])
+        snapshot.appendItems([.init(skinProblems: [])], toSection: .header)
+        snapshot.appendItems([.init(skinProblems: [])], toSection: .detectProblem)
+        snapshot.appendItems([.init(skinProblems: [
+            .init(image: "rosacea", title: "Rosacea"),
+            .init(image: "acne", title: "Acne"),
+            .init(image: "melazma", title: "Melazma"),
+            .init(image: "ekzema", title: "Ekzema"),
+            .init(image: "seboreik", title: "Seboreik")])],
+            toSection: .skinProblems)
+        snapshot.appendItems([.init(skinProblems: [])], toSection: .search)
         homeDataSource.apply(snapshot, animatingDifferences: true)
     }
 }

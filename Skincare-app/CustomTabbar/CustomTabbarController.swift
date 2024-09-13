@@ -30,14 +30,14 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         return vc
     }()
     
-    private let searchNavVc: UINavigationController = {
-        let vc = UINavigationController(rootViewController: SearchViewController())
-        vc.tabBarItem.image = UIImage(named: "Search")
-        vc.tabBarItem.selectedImage = UIImage(named: "SearchSelected")?.withRenderingMode(.alwaysOriginal)
-        vc.tabBarItem.title = NSLocalizedString("search", comment: "")
-        vc.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
-        return vc
-    }()
+//    private let searchNavVc: UINavigationController = {
+//        let vc = UINavigationController(rootViewController: SearchViewController())
+//        vc.tabBarItem.image = UIImage(named: "Search")
+//        vc.tabBarItem.selectedImage = UIImage(named: "SearchSelected")?.withRenderingMode(.alwaysOriginal)
+//        vc.tabBarItem.title = NSLocalizedString("search", comment: "")
+//        vc.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+//        return vc
+//    }()
     
     private let consultationNavVc: UINavigationController = {
         let vc = UINavigationController(rootViewController: ConsultationViewController())
@@ -48,10 +48,19 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         return vc
     }()
     
+    
+    private let profileNavVc: UINavigationController = {
+        let vc = UINavigationController(rootViewController: ProfileViewController())
+        vc.tabBarItem.image = UIImage(named: "Profile")
+        vc.tabBarItem.selectedImage = UIImage(named: "ProfileSelected")?.withRenderingMode(.alwaysOriginal)
+        vc.tabBarItem.title = NSLocalizedString("profile", comment: "")
+        vc.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+        return vc
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
-        setViewControllers([homeNavVc, therapyNavVc, searchNavVc, consultationNavVc], animated: true)
+        setViewControllers([homeNavVc, therapyNavVc, consultationNavVc, profileNavVc], animated: true)
         tabBar.items?.forEach { item in
             item.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 16)
             addGestures(to: item)

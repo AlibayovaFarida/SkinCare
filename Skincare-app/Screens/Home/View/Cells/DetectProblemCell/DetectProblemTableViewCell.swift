@@ -11,18 +11,11 @@ class DetectProblemTableViewCell: UITableViewCell {
     
     private let bgView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(named: "backgroundColor")
+        view.backgroundColor = UIColor(named: "homeBannerBgBlue")
         view.layer.cornerRadius = 16
         return view
     }()
     
-    private let generalStackView: UIStackView = {
-        let sv = UIStackView()
-        sv.axis = .horizontal
-        sv.spacing = 2
-        sv.distribution = .equalCentering
-        return sv
-    }()
     private let descriptionView: UIView = {
         let view = UIView()
         return view
@@ -52,6 +45,7 @@ class DetectProblemTableViewCell: UITableViewCell {
         lb.textColor = UIColor(named: "customBlack")
         lb.numberOfLines = 2
         lb.text = NSLocalizedString("detectProblemDescription", comment: "")
+        lb.setLineHeight(14.63)
         return lb
     }()
     private let detectProblemButton: UIButton = {
@@ -98,12 +92,8 @@ class DetectProblemTableViewCell: UITableViewCell {
 
     private func setupUI() {
         contentView.addSubview(bgView)
-        bgView.addSubview(generalStackView)
-        
-        [
-            descriptionView,
-            detectProblemImageView
-        ].forEach(generalStackView.addArrangedSubview)
+        bgView.addSubview(descriptionView)
+        bgView.addSubview(detectProblemImageView)
         
         descriptionView.addSubview(descriptionStackView)
         [
@@ -117,14 +107,14 @@ class DetectProblemTableViewCell: UITableViewCell {
         
         bgView.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(7)
+            make.leading.trailing.equalToSuperview().inset(16)
             make.bottom.equalToSuperview().inset(12)
         }
-        generalStackView.snp.makeConstraints { make in
+        
+        descriptionView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(8)
-            make.leading.equalToSuperview().inset(16)
-            make.trailing.equalToSuperview().inset(8)
             make.bottom.equalToSuperview()
+            make.leading.equalToSuperview().inset(16)
         }
         descriptionStackView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(21.5)
@@ -135,6 +125,10 @@ class DetectProblemTableViewCell: UITableViewCell {
             make.height.equalTo(34)
         }
         detectProblemImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(8)
+            make.bottom.equalToSuperview()
+            make.trailing.equalToSuperview().inset(8)
+            make.leading.equalTo(descriptionView.snp.trailing).offset(-16)
             make.width.equalTo(154)
             make.height.equalTo(180)
         }

@@ -35,9 +35,23 @@ class HeaderTableViewCell: UITableViewCell {
         lb.text = "Ayla"
         return lb
     }()
+    private let buttonsStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .horizontal
+        sv.spacing = 8
+        return sv
+    }()
     private let notificationsButton: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setImage(UIImage(named: "notifications"), for: .normal)
+        btn.layer.cornerRadius = 22
+        btn.layer.borderWidth = 1
+        btn.layer.borderColor = UIColor(named: "customGray")?.cgColor
+        return btn
+    }()
+    private let searchButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setImage(UIImage(named: "search-icon"), for: .normal)
         btn.layer.cornerRadius = 22
         btn.layer.borderWidth = 1
         btn.layer.borderColor = UIColor(named: "customGray")?.cgColor
@@ -58,9 +72,13 @@ class HeaderTableViewCell: UITableViewCell {
         
         [
             welcomeStackView,
-            notificationsButton
+            buttonsStackView
         ].forEach(generalStackView.addArrangedSubview)
         
+        [
+            searchButton,
+            notificationsButton
+        ].forEach(buttonsStackView.addArrangedSubview)
         [
             welcomeLabel,
             usernameLabel
@@ -68,10 +86,13 @@ class HeaderTableViewCell: UITableViewCell {
         
         generalStackView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(8)
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.leading.trailing.equalToSuperview().inset(16)
             make.bottom.equalToSuperview().inset(12)
         }
         notificationsButton.snp.makeConstraints { make in
+            make.size.equalTo(44)
+        }
+        searchButton.snp.makeConstraints { make in
             make.size.equalTo(44)
         }
     }

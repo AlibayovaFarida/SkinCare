@@ -17,7 +17,7 @@ class SearchTableViewCell: UITableViewCell {
     
     private let darkBlueView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(named: "customBlue")
+        view.backgroundColor = UIColor(named: "homeBannerBgBlue")
         return view
     }()
     private let skinProblemsStackView: UIStackView = {
@@ -34,22 +34,23 @@ class SearchTableViewCell: UITableViewCell {
     }()
     private let headerImageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "Lab")
+        iv.image = UIImage(named: "consultation-icon")
         return iv
     }()
     private let headerTitleLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-SemiBold", size: 16)
-        lb.textColor = UIColor(named: "customWhite")
-        lb.text = NSLocalizedString("searchTitle", comment: "")
+        lb.textColor = .black
+        lb.text = NSLocalizedString("consultationTitle", comment: "")
         return lb
     }()
     private let skinProblemsDescriptionLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-Medium", size: 14)
-        lb.textColor = UIColor(named: "customWhite")
-        lb.text = NSLocalizedString("searchDescription", comment: "")
+        lb.textColor = .black
+        lb.text = NSLocalizedString("consultationDescription", comment: "")
         lb.numberOfLines = 0
+        lb.setLineHeight(21)
         return lb
     }()
     private let lightBlueView: UIView = {
@@ -137,8 +138,8 @@ class SearchTableViewCell: UITableViewCell {
         
         darkBlueView.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(7)
-            make.height.equalTo(102)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(123)
         }
         skinProblemsStackView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(12)
@@ -150,7 +151,7 @@ class SearchTableViewCell: UITableViewCell {
         
         lightBlueView.snp.makeConstraints { make in
             make.top.equalTo(darkBlueView.snp.bottom)
-            make.leading.trailing.equalToSuperview().inset(7)
+            make.leading.trailing.equalToSuperview().inset(16)
             make.bottom.equalToSuperview().inset(12)
         }
         

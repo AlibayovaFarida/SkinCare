@@ -52,16 +52,19 @@
 "welcome" = "Welcome,";
 "detectProblemDescription" = "Brighter, Healthier Skin Every Day.";
 "detectProblemButton" = "Determine your skin type";
-"searchTitle" = "Skin problems";
-"searchDescription" = "Investigate the skin problem you are facing and find the cause of the problem.";
-"redirectionSearch" = "Search now";
+"consultationTitle" = "Choose your doctor";
+"consultationDescription" = "You can get secure and real-time medical advice and personalized care by connecting instantly with the doctor of your choice.";
+"redirectionSearch" = "Start a conversation";
 "popularProblemsTitle" = "Most searched problems";
+"skinProblems" = "Skin problems";
+"seeAll" = "See all";
 
 // Tabbar items and globals
 "home" = "Home";
 "therapy" = "Therapy";
 "search" = "Search";
 "consultation" = "Consultation";
+"profile" = "Profile";
 "searchTextField" = "Search";
 
 // Consultation
