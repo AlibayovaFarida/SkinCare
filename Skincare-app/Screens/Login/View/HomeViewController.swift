@@ -24,7 +24,7 @@ struct HomeModel: Hashable {
 
 typealias HomeDataSource = UITableViewDiffableDataSource<HomeSection, HomeModel>
 
-class HomeViewController: UIViewController, SearchTableViewCellDelegate {
+class HomeViewController: UIViewController, SearchTableViewCellDelegate, SkinProblemsTableViewCellDelegate {
     
     private lazy var homeDataSource: HomeDataSource = makeHomeDataSource()
     
@@ -69,6 +69,11 @@ class HomeViewController: UIViewController, SearchTableViewCellDelegate {
                           completion: nil)
     }
     
+    func didTapMoreButton() {
+        let vc = MoreSkinProblemsViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    
     private func makeHomeDataSource() -> HomeDataSource {
         return HomeDataSource(tableView: tableView) { tableView, indexPath, itemIdentifier in
             if indexPath.section == 0{
@@ -81,6 +86,7 @@ class HomeViewController: UIViewController, SearchTableViewCellDelegate {
             else if indexPath.section == 2 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: SkinProblemsTableViewCell.identifier) as! SkinProblemsTableViewCell
                 cell.configure(itemIdentifier.skinProblems)
+                cell.delegate = self
                 return cell
             }
             else if indexPath.section == 3 {

@@ -25,7 +25,7 @@ class FilterItemCollectionViewCell: UICollectionViewCell {
     private let removeButton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(named: "close"), for: .normal)
-        btn.addTarget(self, action: #selector(removeButtonTapped), for: .touchUpInside)
+        btn.addTarget(nil, action: #selector(removeButtonTapped), for: .touchUpInside)
         return btn
     }()
     @objc

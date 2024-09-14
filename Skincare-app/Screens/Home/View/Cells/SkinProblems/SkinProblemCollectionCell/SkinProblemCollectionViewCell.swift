@@ -76,7 +76,7 @@ class SkinProblemCollectionViewCell: UICollectionViewCell {
             make.edges.equalToSuperview()
             let screenWidth = UIScreen.main.bounds.width
             make.width.equalTo((screenWidth-64)/2-2)
-            make.height.equalTo(128)
+            make.height.equalTo(161)
         }
         
         blueView.snp.makeConstraints { make in

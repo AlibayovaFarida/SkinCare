@@ -56,7 +56,7 @@ class ConsultationViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "sort"), for: .normal)
         button.tintColor = .black
-        button.addTarget(self, action: #selector(didTapPresentFilter), for: .touchUpInside)
+        button.addTarget(nil, action: #selector(didTapPresentFilter), for: .touchUpInside)
         return button
     }()
     private let filterCountView: UIView = {
