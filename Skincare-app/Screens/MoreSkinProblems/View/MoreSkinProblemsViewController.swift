@@ -74,7 +74,7 @@ class MoreSkinProblemsViewController: UIViewController
             let titleTextAttributes: [NSAttributedString.Key: Any] =
             [
                 .foregroundColor: UIColor(named: "customDarkBlue") ?? UIColor.black,
-                .font: UIFont(name: "Montserrat-Medium", size: 20) ?? UIFont.systemFont(ofSize: 20)
+                .font: UIFont(name: "Montserrat-Bold", size: 20) ?? UIFont.systemFont(ofSize: 20)
             ]
             navigationController.navigationBar.titleTextAttributes = titleTextAttributes
         }
