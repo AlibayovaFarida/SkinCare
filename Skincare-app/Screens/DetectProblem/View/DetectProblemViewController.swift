@@ -157,9 +157,9 @@ class DetectProblemViewController: UIViewController {
         formStackView.addArrangedSubview(titleLabel)
         
         let questionsAndAnswers: [(question: String, answers: [String])] = [
-            ("1. Təmizlədikdən sonra dərinizdə necə bir hiss yaranır?", ["Sıx və quru", "Sıx və quru", "Yağlı və ya parıltılı"]),
-            ("2. Dərinizdə nə qədər tez-tez qırışlar və ya ləkələr yaranır?", ["Heç vaxt", "Sıx və quru", "Tez-tez"]),
-            ("3. Dəriniz günəşə necə reaksiya verir?", ["Yanır, həssasdır", "Sıx və quru", "Mülayim"]),
+            ("1. Təmizlədikdən sonra dərinizdə necə bir hiss yaranır?", ["Yağlı", "Quru", "Normal"]),
+            ("2. Dərinizdə nə qədər tez-tez qırışlar və ya ləkələr yaranır?", ["Heç vaxt", "Arabir", "Tez-tez"]),
+            ("3. Dəriniz günəşə necə reaksiya verir?", ["Yanır, həssasdır", "Nadir hallarda yanır", "Mülayim"]),
             ("4. Dərinizin quruluşu necədir?", ["İncə məsaməli", "Orta məsaməli", "Çox məsaməli"]),
             ("5. Nəmləndirici tətbiq etdikdən bir neçə saat sonra dəriniz necə hiss edir?", ["Nəmlənmiş", "Yağlı", "Həssas"])
         ]
@@ -296,10 +296,20 @@ class DetectProblemViewController: UIViewController {
             self.navigationItem.leftBarButtonItem?.customView?.transform = CGAffineTransform(scaleX: scale, y: scale)
         })
     }
-
     
     @objc private func infoButtonTapped() {
-        print("Info button tapped")
+        let infoViewController = InfoViewController()
+        infoViewController.modalPresentationStyle = .pageSheet
+        
+        if let sheet = infoViewController.sheetPresentationController {
+            sheet.detents = [.medium()] 
+            sheet.preferredCornerRadius = 16
+            sheet.selectedDetentIdentifier = .medium
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.prefersGrabberVisible = true
+        }
+        
+        present(infoViewController, animated: true, completion: nil)
     }
     
     @objc private func submitButtonTapped() {

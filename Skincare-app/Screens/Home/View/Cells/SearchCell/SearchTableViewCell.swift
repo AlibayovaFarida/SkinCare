@@ -46,7 +46,7 @@ class SearchTableViewCell: UITableViewCell {
     }()
     private let skinProblemsDescriptionLabel: UILabel = {
         let lb = UILabel()
-        lb.font = UIFont(name: "Montserrat-Medium", size: 14)
+        lb.font = UIFont(name: "Montserrat-Regular", size: 14)
         lb.textColor = .black
         lb.text = NSLocalizedString("consultationDescription", comment: "")
         lb.numberOfLines = 0

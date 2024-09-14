@@ -57,7 +57,7 @@ class ConsultationFilterViewController: UIViewController {
     private let closeButton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(named: "close"), for: .normal)
-        btn.addTarget(self, action: #selector(didTapCloseFilterView), for: .touchUpInside)
+        btn.addTarget(nil, action: #selector(didTapCloseFilterView), for: .touchUpInside)
         return btn
     }()
     @objc
@@ -143,7 +143,7 @@ class ConsultationFilterViewController: UIViewController {
         btn.setTitle(NSLocalizedString("filterButton", comment: ""), for: .normal)
         btn.setTitleColor(.black, for: .normal)
         btn.titleLabel?.font = UIFont(name: "DMSans-Bold", size: 16)
-        btn.addTarget(self, action: #selector(applyFilters), for: .touchUpInside)
+        btn.addTarget(nil, action: #selector(applyFilters), for: .touchUpInside)
         return btn
     }()
     @objc

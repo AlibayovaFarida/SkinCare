@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol SkinProblemsTableViewCellDelegate: AnyObject {
+    func didTapMoreButton()
+}
+
 class SkinProblemsTableViewCell: UITableViewCell {
+    
+    weak var delegate: SkinProblemsTableViewCellDelegate?
+    
     private var skinProblems: [SkinProblemItemModel] = []
     private let headerStackView: UIStackView = {
         let sv = UIStackView()
@@ -38,7 +45,8 @@ class SkinProblemsTableViewCell: UITableViewCell {
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 16
         let screenWidth = UIScreen.main.bounds.width
-        layout.itemSize = .init(width: (screenWidth-64)/2, height: 161)
+//        layout.itemSize = .init(width: (screenWidth-64)/2, height: 161)
+        layout.itemSize = .init(width: 147, height: 161)
         layout.sectionInset = .init(top: 0, left: 16, bottom: 0, right: 16)
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.register(SkinProblemCollectionViewCell.self, forCellWithReuseIdentifier: SkinProblemCollectionViewCell.identifier)
@@ -64,10 +72,13 @@ class SkinProblemsTableViewCell: UITableViewCell {
             moreButton
         ].forEach(headerStackView.addArrangedSubview)
         
+        moreButton.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
+        
         headerStackView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(8)
             make.leading.trailing.equalToSuperview().inset(16)
         }
+        
         skinProblemsCollectionView.snp.makeConstraints { make in
             make.top.equalTo(headerStackView.snp.bottom).offset(12)
             make.leading.trailing.equalToSuperview()
@@ -79,6 +90,11 @@ class SkinProblemsTableViewCell: UITableViewCell {
     func configure(_ item: [SkinProblemItemModel]){
         skinProblems = item
     }
+    
+    @objc private func moreButtonTapped() {
+           delegate?.didTapMoreButton()
+        print("More button tapped")
+       }
 }
 
 extension SkinProblemsTableViewCell: UICollectionViewDataSource{

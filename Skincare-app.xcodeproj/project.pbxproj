@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -78,6 +78,7 @@
 		18ED7A062C67DEE9000F03C3 /* DropdownButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A052C67DEE9000F03C3 /* DropdownButtonView.swift */; };
 		18ED7A0E2C67DFA6000F03C3 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A0D2C67DFA6000F03C3 /* RegisterViewModel.swift */; };
 		18ED7A102C67DFBB000F03C3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7A0F2C67DFBB000F03C3 /* RegisterViewController.swift */; };
+		F0273E392C9603810069EDE7 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0273E382C9603810069EDE7 /* ProfileTableViewCell.swift */; };
 		F05804312C7518FA003AE03E /* ConsultationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05804302C7518FA003AE03E /* ConsultationCollectionViewCell.swift */; };
 		F0D38DD82C69FDA3007E35ED /* DetectProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D38DD72C69FDA3007E35ED /* DetectProblemViewController.swift */; };
 		F0D38DDA2C69FFEA007E35ED /* AnswerBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D38DD92C69FFEA007E35ED /* AnswerBoxView.swift */; };
@@ -161,6 +162,7 @@
 		18ED7A052C67DEE9000F03C3 /* DropdownButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButtonView.swift; sourceTree = "<group>"; };
 		18ED7A0D2C67DFA6000F03C3 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		18ED7A0F2C67DFBB000F03C3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		F0273E382C9603810069EDE7 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		F05804302C7518FA003AE03E /* ConsultationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationCollectionViewCell.swift; sourceTree = "<group>"; };
 		F0D38DD72C69FDA3007E35ED /* DetectProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectProblemViewController.swift; sourceTree = "<group>"; };
 		F0D38DD92C69FFEA007E35ED /* AnswerBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerBoxView.swift; sourceTree = "<group>"; };
@@ -170,6 +172,28 @@
 		F0EAC6DC2C674A10006DE3E1 /* TitleBgColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBgColorButton.swift; sourceTree = "<group>"; };
 		F0EAC6DE2C674A2A006DE3E1 /* OnboardingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F020F6902C96314900058F37 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				View/InfoViewController.swift,
+			);
+			target = 182B5BA62C60A9E900F7E85D /* Skincare-app */;
+		};
+		F020F6952C963F1800058F37 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				View/MoreSkinProblemsViewController.swift,
+			);
+			target = 182B5BA62C60A9E900F7E85D /* Skincare-app */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F020F68C2C96312700058F37 /* Info */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (F020F6902C96314900058F37 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Info; sourceTree = "<group>"; };
+		F020F6912C963F0A00058F37 /* MoreSkinProblems */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (F020F6952C963F1800058F37 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = MoreSkinProblems; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		182B5BA42C60A9E900F7E85D /* Frameworks */ = {
@@ -304,6 +328,8 @@
 		182B5BF02C60D2DE00F7E85D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F020F6912C963F0A00058F37 /* MoreSkinProblems */,
+				F020F68C2C96312700058F37 /* Info */,
 				18AD81772C8F0834002A7272 /* Profile */,
 				1883F83B2C6B3AF4005ED089 /* Consultation */,
 				1883F8392C6B3AD3005ED089 /* Therapy */,
@@ -524,6 +550,7 @@
 		18AD81792C8F0846002A7272 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F0273E382C9603810069EDE7 /* ProfileTableViewCell.swift */,
 				18AD817B2C8F0A6A002A7272 /* ProfileViewController.swift */,
 			);
 			path = View;
@@ -881,6 +908,7 @@
 				1883F8382C6B3A79005ED089 /* CustomTabbarController.swift in Sources */,
 				181FEA622C69118700B9AAE6 /* LoginViewController.swift in Sources */,
 				18ED7A102C67DFBB000F03C3 /* RegisterViewController.swift in Sources */,
+				F0273E392C9603810069EDE7 /* ProfileTableViewCell.swift in Sources */,
 				18C53DBA2C6A9346004FA52B /* HomeViewController.swift in Sources */,
 				1886EB5A2C77515D00EBAD95 /* ConsultationFilterViewController.swift in Sources */,
 				F0D38DDA2C69FFEA007E35ED /* AnswerBoxView.swift in Sources */,
