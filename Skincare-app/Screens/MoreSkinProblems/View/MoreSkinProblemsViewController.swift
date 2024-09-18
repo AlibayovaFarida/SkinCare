@@ -19,6 +19,7 @@ class MoreSkinProblemsViewController: UIViewController
         collectionView.backgroundColor = .white
         collectionView.alwaysBounceVertical = true
         collectionView.register(SkinProblemCollectionViewCell.self, forCellWithReuseIdentifier: "SkinProblemCollectionViewCell")
+        collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
     

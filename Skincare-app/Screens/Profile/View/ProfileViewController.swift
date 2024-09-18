@@ -12,6 +12,7 @@ class ProfileViewController: UIViewController {
     
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
     

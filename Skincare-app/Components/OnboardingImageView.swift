@@ -12,7 +12,7 @@ class OnboardingImageView: UIView {
     
     private let backgroundView: UIView = {
         let view = UIView()
-        view.backgroundColor = .background
+        view.backgroundColor = UIColor(named: "customBgBlue")
         view.clipsToBounds = true
         return view
     }()
@@ -55,7 +55,7 @@ class OnboardingImageView: UIView {
         label1.text = "SkinCare"
         label2.text = "Çünki dəriniz ən yaxşı qayğıya layiqdir."
         bottomLabel.text = "Cildinizi parlatmaq üçün İlk addımınızı burada atın!"
-        backgroundView.backgroundColor = .background
+        backgroundView.backgroundColor = UIColor(named: "customBgBlue")
     }
     
     required init?(coder: NSCoder) {
