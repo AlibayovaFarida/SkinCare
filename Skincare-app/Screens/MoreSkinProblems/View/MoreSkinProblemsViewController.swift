@@ -58,7 +58,7 @@ class MoreSkinProblemsViewController: UIViewController
         SkinProblemItemModel(image: "seboreik", title: "Seboreik"),
         SkinProblemItemModel(image: "skinCancer", title: "Dəri xərçəngi"),
         SkinProblemItemModel(image: "redSkin", title: "Qızartı"),
-        SkinProblemItemModel(image: "vitiligo", title: "Vitiliqo"),
+        SkinProblemItemModel(image: "Vitiligo", title: "Vitiliqo"),
     ]
     
     private var filteredItems: [SkinProblemItemModel] = []
