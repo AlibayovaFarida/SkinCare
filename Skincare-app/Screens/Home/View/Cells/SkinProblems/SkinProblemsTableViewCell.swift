@@ -9,6 +9,7 @@ import UIKit
 
 protocol SkinProblemsTableViewCellDelegate: AnyObject {
     func didTapMoreButton()
+    func skinProblemsTableViewCell(_ cell: SkinProblemsTableViewCell, didSelectItem item: SkinProblemItemModel)
 }
 
 class SkinProblemsTableViewCell: UITableViewCell {

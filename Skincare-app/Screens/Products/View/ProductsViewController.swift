@@ -1,13 +1,13 @@
 //
-//  MoreSkinProblemsViewController.swift
+//  ProductsViewController.swift
 //  Skincare-app
 //
-//  Created by Umman on 15.09.24.
+//  Created by Apple on 13.08.24.
 //
 
 import UIKit
 
-class MoreSkinProblemsViewController: UIViewController
+class ProductsViewController: UIViewController
 {
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -51,14 +51,14 @@ class MoreSkinProblemsViewController: UIViewController
     
     private let allItems: [SkinProblemItemModel] =
     [
-        SkinProblemItemModel(image: "rosacea", title: "Rosacea"),
-        SkinProblemItemModel(image: "acne", title: "Akne"),
-        SkinProblemItemModel(image: "melazma", title: "Melazma"),
-        SkinProblemItemModel(image: "ekzema", title: "Ekzema"),
-        SkinProblemItemModel(image: "seboreik", title: "Seboreik"),
-        SkinProblemItemModel(image: "skinCancer", title: "Dəri xərçəngi"),
-        SkinProblemItemModel(image: "redSkin", title: "Qızartı"),
-        SkinProblemItemModel(image: "vitiligo", title: "Vitiliqo"),
+        SkinProblemItemModel(image: "cleansers", title: "Cleansers"),
+        SkinProblemItemModel(image: "tonikler", title: "Toniklər"),
+        SkinProblemItemModel(image: "skrablar", title: "Skrablar"),
+        SkinProblemItemModel(image: "serumlar", title: "Serumlar"),
+        SkinProblemItemModel(image: "nemlendirici", title: "Nəmləndirici"),
+        SkinProblemItemModel(image: "spf", title: "SPF"),
+        SkinProblemItemModel(image: "maskalar", title: "Maskalar"),
+        SkinProblemItemModel(image: "baxim-yaglari", title: "Baxım yağları"),
     ]
     
     private var filteredItems: [SkinProblemItemModel] = []
@@ -68,9 +68,7 @@ class MoreSkinProblemsViewController: UIViewController
         setupViews()
         setupConstraints()
         
-        title = "Dəri Problemləri"
-        view.backgroundColor = UIColor(named: "customWhite")
-        
+        navigationItem.title = "Baxım məhsulları"
         if let navigationController = navigationController {
             let titleTextAttributes: [NSAttributedString.Key: Any] =
             [
@@ -79,11 +77,8 @@ class MoreSkinProblemsViewController: UIViewController
             ]
             navigationController.navigationBar.titleTextAttributes = titleTextAttributes
         }
-        
-        let backButtonImage = UIImage(named: "back-button")
-        let backButton = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(backButtonTapped))
-        backButton.tintColor = .customDarkBlue
-        navigationItem.leftBarButtonItem = backButton
+
+        view.backgroundColor = UIColor(named: "customWhite")
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -119,7 +114,7 @@ class MoreSkinProblemsViewController: UIViewController
     }
 }
 
-extension MoreSkinProblemsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filteredItems.count
     }
@@ -130,19 +125,15 @@ extension MoreSkinProblemsViewController: UICollectionViewDataSource, UICollecti
         cell.configure(item)
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = SkinProblemDetailsViewController(problemName: allItems[indexPath.row].title)
-        navigationController?.pushViewController(vc, animated: true)
-    }
 }
 
-extension MoreSkinProblemsViewController: UICollectionViewDelegateFlowLayout {
+extension ProductsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 147, height: 161)
     }
 }
 
-extension MoreSkinProblemsViewController: UISearchBarDelegate {
+extension ProductsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             filteredItems = allItems
@@ -154,3 +145,4 @@ extension MoreSkinProblemsViewController: UISearchBarDelegate {
         collectionView.reloadData()
     }
 }
+

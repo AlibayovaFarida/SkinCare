@@ -72,8 +72,15 @@ class HomeViewController: UIViewController, SearchTableViewCellDelegate, SkinPro
     func didTapMoreButton() {
         let vc = MoreSkinProblemsViewController()
             navigationController?.pushViewController(vc, animated: true)
+    }
+    func skinProblemsTableViewCell(_ cell: SkinProblemsTableViewCell, didSelectItem item: SkinProblemItemModel) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            if let viewController = self.findViewController() {
+                let vc = SkinProblemDetailsViewController(problemName: item.title)
+                viewController.navigationController?.pushViewController(vc, animated: true)
+            }
         }
-    
+    }
     private func makeHomeDataSource() -> HomeDataSource {
         return HomeDataSource(tableView: tableView) { tableView, indexPath, itemIdentifier in
             if indexPath.section == 0{

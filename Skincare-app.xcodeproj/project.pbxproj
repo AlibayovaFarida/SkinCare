@@ -35,11 +35,15 @@
 		182B5BEE2C60BCA800F7E85D /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BDC2C60BCA800F7E85D /* Montserrat-LightItalic.ttf */; };
 		182B5BEF2C60BCA800F7E85D /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BDD2C60BCA800F7E85D /* Montserrat-SemiBoldItalic.ttf */; };
 		182B5BFE2C60DC8900F7E85D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BFC2C60DC8900F7E85D /* Localizable.strings */; };
+		182EB5572C9CC5EA00C4A40C /* MainProblemCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182EB5562C9CC5EA00C4A40C /* MainProblemCardTableViewCell.swift */; };
+		182EB55A2C9CCAD300C4A40C /* AccordionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182EB5592C9CCAD300C4A40C /* AccordionTableViewCell.swift */; };
+		1848393D2C9D8B97000558B2 /* AccordionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848393C2C9D8B97000558B2 /* AccordionCellModel.swift */; };
 		185980882C9441C700455BEB /* SkinProblemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185980872C9441C700455BEB /* SkinProblemsTableViewCell.swift */; };
 		1859808B2C944FF700455BEB /* SkinProblemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859808A2C944FF700455BEB /* SkinProblemCollectionViewCell.swift */; };
 		1859808D2C94577000455BEB /* SkinProblemItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859808C2C94577000455BEB /* SkinProblemItemModel.swift */; };
+		1865506E2C9C2CDC003C002A /* SkinProblemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865506D2C9C2CDC003C002A /* SkinProblemDetailsViewController.swift */; };
 		1883F8382C6B3A79005ED089 /* CustomTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F8372C6B3A79005ED089 /* CustomTabbarController.swift */; };
-		1883F8462C6B3B44005ED089 /* TherapyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F8452C6B3B44005ED089 /* TherapyViewController.swift */; };
+		1883F8462C6B3B44005ED089 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F8452C6B3B44005ED089 /* ProductsViewController.swift */; };
 		1883F84A2C6B3B62005ED089 /* ConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F8492C6B3B62005ED089 /* ConsultationViewController.swift */; };
 		1884E9A92C6C89BC00E40A3D /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884E9A82C6C89BC00E40A3D /* HeaderTableViewCell.swift */; };
 		1884E9AC2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884E9AB2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift */; };
@@ -119,11 +123,15 @@
 		182B5BDD2C60BCA800F7E85D /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		182B5BFD2C60DC8900F7E85D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		182B5BFF2C60DC8C00F7E85D /* az */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = az; path = az.lproj/Localizable.strings; sourceTree = "<group>"; };
+		182EB5562C9CC5EA00C4A40C /* MainProblemCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProblemCardTableViewCell.swift; sourceTree = "<group>"; };
+		182EB5592C9CCAD300C4A40C /* AccordionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionTableViewCell.swift; sourceTree = "<group>"; };
+		1848393C2C9D8B97000558B2 /* AccordionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionCellModel.swift; sourceTree = "<group>"; };
 		185980872C9441C700455BEB /* SkinProblemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemsTableViewCell.swift; sourceTree = "<group>"; };
 		1859808A2C944FF700455BEB /* SkinProblemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemCollectionViewCell.swift; sourceTree = "<group>"; };
 		1859808C2C94577000455BEB /* SkinProblemItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemItemModel.swift; sourceTree = "<group>"; };
+		1865506D2C9C2CDC003C002A /* SkinProblemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemDetailsViewController.swift; sourceTree = "<group>"; };
 		1883F8372C6B3A79005ED089 /* CustomTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarController.swift; sourceTree = "<group>"; };
-		1883F8452C6B3B44005ED089 /* TherapyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapyViewController.swift; sourceTree = "<group>"; };
+		1883F8452C6B3B44005ED089 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		1883F8492C6B3B62005ED089 /* ConsultationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationViewController.swift; sourceTree = "<group>"; };
 		1884E9A82C6C89BC00E40A3D /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		1884E9AB2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectProblemTableViewCell.swift; sourceTree = "<group>"; };
@@ -328,11 +336,12 @@
 		182B5BF02C60D2DE00F7E85D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				186550672C9C2C6A003C002A /* SkinProblemDetails */,
 				F020F6912C963F0A00058F37 /* MoreSkinProblems */,
 				F020F68C2C96312700058F37 /* Info */,
 				18AD81772C8F0834002A7272 /* Profile */,
 				1883F83B2C6B3AF4005ED089 /* Consultation */,
-				1883F8392C6B3AD3005ED089 /* Therapy */,
+				1883F8392C6B3AD3005ED089 /* Products */,
 				18C53DB52C6A9324004FA52B /* Home */,
 				F0E07E242C6A44F500BD410A /* CompleteTest */,
 				F0D38DD32C69FD55007E35ED /* DetectProblem */,
@@ -359,6 +368,15 @@
 				182B5BFC2C60DC8900F7E85D /* Localizable.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		182EB5582C9CCAAA00C4A40C /* AccordionCell */ = {
+			isa = PBXGroup;
+			children = (
+				182EB5592C9CCAD300C4A40C /* AccordionTableViewCell.swift */,
+				1848393C2C9D8B97000558B2 /* AccordionCellModel.swift */,
+			);
+			path = AccordionCell;
 			sourceTree = "<group>";
 		};
 		184CBD5C2C7DD5AD00D6F515 /* Cells */ = {
@@ -388,14 +406,56 @@
 			path = SkinProblemCollectionCell;
 			sourceTree = "<group>";
 		};
-		1883F8392C6B3AD3005ED089 /* Therapy */ = {
+		186550672C9C2C6A003C002A /* SkinProblemDetails */ = {
+			isa = PBXGroup;
+			children = (
+				1865506A2C9C2C94003C002A /* Model */,
+				186550692C9C2C8D003C002A /* View */,
+				186550682C9C2C85003C002A /* ViewModel */,
+			);
+			path = SkinProblemDetails;
+			sourceTree = "<group>";
+		};
+		186550682C9C2C85003C002A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		186550692C9C2C8D003C002A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				182EB5582C9CCAAA00C4A40C /* AccordionCell */,
+				1865506F2C9C3D81003C002A /* MainProblemCardCell */,
+				1865506D2C9C2CDC003C002A /* SkinProblemDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1865506A2C9C2C94003C002A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1865506F2C9C3D81003C002A /* MainProblemCardCell */ = {
+			isa = PBXGroup;
+			children = (
+				182EB5562C9CC5EA00C4A40C /* MainProblemCardTableViewCell.swift */,
+			);
+			path = MainProblemCardCell;
+			sourceTree = "<group>";
+		};
+		1883F8392C6B3AD3005ED089 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				1883F83E2C6B3B0A005ED089 /* Model */,
 				1883F83D2C6B3B05005ED089 /* View */,
 				1883F83C2C6B3AFD005ED089 /* ViewModel */,
 			);
-			path = Therapy;
+			path = Products;
 			sourceTree = "<group>";
 		};
 		1883F83B2C6B3AF4005ED089 /* Consultation */ = {
@@ -418,7 +478,7 @@
 		1883F83D2C6B3B05005ED089 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1883F8452C6B3B44005ED089 /* TherapyViewController.swift */,
+				1883F8452C6B3B44005ED089 /* ProductsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -910,16 +970,20 @@
 				18ED7A102C67DFBB000F03C3 /* RegisterViewController.swift in Sources */,
 				F0273E392C9603810069EDE7 /* ProfileTableViewCell.swift in Sources */,
 				18C53DBA2C6A9346004FA52B /* HomeViewController.swift in Sources */,
+				1848393D2C9D8B97000558B2 /* AccordionCellModel.swift in Sources */,
 				1886EB5A2C77515D00EBAD95 /* ConsultationFilterViewController.swift in Sources */,
 				F0D38DDA2C69FFEA007E35ED /* AnswerBoxView.swift in Sources */,
 				1883F84A2C6B3B62005ED089 /* ConsultationViewController.swift in Sources */,
 				182B5BAB2C60A9E900F7E85D /* AppDelegate.swift in Sources */,
+				182EB55A2C9CCAD300C4A40C /* AccordionTableViewCell.swift in Sources */,
 				18ED7A0E2C67DFA6000F03C3 /* RegisterViewModel.swift in Sources */,
 				F0E07E292C6A453D00BD410A /* CompleteTestViewController.swift in Sources */,
 				185980882C9441C700455BEB /* SkinProblemsTableViewCell.swift in Sources */,
 				18936EC72C62B637006A8683 /* IconTitleBgColorButton.swift in Sources */,
+				1865506E2C9C2CDC003C002A /* SkinProblemDetailsViewController.swift in Sources */,
 				18DE77A22C6E0A0F000B321C /* UIResponder+Ext.swift in Sources */,
 				1859808B2C944FF700455BEB /* SkinProblemCollectionViewCell.swift in Sources */,
+				182EB5572C9CC5EA00C4A40C /* MainProblemCardTableViewCell.swift in Sources */,
 				F0DD68EE2C68CAF200C11ECF /* OnboardingLoginViewController.swift in Sources */,
 				F0DD68F42C68CF0700C11ECF /* OnboardingRegisterViewController.swift in Sources */,
 				1886EB5F2C776E6200EBAD95 /* ConsultationFilterItemModel.swift in Sources */,
@@ -934,7 +998,7 @@
 				188931D42C7C6B3400088C9E /* FilterItemCollectionViewCell.swift in Sources */,
 				F0EAC6DD2C674A10006DE3E1 /* TitleBgColorButton.swift in Sources */,
 				18DE77A02C6DF98E000B321C /* UIView+Ext.swift in Sources */,
-				1883F8462C6B3B44005ED089 /* TherapyViewController.swift in Sources */,
+				1883F8462C6B3B44005ED089 /* ProductsViewController.swift in Sources */,
 				1884E9A92C6C89BC00E40A3D /* HeaderTableViewCell.swift in Sources */,
 				18AD817C2C8F0A6A002A7272 /* ProfileViewController.swift in Sources */,
 				F0D38DD82C69FDA3007E35ED /* DetectProblemViewController.swift in Sources */,

@@ -11,7 +11,7 @@ class DetectProblemTableViewCell: UITableViewCell {
     
     private let bgView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(named: "homeBannerBgBlue")
+        view.backgroundColor = UIColor(named: "customBgBlue")
         view.layer.cornerRadius = 16
         return view
     }()

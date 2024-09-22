@@ -62,6 +62,7 @@
 // Tabbar items and globals
 "home" = "Home";
 "therapy" = "Therapy";
+"products" = "Products";
 "search" = "Search";
 "consultation" = "Consultation";
 "profile" = "Profile";

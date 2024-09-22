@@ -17,7 +17,7 @@ class SearchTableViewCell: UITableViewCell {
     
     private let darkBlueView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(named: "homeBannerBgBlue")
+        view.backgroundColor = UIColor(named: "customBgBlue")
         return view
     }()
     private let skinProblemsStackView: UIStackView = {

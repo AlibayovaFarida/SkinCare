@@ -21,11 +21,20 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         return vc
     }()
     
-    private let therapyNavVc: UINavigationController = {
-        let vc = UINavigationController(rootViewController: TherapyViewController())
-        vc.tabBarItem.image = UIImage(named: "Therapy")
-        vc.tabBarItem.selectedImage = UIImage(named: "TherapySelected")?.withRenderingMode(.alwaysOriginal)
-        vc.tabBarItem.title = NSLocalizedString("therapy", comment: "")
+//    private let therapyNavVc: UINavigationController = {
+//        let vc = UINavigationController(rootViewController: TherapyViewController())
+//        vc.tabBarItem.image = UIImage(named: "Therapy")
+//        vc.tabBarItem.selectedImage = UIImage(named: "TherapySelected")?.withRenderingMode(.alwaysOriginal)
+//        vc.tabBarItem.title = NSLocalizedString("therapy", comment: "")
+//        vc.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+//        return vc
+//    }()
+    
+    private let productsNavVc: UINavigationController = {
+        let vc = UINavigationController(rootViewController: ProductsViewController())
+        vc.tabBarItem.image = UIImage(named: "Products")
+        vc.tabBarItem.selectedImage = UIImage(named: "ProductsSelected")?.withRenderingMode(.alwaysOriginal)
+        vc.tabBarItem.title = NSLocalizedString("products", comment: "")
         vc.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
         return vc
     }()
@@ -60,7 +69,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
-        setViewControllers([homeNavVc, therapyNavVc, consultationNavVc, profileNavVc], animated: true)
+        setViewControllers([homeNavVc, productsNavVc, consultationNavVc, profileNavVc], animated: true)
         tabBar.items?.forEach { item in
             item.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 16)
             addGestures(to: item)
