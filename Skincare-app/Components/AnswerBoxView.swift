@@ -9,7 +9,7 @@ import UIKit
 
 class AnswerBoxView: UIView {
     
-    private let answerLabel: UILabel = {
+    public let answerLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Medium", size: 12)
         label.textColor = UIColor(named: "customDarkBlue")
