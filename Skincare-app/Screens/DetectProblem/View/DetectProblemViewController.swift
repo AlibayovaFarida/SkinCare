@@ -157,11 +157,11 @@ class DetectProblemViewController: UIViewController {
         formStackView.addArrangedSubview(titleLabel)
         
         let questionsAndAnswers: [(question: String, answers: [String])] = [
-            ("1. Təmizlədikdən sonra dərinizdə necə bir hiss yaranır?", ["Yağlı", "Quru", "Normal"]),
-            ("2. Dərinizdə nə qədər tez-tez qırışlar və ya ləkələr yaranır?", ["Heç vaxt", "Arabir", "Tez-tez"]),
-            ("3. Dəriniz günəşə necə reaksiya verir?", ["Yanır, həssasdır", "Nadir hallarda yanır", "Mülayim"]),
-            ("4. Dərinizin quruluşu necədir?", ["İncə məsaməli", "Orta məsaməli", "Çox məsaməli"]),
-            ("5. Nəmləndirici tətbiq etdikdən bir neçə saat sonra dəriniz necə hiss edir?", ["Nəmlənmiş", "Yağlı", "Həssas"])
+            ("1. Təmizlədikdən sonra dərinizdə necə bir hiss yaranır?",                     ["Yağlı", "Quru", "Normal"]),
+            ("2. Dərinizdə nə qədər tez-tez qırışlar və ya ləkələr yaranır?",               ["Tez-tez", "Heç vaxt", "Arabir"]),
+            ("3. Dəriniz günəşə necə reaksiya verir?",                                      ["Nadir hallarda yanır", "Yanır, həssasdır", "Mülayim"]),
+            ("4. Dərinizin quruluşu necədir?",                                              ["Çox məsaməli", "İncə məsaməli", "Orta məsaməli"]),
+            ("5. Nəmləndirici tətbiq etdikdən bir neçə saat sonra dəriniz necə hiss edir?", ["Yağlı", "Həssas", "Nəmlənmiş"])
         ]
         
         questionsAndAnswers.enumerated().forEach { index, qa in
@@ -318,8 +318,9 @@ class DetectProblemViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             present(alert, animated: true, completion: nil)
         } else {
-            print("Submit button tapped")
-            
+            let completeTestVC = CompleteTestViewController()
+            completeTestVC.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(completeTestVC, animated: true)
         }
     }
 }

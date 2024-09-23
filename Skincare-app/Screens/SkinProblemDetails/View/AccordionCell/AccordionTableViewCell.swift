@@ -44,7 +44,7 @@ class AccordionTableViewCell: UITableViewCell {
     private let arrowButton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(named: "arrow-left"), for: .normal)
-        btn.addTarget(self, action: #selector(didTapAccordionButton), for: .touchUpInside)
+        btn.addTarget(nil, action: #selector(didTapAccordionButton), for: .touchUpInside)
         return btn
     }()
     @objc

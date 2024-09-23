@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 class CompleteTestViewController: UIViewController {
+    
     private let stackView = UIStackView()
     
     override func viewDidLoad() {
@@ -16,6 +17,7 @@ class CompleteTestViewController: UIViewController {
         setupGradientBackground()
         setupReturnHomeButton()
         setupStackView()
+        self.navigationItem.hidesBackButton = true
     }
     
     private func setupGradientBackground() {
@@ -225,7 +227,9 @@ class CompleteTestViewController: UIViewController {
     }
     
     @objc private func returnHomeButtonTapped() {
-        print("Return to Home button tapped")
+        let homeVC = CustomTabBarController()
+        homeVC.modalPresentationStyle = .fullScreen
+        present(homeVC, animated: true, completion: nil)
     }
     
     override func viewDidLayoutSubviews() {
