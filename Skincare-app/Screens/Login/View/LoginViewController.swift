@@ -53,6 +53,41 @@ class LoginViewController: UIViewController {
         setupActions()
     }
     
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification)
+    {
+        guard let userInfo = notification.userInfo, let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
+        let safeAreaBottomInset = view.safeAreaInsets.bottom
+        let keyboardHeight = keyboardFrame.height - safeAreaBottomInset
+        let textFieldBottomY = loginButton.frame.maxY + 20
+        let offset = textFieldBottomY - (view.frame.height - keyboardHeight)
+        
+        if offset > 0
+        {
+            UIView.animate(withDuration: 0.3)
+            {
+                self.view.frame.origin.y = -offset
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+
+    @objc private func keyboardWillHide()
+    {
+        UIView.animate(withDuration: 0.1)
+        {
+            self.view.frame.origin.y = 0
+            self.view.layoutIfNeeded()
+        }
+    }
+
     private func setupUI(){
         view.addSubview(scrollView)
         scrollView.addSubview(contentViewInScroll)
