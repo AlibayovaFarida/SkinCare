@@ -52,7 +52,7 @@ class InfoViewController: UIViewController {
         
         let titleLabel = UILabel()
         titleLabel.text = title
-        titleLabel.font = UIFont(name: "Montserrat-Bold", size: 14)
+        titleLabel.font = UIFont(name: "Montserrat-Bold", size: 12)
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 2
         

@@ -14,7 +14,7 @@ struct Question {
 }
 
 class DetectProblemViewController: UIViewController {
-
+    
     private let scrollView: UIScrollView = {
         let sv = UIScrollView()
         sv.showsVerticalScrollIndicator = false
@@ -54,14 +54,14 @@ class DetectProblemViewController: UIViewController {
     ]
     
     private var selectedAnswers: [Int?] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(named: "customWhite")
         self.hidesBottomBarWhenPushed = true
         selectedAnswers = Array(repeating: nil, count: questions.count)
-
+        
         setupScrollView()
         setupTitleLabel()
         setupQuestionsAndAnswers()
@@ -70,7 +70,7 @@ class DetectProblemViewController: UIViewController {
         setupCustomBackButton()
         infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
     }
-
+    
     private func setupScrollView() {
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
@@ -79,12 +79,11 @@ class DetectProblemViewController: UIViewController {
         
         scrollView.addSubview(contentView)
         contentView.snp.makeConstraints { make in
-                make.edges.equalTo(scrollView)
-                make.width.equalTo(scrollView) // This is important to avoid scrolling issues
-                make.bottom.equalToSuperview() // Ensures the content view expands to fit all subviews
-            }
+            make.edges.equalTo(scrollView)
+            make.width.equalTo(scrollView)
+            make.bottom.equalToSuperview()
+        }
     }
-    
     
     @objc private func infoButtonTapped() {
         let infoViewController = InfoViewController()
@@ -108,13 +107,13 @@ class DetectProblemViewController: UIViewController {
             make.leading.equalTo(contentView).inset(20)
         }
     }
-
+    
     private func setupInfoButton() {
         contentView.addSubview(infoButton)
-
+        
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleInfoButtonLongPress(_:)))
         infoButton.addGestureRecognizer(longPressGesture)
-
+        
         infoButton.snp.makeConstraints { make in
             make.trailing.equalTo(contentView).inset(16)
             make.centerY.equalTo(titleLabel)
@@ -122,14 +121,13 @@ class DetectProblemViewController: UIViewController {
             make.height.equalTo(20)
         }
     }
-
     
     private func setupCustomBackButton() {
         guard let backButtonImage = UIImage(named: "back-button") else {
             print("Error: Back button image not found.")
             return
         }
-                
+        
         let backButton = UIButton(type: .custom)
         backButton.setImage(backButtonImage, for: .normal)
         backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
@@ -141,7 +139,7 @@ class DetectProblemViewController: UIViewController {
         
         let backBarButtonItem = UIBarButtonItem(customView: backButton)
         navigationItem.leftBarButtonItem = backBarButtonItem
-                
+        
         backButton.snp.makeConstraints { make in
             make.width.equalTo(24)
             make.height.equalTo(24)
@@ -183,25 +181,24 @@ class DetectProblemViewController: UIViewController {
     }
     
     private func animateInfoButton(scale: CGFloat) {
-           UIView.animate(withDuration: 0.1, animations: {
-               self.infoButton.transform = CGAffineTransform(scaleX: scale, y: scale)
-           })
-       }
+        UIView.animate(withDuration: 0.1, animations: {
+            self.infoButton.transform = CGAffineTransform(scaleX: scale, y: scale)
+        })
+    }
     
     private func animateBackButton(scale: CGFloat) {
         UIView.animate(withDuration: 0.1, animations: {
             self.navigationItem.leftBarButtonItem?.customView?.transform = CGAffineTransform(scaleX: scale, y: scale)
         })
     }
-
+    
     private func setupQuestionsAndAnswers() {
         var previousQuestionView: UIView? = titleLabel
-
+        
         for (index, question) in questions.enumerated() {
             let questionView = createQuestionView(question: question, questionIndex: index)
             contentView.addSubview(questionView)
-
-            // Debug log to confirm view addition
+            
             print("Adding question view for: \(question.text)")
             
             questionView.snp.makeConstraints { make in
@@ -212,89 +209,80 @@ class DetectProblemViewController: UIViewController {
                     make.top.equalTo(contentView).offset(20)
                 }
             }
-
+            
             previousQuestionView = questionView
         }
-
+        
         if let lastQuestionView = previousQuestionView {
             lastQuestionView.snp.makeConstraints { make in
-                make.bottom.equalTo(contentView).offset(-100) // Leave space for submit button
+                make.bottom.equalTo(contentView).offset(-100)
             }
         }
     }
     
-
-
     private func createQuestionView(question: Question, questionIndex: Int) -> UIView {
         let questionView = UIStackView()
         questionView.axis = .vertical
         questionView.spacing = 8
         questionView.alignment = .leading
-
-        // Create the question label
+        
         let questionLabel = UILabel()
         questionLabel.font = UIFont(name: "Montserrat-Regular", size: 14)
         questionLabel.textColor = UIColor(named: "customBlack")
         questionLabel.numberOfLines = 0
-
-        // Create an attributed string for the question
+        
         let attributedString = NSMutableAttributedString(string: question.text)
         
-        // Define attributes for the asterisk
         let starAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: "Montserrat-Regular", size: 14) ?? UIFont.systemFont(ofSize: 14),
             .foregroundColor: UIColor(named: "threatening_red") ?? UIColor.red
         ]
         let starString = NSAttributedString(string: " *", attributes: starAttributes)
-
-        // Append the asterisk to the question label
+        
         attributedString.append(starString)
         questionLabel.attributedText = attributedString
-
-        // Create the answer stack view
+        
         let answerStackView = UIStackView()
         answerStackView.axis = .horizontal
-        answerStackView.spacing = 12
+        answerStackView.spacing = 8
         answerStackView.alignment = .leading
-
-        // Add answer buttons
+        
         for (answerIndex, answerText) in question.answers.enumerated() {
             let answerButton = createAnswerButton(title: answerText, tag: questionIndex * 10 + answerIndex)
             answerStackView.addArrangedSubview(answerButton)
         }
-
-        // Add the question label and answer stack view to the question view
+        
         questionView.addArrangedSubview(questionLabel)
         questionView.addArrangedSubview(answerStackView)
-
+        
         return questionView
     }
-
-
     
-
     private func createAnswerButton(title: String, tag: Int) -> UIButton {
         let answerButton = UIButton()
         answerButton.setTitle(title, for: .normal)
-        answerButton.setTitleColor(.black, for: .normal)
+        answerButton.setTitleColor(.customDarkBlue, for: .normal)
         answerButton.layer.borderWidth = 1
-        answerButton.layer.borderColor = UIColor.lightGray.cgColor
+        if let customGray = UIColor(named: "customGray") {
+            answerButton.layer.borderColor = customGray.cgColor
+        } else {
+            
+            answerButton.layer.borderColor = UIColor.lightGray.cgColor
+        }
         answerButton.layer.cornerRadius = 15
         answerButton.tag = tag
         
-        // Set the font size for the answer text
-        answerButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 14) // Change the size as needed
+        answerButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 13)
         
         answerButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         answerButton.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-
+        
         answerButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         
         answerButton.addTarget(self, action: #selector(answerSelected(_:)), for: .touchUpInside)
         return answerButton
     }
-
-
+    
     private func setupSubmitButton() {
         let submitButton = UIButton(type: .system)
         submitButton.setTitle("Müəyyən et", for: .normal)
@@ -307,7 +295,7 @@ class DetectProblemViewController: UIViewController {
         contentView.addSubview(submitButton)
         
         submitButton.snp.makeConstraints { make in
-            make.trailing.equalTo(contentView).offset(-20) // Adjusted for consistent spacing
+            make.trailing.equalTo(contentView).offset(-20)
             make.bottom.equalTo(contentView).inset(20)
             make.height.equalTo(44)
             make.width.equalTo(120)
@@ -315,27 +303,37 @@ class DetectProblemViewController: UIViewController {
         
         submitButton.addTarget(self, action: #selector(handleSubmit), for: .touchUpInside)
     }
-
+    
     @objc private func answerSelected(_ sender: UIButton) {
         let questionIndex = sender.tag / 10
         let answerIndex = sender.tag % 10
-     
+        
         selectedAnswers[questionIndex] = answerIndex
         
         if let stackView = sender.superview as? UIStackView {
             for button in stackView.arrangedSubviews {
                 if let button = button as? UIButton {
-                    button.layer.borderColor = UIColor.lightGray.cgColor
+                    if let customGray = UIColor(named: "customGray") {
+                        button.layer.borderColor = customGray.cgColor
+                    } else {
+                        button.layer.borderColor = UIColor.lightGray.cgColor
+                    }
+                    
                     button.backgroundColor = UIColor.white
-                    button.setTitleColor(.black, for: .normal)
+                    button.setTitleColor(.customDarkBlue, for: .normal)
                 }
             }
         }
-
-        sender.backgroundColor = UIColor(named: "customDarkBlue")
+        
+        if let customDarkBlue = UIColor(named: "customDarkBlue") {
+            sender.backgroundColor = customDarkBlue
+        } else {
+            sender.backgroundColor = UIColor.blue
+        }
+        
         sender.setTitleColor(.white, for: .normal)
     }
-
+    
     @objc private func handleSubmit() {
         let answeredCount = selectedAnswers.compactMap { $0 }.count
         
@@ -350,13 +348,13 @@ class DetectProblemViewController: UIViewController {
             navigationController?.pushViewController(completeTestVC, animated: true)
         }
     }
-
+    
     private func calculateResult() -> String {
         var countColumn2 = 0
         var countColumn3 = 0
-
-        for answer in selectedAnswers {
         
+        for answer in selectedAnswers {
+            
             guard let answerIndex = answer else { continue }
             if answerIndex == 1 {
                 countColumn2 += 1
@@ -364,7 +362,7 @@ class DetectProblemViewController: UIViewController {
                 countColumn3 += 1
             }
         }
-
+        
         if countColumn2 >= 3 {
             return "Qurudur"
         } else if countColumn3 >= 3 {
@@ -373,6 +371,5 @@ class DetectProblemViewController: UIViewController {
             return "Qarışıqdır"
         }
     }
-
 }
 

@@ -107,8 +107,8 @@ class ProductsViewController: UIViewController
         
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom).offset(12)
-            make.leading.equalTo(view).offset(34)
-            make.trailing.equalTo(view).offset(-34)
+            make.leading.equalTo(view).offset(32)
+            make.trailing.equalTo(view).offset(-32)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
     }
