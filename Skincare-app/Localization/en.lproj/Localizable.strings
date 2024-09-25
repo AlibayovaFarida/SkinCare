@@ -20,6 +20,7 @@
 "surnameTextField" = "Surname";
 "emailTextField" = "Email";
 "passwordTextField" = "Password";
+"confirmPasswordTextField" = "Confirm Password";
 "birthdateTextField" = "Birthdate";
 "day" = "Day";
 "month" = "Month";

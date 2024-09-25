@@ -8,7 +8,7 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-    
+    private let viewModel: RegisterViewModel = RegisterViewModel()
     private let scrollView: UIScrollView = {
         let sv = UIScrollView()
         sv.showsVerticalScrollIndicator = false
@@ -32,7 +32,7 @@ class RegisterViewController: UIViewController {
     private let surnameTextField = CustomTextField(placeholder: NSLocalizedString("surnameTextField", comment: ""), title: NSLocalizedString("surnameTextField", comment: ""), textFieldWidth: (UIScreen.main.bounds.width - (UIScreen.main.bounds.width * 0.16)))
     private let emailTextField = CustomTextField(placeholder: NSLocalizedString("emailTextField", comment: ""), title: NSLocalizedString("emailTextField", comment: ""), textFieldWidth: (UIScreen.main.bounds.width - (UIScreen.main.bounds.width * 0.16)))
     private let passwordTextField = CustomTextField(placeholder: NSLocalizedString("passwordTextField", comment: ""), title: NSLocalizedString("passwordTextField", comment: ""), textFieldWidth: (UIScreen.main.bounds.width - (UIScreen.main.bounds.width * 0.16)))
-    private let passwordTestTextField = CustomTextField(placeholder: NSLocalizedString("passwordTextField", comment: ""), title: NSLocalizedString("passwordTextField", comment: ""), textFieldWidth: (UIScreen.main.bounds.width - (UIScreen.main.bounds.width * 0.16)))
+    private let passwordTestTextField = CustomTextField(placeholder: NSLocalizedString("confirmPasswordTextField", comment: ""), title: NSLocalizedString("confirmPasswordTextField", comment: ""), textFieldWidth: (UIScreen.main.bounds.width - (UIScreen.main.bounds.width * 0.16)))
     
     private let titleBirthDateStackView: UIStackView = {
         let sv = UIStackView()
@@ -198,6 +198,7 @@ class RegisterViewController: UIViewController {
          surnameTextField,
          emailTextField,
          passwordTextField,
+         passwordTestTextField,
          titleBirthDateStackView,
          genderStackView
         ].forEach(formStackView.addArrangedSubview)
@@ -258,7 +259,7 @@ class RegisterViewController: UIViewController {
         submitButton.snp.makeConstraints { make in
             make.top.equalTo(formStackView.snp.bottom).offset(68)
             make.trailing.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview().inset(5)
+            make.bottom.equalToSuperview().inset(35)
             make.width.equalTo(106)
             make.height.equalTo(44)
         }
@@ -270,9 +271,10 @@ class RegisterViewController: UIViewController {
         surnameTextField.textField.addTarget(self, action: #selector(didTapSurnameValidate), for: .editingChanged)
         emailTextField.textField.addTarget(self, action: #selector(didTapEmailValidate), for: .editingChanged)
         passwordTextField.textField.addTarget(self, action: #selector(didTapPasswordValidate), for: .editingChanged)
-        
+        passwordTestTextField.textField.addTarget(self, action: #selector(didTapPasswordTestValidate), for: .editingChanged)
         maleRadioButton.addTarget(self, action: #selector(didTapGenderOption), for: .touchUpInside)
         femaleRadioButton.addTarget(self, action: #selector(didTapGenderOption), for: .touchUpInside)
+        submitButton.addTarget(self, action: #selector(didTapRegisterButton), for: .touchUpInside)
     }
     
     private func setupCustomBackButton() {
@@ -343,6 +345,17 @@ class RegisterViewController: UIViewController {
     }
 
     @objc
+    private func didTapPasswordTestValidate() {
+        if !isValidPassword(password: passwordTestTextField.textField.text ?? "") {
+            UIView.animate(withDuration: 0.2) { [self] in
+                inValidState(textField: passwordTestTextField, errorMessage: "Invalid confirm password")
+            }
+        } else {
+            validState(textField: passwordTestTextField)
+        }
+    }
+    
+    @objc
     private func didTapGenderOption(_ sender: UIButton) {
         switch sender.tag {
         case 1:
@@ -355,7 +368,17 @@ class RegisterViewController: UIViewController {
             break
         }
     }
-    
+    @objc
+    private func didTapRegisterButton(){
+        guard let name = nameTextField.textField.text else {return}
+        guard let surname = nameTextField.textField.text else {return}
+        guard let email = nameTextField.textField.text else {return}
+        guard let password = nameTextField.textField.text else {return}
+        guard let rePassword = nameTextField.textField.text else {return}
+        viewModel.register(name: name, surname: surname, email: email, password: password, rePassword: rePassword) { error in
+            print(error, "Hello error")
+        }
+    }
     func isValidNameSurname(name: String) -> Bool {
         let nameRegex = "^[A-Za-z\\s-]+$"
         let namePredicate = NSPredicate(format: "SELF MATCHES %@", nameRegex)

@@ -20,6 +20,7 @@
 "surnameTextField" = "Soyad";
 "emailTextField" = "Email";
 "passwordTextField" = "Şifrə";
+"confirmPasswordTextField" = "Təsdiq şifrə";
 "birthdateTextField" = "Doğum tarixi";
 "day" = "Gün";
 "month" = "Ay";

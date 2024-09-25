@@ -37,6 +37,7 @@
 		182B5BFE2C60DC8900F7E85D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BFC2C60DC8900F7E85D /* Localizable.strings */; };
 		182EB5572C9CC5EA00C4A40C /* MainProblemCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182EB5562C9CC5EA00C4A40C /* MainProblemCardTableViewCell.swift */; };
 		182EB55A2C9CCAD300C4A40C /* AccordionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182EB5592C9CCAD300C4A40C /* AccordionTableViewCell.swift */; };
+		183CF81D2CA3EF9300D341A7 /* Encodable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CF81C2CA3EF8A00D341A7 /* Encodable+Ext.swift */; };
 		1848393D2C9D8B97000558B2 /* AccordionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848393C2C9D8B97000558B2 /* AccordionCellModel.swift */; };
 		185980882C9441C700455BEB /* SkinProblemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185980872C9441C700455BEB /* SkinProblemsTableViewCell.swift */; };
 		1859808B2C944FF700455BEB /* SkinProblemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859808A2C944FF700455BEB /* SkinProblemCollectionViewCell.swift */; };
@@ -73,8 +74,12 @@
 		18A1EBA92C766B81008AAD5F /* DermatologistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1EBA82C766B81008AAD5F /* DermatologistModel.swift */; };
 		18AD817C2C8F0A6A002A7272 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AD817B2C8F0A6A002A7272 /* ProfileViewController.swift */; };
 		18AD817E2C8F2EFB002A7272 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AD817D2C8F2EFB002A7272 /* UILabel+Ext.swift */; };
+		18BC5C4F2CA1EFA200401955 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC5C4E2CA1EFA200401955 /* RegisterModel.swift */; };
 		18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD65192C63AA250071C597 /* CustomTextField.swift */; };
 		18C53DBA2C6A9346004FA52B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C53DB92C6A9346004FA52B /* HomeViewController.swift */; };
+		18DBDF772CA3394B00A8705A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 18DBDF762CA3394B00A8705A /* Alamofire */; };
+		18DBDF7A2CA33E4C00A8705A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBDF792CA33E4100A8705A /* NetworkManager.swift */; };
+		18DBDF7F2CA3465800A8705A /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBDF7E2CA3465200A8705A /* RegisterService.swift */; };
 		18DE779D2C6DEBFF000B321C /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE779C2C6DEBFE000B321C /* SearchTableViewCell.swift */; };
 		18DE77A02C6DF98E000B321C /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE779F2C6DF98E000B321C /* UIView+Ext.swift */; };
 		18DE77A22C6E0A0F000B321C /* UIResponder+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DE77A12C6E0A0F000B321C /* UIResponder+Ext.swift */; };
@@ -126,6 +131,7 @@
 		182B5BFF2C60DC8C00F7E85D /* az */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = az; path = az.lproj/Localizable.strings; sourceTree = "<group>"; };
 		182EB5562C9CC5EA00C4A40C /* MainProblemCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProblemCardTableViewCell.swift; sourceTree = "<group>"; };
 		182EB5592C9CCAD300C4A40C /* AccordionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionTableViewCell.swift; sourceTree = "<group>"; };
+		183CF81C2CA3EF8A00D341A7 /* Encodable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Ext.swift"; sourceTree = "<group>"; };
 		1848393C2C9D8B97000558B2 /* AccordionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionCellModel.swift; sourceTree = "<group>"; };
 		185980872C9441C700455BEB /* SkinProblemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemsTableViewCell.swift; sourceTree = "<group>"; };
 		1859808A2C944FF700455BEB /* SkinProblemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -162,8 +168,11 @@
 		18A1EBA82C766B81008AAD5F /* DermatologistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DermatologistModel.swift; path = "Skincare-app/Screens/Home/View/Cells/PopularProblems/PopularCollectionCell/DermatologistModel.swift"; sourceTree = SOURCE_ROOT; };
 		18AD817B2C8F0A6A002A7272 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		18AD817D2C8F2EFB002A7272 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
+		18BC5C4E2CA1EFA200401955 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterModel.swift; path = "Skincare-app/Screens/Register/View/RegisterModel.swift"; sourceTree = SOURCE_ROOT; };
 		18BD65192C63AA250071C597 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		18C53DB92C6A9346004FA52B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "Skincare-app/Screens/Login/View/HomeViewController.swift"; sourceTree = SOURCE_ROOT; };
+		18DBDF792CA33E4100A8705A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		18DBDF7E2CA3465200A8705A /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		18DE779C2C6DEBFE000B321C /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		18DE779F2C6DF98E000B321C /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		18DE77A12C6E0A0F000B321C /* UIResponder+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Ext.swift"; sourceTree = "<group>"; };
@@ -210,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0DACAC52CA0741F00A219EF /* MessageKit in Frameworks */,
+				18DBDF772CA3394B00A8705A /* Alamofire in Frameworks */,
 				182B5BC52C60AB3300F7E85D /* Kingfisher in Frameworks */,
 				182B5BC02C60AAC800F7E85D /* SnapKit in Frameworks */,
 			);
@@ -269,6 +279,8 @@
 		182B5BA92C60A9E900F7E85D /* Skincare-app */ = {
 			isa = PBXGroup;
 			children = (
+				18DBDF7B2CA345A200A8705A /* Services */,
+				18DBDF782CA339A400A8705A /* NetworkLayer */,
 				18C53DBB2C6A936A004FA52B /* CustomTabbar */,
 				18ED7A012C67DEB8000F03C3 /* Extensions */,
 				18936EC52C62B404006A8683 /* Components */,
@@ -666,6 +678,38 @@
 			path = CustomTabbar;
 			sourceTree = "<group>";
 		};
+		18DBDF782CA339A400A8705A /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				18DBDF792CA33E4100A8705A /* NetworkManager.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		18DBDF7B2CA345A200A8705A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				18DBDF7C2CA345D000A8705A /* Register */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		18DBDF7C2CA345D000A8705A /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				18DBDF7D2CA3464800A8705A /* Entities */,
+				18DBDF7E2CA3465200A8705A /* RegisterService.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		18DBDF7D2CA3464800A8705A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		18DE779E2C6DEC04000B321C /* SearchCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -677,6 +721,7 @@
 		18ED7A012C67DEB8000F03C3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				183CF81C2CA3EF8A00D341A7 /* Encodable+Ext.swift */,
 				18ED7A022C67DEC8000F03C3 /* Cell+Ext.swift */,
 				18DE779F2C6DF98E000B321C /* UIView+Ext.swift */,
 				18DE77A12C6E0A0F000B321C /* UIResponder+Ext.swift */,
@@ -714,6 +759,7 @@
 		18ED7A0C2C67DF92000F03C3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18BC5C4E2CA1EFA200401955 /* RegisterModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -866,6 +912,7 @@
 				182B5BBF2C60AAC800F7E85D /* SnapKit */,
 				182B5BC42C60AB3300F7E85D /* Kingfisher */,
 				F0DACAC42CA0741F00A219EF /* MessageKit */,
+				18DBDF762CA3394B00A8705A /* Alamofire */,
 			);
 			productName = "Skincare-app";
 			productReference = 182B5BA72C60A9E900F7E85D /* Skincare-app.app */;
@@ -900,6 +947,7 @@
 				182B5BBE2C60AAC800F7E85D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				182B5BC32C60AB3300F7E85D /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				F0DACAC32CA0741F00A219EF /* XCRemoteSwiftPackageReference "MessageKit" */,
+				18DBDF752CA3394B00A8705A /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 182B5BA82C60A9E900F7E85D /* Products */;
 			projectDirPath = "";
@@ -992,6 +1040,7 @@
 				F0DD68F42C68CF0700C11ECF /* OnboardingRegisterViewController.swift in Sources */,
 				1886EB5F2C776E6200EBAD95 /* ConsultationFilterItemModel.swift in Sources */,
 				182B5BAD2C60A9E900F7E85D /* SceneDelegate.swift in Sources */,
+				18DBDF7A2CA33E4C00A8705A /* NetworkManager.swift in Sources */,
 				18AD817E2C8F2EFB002A7272 /* UILabel+Ext.swift in Sources */,
 				1886EB5D2C77683A00EBAD95 /* ConsultationFilterCollectionViewCell.swift in Sources */,
 				1884E9AC2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift in Sources */,
@@ -1002,10 +1051,13 @@
 				188931D42C7C6B3400088C9E /* FilterItemCollectionViewCell.swift in Sources */,
 				F0EAC6DD2C674A10006DE3E1 /* TitleBgColorButton.swift in Sources */,
 				18DE77A02C6DF98E000B321C /* UIView+Ext.swift in Sources */,
+				183CF81D2CA3EF9300D341A7 /* Encodable+Ext.swift in Sources */,
 				1883F8462C6B3B44005ED089 /* ProductsViewController.swift in Sources */,
 				1884E9A92C6C89BC00E40A3D /* HeaderTableViewCell.swift in Sources */,
 				18AD817C2C8F0A6A002A7272 /* ProfileViewController.swift in Sources */,
 				F0D38DD82C69FDA3007E35ED /* DetectProblemViewController.swift in Sources */,
+				18DBDF7F2CA3465800A8705A /* RegisterService.swift in Sources */,
+				18BC5C4F2CA1EFA200401955 /* RegisterModel.swift in Sources */,
 				1859808D2C94577000455BEB /* SkinProblemItemModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1258,6 +1310,14 @@
 				minimumVersion = 7.12.0;
 			};
 		};
+		18DBDF752CA3394B00A8705A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 		F0DACAC32CA0741F00A219EF /* XCRemoteSwiftPackageReference "MessageKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MessageKit/MessageKit";
@@ -1278,6 +1338,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 182B5BC32C60AB3300F7E85D /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		18DBDF762CA3394B00A8705A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18DBDF752CA3394B00A8705A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		F0DACAC42CA0741F00A219EF /* MessageKit */ = {
 			isa = XCSwiftPackageProductDependency;
