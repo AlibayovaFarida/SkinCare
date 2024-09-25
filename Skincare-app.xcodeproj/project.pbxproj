@@ -90,7 +90,6 @@
 		F0273E392C9603810069EDE7 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0273E382C9603810069EDE7 /* ProfileTableViewCell.swift */; };
 		F05804312C7518FA003AE03E /* ConsultationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05804302C7518FA003AE03E /* ConsultationCollectionViewCell.swift */; };
 		F0D38DD82C69FDA3007E35ED /* DetectProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D38DD72C69FDA3007E35ED /* DetectProblemViewController.swift */; };
-		F0D38DDA2C69FFEA007E35ED /* AnswerBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D38DD92C69FFEA007E35ED /* AnswerBoxView.swift */; };
 		F0DACAC52CA0741F00A219EF /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0DACAC42CA0741F00A219EF /* MessageKit */; };
 		F0DD68EE2C68CAF200C11ECF /* OnboardingLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DD68ED2C68CAF200C11ECF /* OnboardingLoginViewController.swift */; };
 		F0DD68F42C68CF0700C11ECF /* OnboardingRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DD68F32C68CF0700C11ECF /* OnboardingRegisterViewController.swift */; };
@@ -183,7 +182,6 @@
 		F0273E382C9603810069EDE7 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		F05804302C7518FA003AE03E /* ConsultationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationCollectionViewCell.swift; sourceTree = "<group>"; };
 		F0D38DD72C69FDA3007E35ED /* DetectProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectProblemViewController.swift; sourceTree = "<group>"; };
-		F0D38DD92C69FFEA007E35ED /* AnswerBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerBoxView.swift; sourceTree = "<group>"; };
 		F0DD68ED2C68CAF200C11ECF /* OnboardingLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLoginViewController.swift; sourceTree = "<group>"; };
 		F0DD68F32C68CF0700C11ECF /* OnboardingRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRegisterViewController.swift; sourceTree = "<group>"; };
 		F0E07E282C6A453D00BD410A /* CompleteTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTestViewController.swift; sourceTree = "<group>"; };
@@ -599,7 +597,6 @@
 				18BD65192C63AA250071C597 /* CustomTextField.swift */,
 				F0EAC6DC2C674A10006DE3E1 /* TitleBgColorButton.swift */,
 				F0EAC6DE2C674A2A006DE3E1 /* OnboardingImageView.swift */,
-				F0D38DD92C69FFEA007E35ED /* AnswerBoxView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1024,7 +1021,6 @@
 				18C53DBA2C6A9346004FA52B /* HomeViewController.swift in Sources */,
 				1848393D2C9D8B97000558B2 /* AccordionCellModel.swift in Sources */,
 				1886EB5A2C77515D00EBAD95 /* ConsultationFilterViewController.swift in Sources */,
-				F0D38DDA2C69FFEA007E35ED /* AnswerBoxView.swift in Sources */,
 				1883F84A2C6B3B62005ED089 /* ConsultationViewController.swift in Sources */,
 				182B5BAB2C60A9E900F7E85D /* AppDelegate.swift in Sources */,
 				182EB55A2C9CCAD300C4A40C /* AccordionTableViewCell.swift in Sources */,

@@ -1,8 +1,8 @@
 //
 //  CompleteTestViewController.swift
-//  Skincare-app
+//  Questionnaire
 //
-//  Created by Umman on 12.08.24.
+//  Created by Umman on 25.09.24.
 //
 
 import UIKit
@@ -11,6 +11,7 @@ import SnapKit
 class CompleteTestViewController: UIViewController {
     
     private let stackView = UIStackView()
+    var resultText: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +71,6 @@ class CompleteTestViewController: UIViewController {
         }
     }
 
-    
     private func setupStackView() {
         configureStackView()
         let containerView = configureContainerView()
@@ -176,8 +176,8 @@ class CompleteTestViewController: UIViewController {
         }
         
         iconLabelStackViewBottom.snp.makeConstraints { make in
-            make.edges.equalTo(backgroundView).inset(10)
-            make.height.equalTo(55)
+            make.edges.equalTo(backgroundView).inset(15)
+            make.height.equalTo(39)
         }
         
         let spacerView = UIView()
@@ -196,35 +196,45 @@ class CompleteTestViewController: UIViewController {
     private func configureIconLabelStackViewBottom() -> UIStackView {
         let iconLabelStackViewBottom = UIStackView()
         iconLabelStackViewBottom.axis = .horizontal
-        iconLabelStackViewBottom.spacing = 10
+        iconLabelStackViewBottom.spacing = 15
         
-        let iconImageViewBottom = UIImageView(image: UIImage(named: "OilyFace"))
-        iconImageViewBottom.contentMode = .scaleAspectFit
+        let skinTypeImages: [String: String] = [
+            "Yağlıdır": "OilyFace",
+            "Qurudur": "DryFace",
+            "Qarışıqdır": "CombinedFace"
+        ]
+        
+        let imageName = skinTypeImages[resultText ?? ""] ?? "DefaultImage"
+        
+        let iconImageViewBottom = UIImageView(image: UIImage(named: imageName))
+        iconImageViewBottom.contentMode = .scaleAspectFill
         iconLabelStackViewBottom.addArrangedSubview(iconImageViewBottom)
         
         let bottomLabelTwo = UILabel()
         bottomLabelTwo.textAlignment = .left
         iconLabelStackViewBottom.addArrangedSubview(bottomLabelTwo)
         
-        updateBottomLabel(with: "Yağlıdır", label: bottomLabelTwo)
+        if let skinType = resultText {
+            updateBottomLabel(with: skinType, label: bottomLabelTwo)
+        }
         
         return iconLabelStackViewBottom
     }
 
     private func updateBottomLabel(with dynamicText: String, label: UILabel) {
-        let fullText = "Sizin dəri tipiniz \(dynamicText)"
-        let attributedString = NSMutableAttributedString(string: fullText)
-        
-        let normalFont = UIFont(name: "Montserrat-Medium", size: 16)!
-        let highlightedFont = UIFont(name: "Montserrat-Bold", size: 16)!
-        
-        let dynamicTextRange = (fullText as NSString).range(of: dynamicText)
-        
-        attributedString.addAttribute(.font, value: normalFont, range: NSRange(location: 0, length: (fullText as NSString).length - dynamicText.count))
-        attributedString.addAttribute(.font, value: highlightedFont, range: dynamicTextRange)
-        
-        label.attributedText = attributedString
-    }
+            let fullText = "Sizin dəri tipiniz \(dynamicText)"
+            let attributedString = NSMutableAttributedString(string: fullText)
+            
+            let normalFont = UIFont(name: "Montserrat-Medium", size: 16)!
+            let highlightedFont = UIFont(name: "Montserrat-Bold", size: 16)!
+            
+            let dynamicTextRange = (fullText as NSString).range(of: dynamicText)
+            
+            attributedString.addAttribute(.font, value: normalFont, range: NSRange(location: 0, length: (fullText as NSString).length - dynamicText.count))
+            attributedString.addAttribute(.font, value: highlightedFont, range: dynamicTextRange)
+            
+            label.attributedText = attributedString
+        }
     
     @objc private func returnHomeButtonTapped() {
         let homeVC = CustomTabBarController()
