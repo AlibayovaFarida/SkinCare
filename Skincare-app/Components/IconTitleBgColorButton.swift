@@ -12,7 +12,7 @@ import SnapKit
 class IconTitleBgColorButton: UIView {
     var action: (() -> Void)?
     
-    private let bgView: UIView = {
+    let bgView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 16
         view.isUserInteractionEnabled = true

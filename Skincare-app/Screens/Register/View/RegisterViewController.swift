@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class RegisterViewController: UIViewController {
     private let viewModel: RegisterViewModel = RegisterViewModel()
@@ -185,6 +186,9 @@ class RegisterViewController: UIViewController {
         setupCustomBackButton()
         setupUI()
         setupActions()
+        viewModel.onSuccess = { [weak self] in
+            self?.presentOTPViewController()
+        }
     }
     
     private func setupUI() {
@@ -371,14 +375,20 @@ class RegisterViewController: UIViewController {
     @objc
     private func didTapRegisterButton(){
         guard let name = nameTextField.textField.text else {return}
-        guard let surname = nameTextField.textField.text else {return}
-        guard let email = nameTextField.textField.text else {return}
-        guard let password = nameTextField.textField.text else {return}
-        guard let rePassword = nameTextField.textField.text else {return}
+        guard let surname = surnameTextField.textField.text else {return}
+        guard let email = emailTextField.textField.text else {return}
+        guard let password = passwordTextField.textField.text else {return}
+        guard let rePassword = passwordTestTextField.textField.text else {return}
         viewModel.register(name: name, surname: surname, email: email, password: password, rePassword: rePassword) { error in
-            print(error, "Hello error")
+            print(error, "Hello Register error")
         }
+
     }
+    private func presentOTPViewController() {
+           let otpVC = OTPViewController()
+           otpVC.sheetPresentationController?.detents = [.medium()]
+           present(otpVC, animated: true, completion: nil)
+       }
     func isValidNameSurname(name: String) -> Bool {
         let nameRegex = "^[A-Za-z\\s-]+$"
         let namePredicate = NSPredicate(format: "SELF MATCHES %@", nameRegex)

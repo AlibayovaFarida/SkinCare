@@ -8,38 +8,53 @@
 import Alamofire
 import Foundation
 
-struct CustomNetworkError: Error, Decodable {
-    let code: String
-    let message: String
+enum CustomNetworkErrorEnum: Error {
+    case invalidURL
+    case noData
+    case decodingError
+    case unexpectedResponse
 }
 
 class NetworkManager {
     static let shared = NetworkManager()
     
-    private init(){}
-    
-    func fetch<T: Decodable>(url: String, method: HTTPMethod = .get, bodyParametrs: Parameters? = nil, headers: HTTPHeaders, completion: @escaping (Result<T, CustomNetworkError>) -> Void){
-        guard let url = URL(string: url) else {
+    private init() {}
+
+    func fetch<T: Decodable>(url: String, method: HTTPMethod, parameters: Parameters? = nil, encoding: ParameterEncoding = JSONEncoding.default, headers: HTTPHeaders? = nil, completion: @escaping (Result<T, Error>) -> Void) {
+        guard let requestURL = URL(string: url) else {
+            completion(.failure(CustomNetworkErrorEnum.invalidURL))
             return
         }
-        
-        AF.request(url, method: method, parameters: bodyParametrs, headers: headers).validate().responseDecodable(of: T.self) { response in
-            switch response.result {
-            case .success(let data):
-                completion(.success(data))
-            case .failure:
-                guard let data = response.data else {
-                    print("Response data is nil")
-                    return
-                }
-        
-                do{
-                    let errorModel = try JSONDecoder().decode(CustomNetworkError.self, from: data)
-                    completion(.failure(errorModel))
-                } catch{
-                    print("Error model decoding failed", error)
+
+        AF.request(requestURL, method: method, parameters: parameters, encoding: encoding, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: T.self) { response in
+                switch response.result {
+                case .success(let data):
+                    completion(.success(data))
+                case .failure(let error):
+                    print("Request failed with error: \(error)")
+                    completion(.failure(error))
                 }
             }
+    }
+
+    func fetchWithoutResponse(url: String, method: HTTPMethod, parameters: Parameters? = nil, encoding: ParameterEncoding = JSONEncoding.default, headers: HTTPHeaders? = nil, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard let requestURL = URL(string: url) else {
+            completion(.failure(CustomNetworkErrorEnum.invalidURL))
+            return
         }
+
+        AF.request(requestURL, method: method, parameters: parameters, encoding: encoding, headers: headers)
+            .validate(statusCode: 200..<300)
+            .response { response in
+                switch response.result {
+                case .success:
+                    completion(.success(()))
+                case .failure(let error):
+                    print("Request failed with error: \(error)")
+                    completion(.failure(error))
+                }
+            }
     }
 }

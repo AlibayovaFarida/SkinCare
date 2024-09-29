@@ -14,6 +14,6 @@ struct RegisterModel{
         let rePassword: String
     }
     struct Response: Decodable{
-        let code: Int
+        
     }
 }
