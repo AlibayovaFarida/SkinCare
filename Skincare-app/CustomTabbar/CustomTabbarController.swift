@@ -94,9 +94,13 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         guard let itemView = gesture.view else { return }
         
         if let item = tabBar.items?.first(where: { $0.value(forKey: "view") as? UIView == itemView }) {
-            self.selectedIndex = tabBar.items?.firstIndex(of: item) ?? 0
-            currentlySelectedItem = item
+            let index = tabBar.items?.firstIndex(of: item) ?? 0
+            let navControllers = [homeNavVc, productsNavVc, consultationNavVc, profileNavVc]
+            navControllers[index].popToRootViewController(animated: true)
             
+            self.selectedIndex = index
+            currentlySelectedItem = item
+
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 if let itemView = item.value(forKey: "view") as? UIView,
                    let imageView = itemView.subviews.first(where: { $0 is UIImageView }) as? UIImageView {

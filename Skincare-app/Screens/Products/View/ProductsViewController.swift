@@ -125,6 +125,11 @@ extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDe
         cell.configure(item)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = ProductDetailsViewController(problemName: allItems[indexPath.row].title)
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension ProductsViewController: UICollectionViewDelegateFlowLayout {

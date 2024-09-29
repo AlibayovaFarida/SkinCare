@@ -58,7 +58,7 @@ class SkinProblemDetailsViewController: UIViewController {
         .init(question: "Ekzemanın əlamətləri:", answer: "Dəridə qızartı, şiddətli qaşınma, quruluq və qabıqlanma əsas əlamətlərdir. Bəzən sulu qabarcıqlar və ya çatlar da yaranır."),
         .init(question: "Ekzema necə müalicə olunur?", answer: "Ekzemanın müalicəsi üçün iltihab əleyhinə kremlər, dərini nəmləndirən məhsullar və antihistaminiklər istifadə edilir. Qaşınmanın qarşısını almaq və dərini qıcıqlandıran maddələrdən uzaq durmaq vacibdir."),
         .init(question: "Ekzemanın qarşısını necə almaq olar?", answer: "Dərini mütəmadi olaraq nəmləndirmək, qaşınmaya səbəb olan qıcıqlandırıcılardan qaçmaq və yumşaq təmizləyicilərdən istifadə ekzemanın şiddətlənməsinin qarşısını alır."),
-        ]
+    ]
     
     let seboreikData: [AccordionCellModel] = [
         .init(question: "Seboreik dermatit nədir?", answer: "Seboreik dermatit, saç dərisində və üz nahiyəsində yağlı və qızarmış qabıqlarla müşayiət olunan xroniki dəri xəstəliyidir. Bu xəstəlik xüsusilə yağlı dəriyə sahib insanlarda daha çox müşahidə olunur və qızartı, qaşınma və yağlılıq ilə xarakterizə edilir."),
@@ -71,7 +71,7 @@ class SkinProblemDetailsViewController: UIViewController {
         .init(question: "Seboreik dermatitin əlamətləri:", answer: "Dəridə qızarmış, yağlı və qabıqlanmış nahiyələr, şiddətli qaşınma və dərinin yağlı olması əsas əlamətlərdir. Körpələrdə baş dərisində qalın, sarımtıl qabıqlar müşahidə olunur."),
         .init(question: "Seboreik dermatit necə müalicə olunur?", answer: "Seboreik dermatitin müalicəsi üçün antifungal şampunlar, kortikosteroidlər və iltihab əleyhinə dərmanlar istifadə olunur. Dərinin müntəzəm təmizlənməsi və stressdən uzaq durmaq xəstəliyin şiddətini azalda bilər."),
         .init(question: "Seboreik dermatitin qarşısını necə almaq olar?", answer: "Seboreik dermatitin qarşısını almaq üçün düzgün dəri təmizliyi, yağlı dəriyə uyğun məhsullardan istifadə"),
-        ]
+    ]
     
     let cancerData: [AccordionCellModel] = [
         .init(question: "Dəri xərçəngi nədir?", answer: "Dəri xərçəngi, dəridəki hüceyrələrin nəzarətsiz şəkildə böyüməsi nəticəsində yaranan bir xəstəlikdir. Dəri xərçəngi əsasən dərinin günəşə məruz qalan hissələrində inkişaf edir, lakin bədənin hər hansı bir nahiyəsində də yarana bilər. Əsas növləri bazal hüceyrəli, yastı hüceyrəli və melanomadır."),
@@ -90,7 +90,7 @@ class SkinProblemDetailsViewController: UIViewController {
         """),
         .init(question: "Dəri xərçəngi necə müalicə olunur?", answer: "Dəri xərçənginin müalicəsi xərçəngin növü və mərhələsinə görə dəyişir. Əsas müalicə üsulları cərrahiyyə (şişin çıxarılması), radiasiya terapiyası və kimyəvi terapiyadır. Erkən mərhələdə diaqnoz qoyulduqda, müalicə çox vaxt uğurlu olur."),
         .init(question: "Dəri xərçənginin qarşısını necə almaq olar?", answer: "Dəri xərçənginin qarşısını almaq üçün günəşdən qoruyucu kremlərdən istifadə edilməli, günəşin ən intensiv olduğu saatlarda açıq havada olmaqdan çəkinməli və solaryumdan istifadə edilməməlidir. Həmçinin, dəridəki hər hansı dəyişikliklər mütəmadi olaraq yoxlanılmalı və şübhəli hallarda dermatoloqa müraciət edilməlidir."),
-        ]
+    ]
     
     let rednessData: [AccordionCellModel] = [
         .init(question: "Qızartı (Eritema) nədir?", answer: "Eritema, dəri səthində yaranan qızartıdır və müxtəlif xəstəliklər, iltihablar və ya allergik reaksiyalar nəticəsində meydana gələ bilər. Qızartı adətən dəridə qan damarlarının genişlənməsi və dərinin iltihablanması ilə bağlıdır."),
@@ -111,7 +111,7 @@ class SkinProblemDetailsViewController: UIViewController {
         .init(question: "Qızartının əlamətləri:", answer: "Dəridə qızartı, bəzən yanma və ya qaşınma hissi yarana bilər. Qızartı çox vaxt lokal olaraq müşahidə edilir, lakin bəzi hallarda bütün bədən səthinə yayıla bilər."),
         .init(question: "Qızartı necə müalicə olunur?", answer: "Müalicə qızartının səbəbindən asılıdır. Allergik reaksiya və ya iltihab nəticəsində yaranan qızartılar üçün antihistaminlər və ya iltihab əleyhinə dərmanlar istifadə edilə bilər. Günəş yanığı və ya istilik nəticəsində yaranan qızartı üçün isə soyuducu kremlər və günəşdən qorunmaq tövsiyə edilir."),
         .init(question: "Qızartının qarşısını necə almaq olar?", answer: "Qızartının qarşısını almaq üçün dəriyə qulluq etmək, allergiyaya səbəb olan maddələrdən qaçmaq və günəşdən qoruyucu vasitələrdən istifadə etmək vacibdir. Stressin idarə olunması və qıcıqlandırıcı məhsullardan uzaq durmaq da önəmlidir."),
-        ]
+    ]
     
     let vitiligoData: [AccordionCellModel] = [
         .init(question: "Vitiliqo nədir?", answer: "Vitiliqo, dəridəki melanositlərin (piqment istehsal edən hüceyrələrin) zədələnməsi nəticəsində yaranan bir xəstəlikdir və bu, dəridə açıq rəngli ləkələrin yaranmasına səbəb olur. Bu ləkələr bədənin müxtəlif hissələrində görünə bilər və tədricən genişlənə bilər."),
@@ -124,7 +124,49 @@ class SkinProblemDetailsViewController: UIViewController {
         .init(question: "Vitiliqonun yaranma səbəbləri:", answer: "Vitiliqonun dəqiq səbəbi məlum deyil, lakin bunun otoimmün xəstəlik olduğu düşünülür. Bədəndə immun sistem melanositlərə hücum edərək onları məhv edir. Genetik meyllilik, stres və müəyyən xəstəliklər də vitiliqonun yaranmasına təsir göstərə bilər."),
         .init(question: "Vitiliqonun əlamətləri:", answer: "Vitiliqonun tam müalicəsi yoxdur, lakin bir sıra müalicə üsulları ləkələrin görünüşünü azaltmağa kömək edir. Topikal steroid kremlər, fototerapiya (UVB şüaları ilə müalicə), immunosupressiv dərmanlar və lazer terapiyası istifadə edilə bilər. Müalicə vitiliqonun yayılmasını yavaşlatmağa və piqmentin bərpasına kömək edə bilər."),
         .init(question: "Vitiliqonun qarşısını necə almaq olar?", answer: "Vitiliqonun qarşısını almağın konkret yolu yoxdur, lakin stresin idarə edilməsi və dərinin günəşdən qorunması əhəmiyyətli faktorlardır. Dərini qoruyucu kremlər istifadə edərək piqmentsiz bölgələri UV şüalarından qorumaq da vacibdir."),
-        ]
+    ]
+    
+    private var problemDescriptionData: DescriptionModel?
+    
+    let rosaceaDescription = DescriptionModel(
+        imageName: "rosacea",
+        description: "Üzdə damar genişlənmələri və iltihablanma nəticəsində qızartı, həssaslıq və iltihablı sızanaqlar yaranır."
+    )
+    
+    let acneDescription = DescriptionModel(
+        imageName: "acne-detail",
+        description: "Üzdə yağ və ölü dəri hüceyrələrinin tük follikullarını tıxaması nəticəsində sızanaqlar, qara nöqtələr və ya kistlər yaranır."
+    )
+    
+    let melazmaDescription = DescriptionModel(
+        imageName: "melazma-cropped",
+        description: "Günəş şüaları və hormonal dəyişikliklər səbəbindən üzdə qeyri-bərabər qəhvəyi və ya boz rəngli ləkələr yaranır."
+    )
+    
+    let ekzemaDescription = DescriptionModel(
+        imageName: "ekzema-cropped",
+        description: "Dərinin iltihabı nəticəsində qaşınma, qızartı və quru ləkələr yaranır."
+    )
+    
+    let seboreikDescription = DescriptionModel(
+        imageName: "seboreik-cropped",
+        description: "Dərinin yağı çox istehsal etməsi nəticəsində üzdə, xüsusilə burun və alın bölgəsində qaşınan, qabıq verən sarımtıl və ya qırmızı ləkələr yaranır."
+    )
+    
+    let cancerDescription = DescriptionModel(
+        imageName: "skinCancer-cropped",
+        description: "Dərinin hüceyrələrində genetik dəyişikliklər nəticəsində qeyri-adi ləkələr, yaralar və ya dərinin rəngində dəyişikliklər baş verir."
+    )
+    
+    let rednessDescription = DescriptionModel(
+        imageName: "redSkin-cropped",
+        description: "Dərinin iltihabı və ya irritasiya nəticəsində üzdə qızarmış bölgələr meydana gəlir."
+    )
+    
+    let vitiligoDescription = DescriptionModel(
+        imageName: "Vitiligo-cropped",
+        description: "Dərinin müəyyən bölgələrində piqment itkisi nəticəsində ağ ləkələr yaranır."
+    )
     
     private let tableView: UITableView = {
         let tv = UITableView()
@@ -179,29 +221,37 @@ class SkinProblemDetailsViewController: UIViewController {
     }
     
     private func setupData(for problem: String?) {
-            guard let problem = problem else { return }
-
-            switch problem {
-            case "Rosacea":
-                datas = rosaceaData
-            case "Akne":
-                datas = acneData
-            case "Melazma":
-                datas = melazmaData
-            case "Ekzema":
-                datas = ekzemaData
-            case "Seboreik":
-                datas = seboreikData
-            case "Dəri xərçəngi":
-                datas = cancerData
-            case "Qızartı":
-                datas = rednessData
-            case "Vitiliqo":
-                datas = vitiligoData
-            default:
-                break
-            }
+        guard let problem = problem else { return }
+        
+        switch problem {
+        case "Rosacea":
+            datas = rosaceaData
+            problemDescriptionData = rosaceaDescription
+        case "Akne":
+            datas = acneData
+            problemDescriptionData = acneDescription
+        case "Melazma":
+            datas = melazmaData
+            problemDescriptionData = melazmaDescription
+        case "Ekzema":
+            datas = ekzemaData
+            problemDescriptionData = ekzemaDescription
+        case "Seboreik":
+            datas = seboreikData
+            problemDescriptionData = seboreikDescription
+        case "Dəri xərçəngi":
+            datas = cancerData
+            problemDescriptionData = cancerDescription
+        case "Qızartı":
+            datas = rednessData
+            problemDescriptionData = rednessDescription
+        case "Vitiliqo":
+            datas = vitiligoData
+            problemDescriptionData = vitiligoDescription
+        default:
+            break
         }
+    }
 }
 extension SkinProblemDetailsViewController: UITableViewDataSource, UITableViewDelegate, AccordionTableViewCellDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -210,6 +260,10 @@ extension SkinProblemDetailsViewController: UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: MainProblemCardTableViewCell.identifier) as! MainProblemCardTableViewCell
+            
+            if let descriptionData = problemDescriptionData {
+                cell.configure(with: descriptionData)
+            }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: AccordionTableViewCell.identifier) as! AccordionTableViewCell
@@ -218,9 +272,10 @@ extension SkinProblemDetailsViewController: UITableViewDataSource, UITableViewDe
             return cell
         }
     }
+    
     func didTapAccordionButton(in cell: AccordionTableViewCell) {
         guard tableView.indexPath(for: cell) != nil else { return }
-            
+        
         tableView.beginUpdates()
         tableView.endUpdates()
     }
