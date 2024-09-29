@@ -31,16 +31,15 @@ class MainProblemCardTableViewCell: UITableViewCell {
     }()
     private let problemImageView: UIImageView = {
         let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
         iv.layer.cornerRadius = 16
         iv.clipsToBounds = true
-        iv.image = UIImage(named: "acne-detail")
         return iv
     }()
     private let problemDescriptionLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-Medium", size: 13)
         lb.textColor = UIColor(named: "customDarkBlue")
-        lb.text = "Üzdə yağ və ölü dəri hüceyrələrinin tük follikullarını tıxaması nəticəsində sızanaqlar, qara nöqtələr və ya kistlər yaranır."
         lb.numberOfLines = 0
         lb.setLineHeight(18)
         return lb
@@ -51,6 +50,11 @@ class MainProblemCardTableViewCell: UITableViewCell {
         selectionStyle = .none
         setupUI()
     }
+    
+    func configure(with model: DescriptionModel) {
+            problemImageView.image = UIImage(named: model.imageName)
+            problemDescriptionLabel.text = model.description
+        }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

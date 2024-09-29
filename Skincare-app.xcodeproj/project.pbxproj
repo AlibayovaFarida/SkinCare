@@ -94,6 +94,7 @@
 		F0273E392C9603810069EDE7 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0273E382C9603810069EDE7 /* ProfileTableViewCell.swift */; };
 		F05804312C7518FA003AE03E /* ConsultationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05804302C7518FA003AE03E /* ConsultationCollectionViewCell.swift */; };
 		F0D38DD82C69FDA3007E35ED /* DetectProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D38DD72C69FDA3007E35ED /* DetectProblemViewController.swift */; };
+		F0D635B12CA9E71A0047EB2B /* ProblemDescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D635B02CA9E71A0047EB2B /* ProblemDescriptionModel.swift */; };
 		F0DACAC52CA0741F00A219EF /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0DACAC42CA0741F00A219EF /* MessageKit */; };
 		F0DD68EE2C68CAF200C11ECF /* OnboardingLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DD68ED2C68CAF200C11ECF /* OnboardingLoginViewController.swift */; };
 		F0DD68F42C68CF0700C11ECF /* OnboardingRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DD68F32C68CF0700C11ECF /* OnboardingRegisterViewController.swift */; };
@@ -190,6 +191,7 @@
 		F0273E382C9603810069EDE7 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		F05804302C7518FA003AE03E /* ConsultationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationCollectionViewCell.swift; sourceTree = "<group>"; };
 		F0D38DD72C69FDA3007E35ED /* DetectProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectProblemViewController.swift; sourceTree = "<group>"; };
+		F0D635B02CA9E71A0047EB2B /* ProblemDescriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemDescriptionModel.swift; sourceTree = "<group>"; };
 		F0DD68ED2C68CAF200C11ECF /* OnboardingLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLoginViewController.swift; sourceTree = "<group>"; };
 		F0DD68F32C68CF0700C11ECF /* OnboardingRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRegisterViewController.swift; sourceTree = "<group>"; };
 		F0E07E282C6A453D00BD410A /* CompleteTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTestViewController.swift; sourceTree = "<group>"; };
@@ -212,11 +214,19 @@
 			);
 			target = 182B5BA62C60A9E900F7E85D /* Skincare-app */;
 		};
+		F0D635B52CA9FCF60047EB2B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ProductDetailsViewController.swift,
+			);
+			target = 182B5BA62C60A9E900F7E85D /* Skincare-app */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F020F68C2C96312700058F37 /* Info */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (F020F6902C96314900058F37 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Info; sourceTree = "<group>"; };
 		F020F6912C963F0A00058F37 /* MoreSkinProblems */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (F020F6952C963F1800058F37 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = MoreSkinProblems; sourceTree = "<group>"; };
+		F0D635B42CA9FCE90047EB2B /* ProductDetails */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (F0D635B52CA9FCF60047EB2B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ProductDetails; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +370,7 @@
 				186550672C9C2C6A003C002A /* SkinProblemDetails */,
 				F020F6912C963F0A00058F37 /* MoreSkinProblems */,
 				F020F68C2C96312700058F37 /* Info */,
+				F0D635B42CA9FCE90047EB2B /* ProductDetails */,
 				18AD81772C8F0834002A7272 /* Profile */,
 				1883F83B2C6B3AF4005ED089 /* Consultation */,
 				1883F8392C6B3AD3005ED089 /* Products */,
@@ -396,6 +407,7 @@
 			children = (
 				182EB5592C9CCAD300C4A40C /* AccordionTableViewCell.swift */,
 				1848393C2C9D8B97000558B2 /* AccordionCellModel.swift */,
+				F0D635B02CA9E71A0047EB2B /* ProblemDescriptionModel.swift */,
 			);
 			path = AccordionCell;
 			sourceTree = "<group>";
@@ -1076,6 +1088,7 @@
 				18DE77A22C6E0A0F000B321C /* UIResponder+Ext.swift in Sources */,
 				1859808B2C944FF700455BEB /* SkinProblemCollectionViewCell.swift in Sources */,
 				182EB5572C9CC5EA00C4A40C /* MainProblemCardTableViewCell.swift in Sources */,
+				F0D635B12CA9E71A0047EB2B /* ProblemDescriptionModel.swift in Sources */,
 				F0DD68EE2C68CAF200C11ECF /* OnboardingLoginViewController.swift in Sources */,
 				F0DD68F42C68CF0700C11ECF /* OnboardingRegisterViewController.swift in Sources */,
 				1886EB5F2C776E6200EBAD95 /* ConsultationFilterItemModel.swift in Sources */,
