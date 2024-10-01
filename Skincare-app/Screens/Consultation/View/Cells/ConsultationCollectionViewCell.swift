@@ -185,6 +185,20 @@ class ConsultationCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        setupTapGesture()
+    }
+    
+    private func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleBottomStackViewTap))
+        bottomStackView.addGestureRecognizer(tapGesture)
+        bottomStackView.isUserInteractionEnabled = true
+    }
+
+    @objc private func handleBottomStackViewTap() {
+        if let viewController = findViewController() {
+            let nextViewController = ChatViewController()
+            viewController.navigationController?.pushViewController(nextViewController, animated: true)
+        }
     }
     
     required init?(coder: NSCoder) {

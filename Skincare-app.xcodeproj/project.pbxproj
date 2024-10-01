@@ -101,6 +101,7 @@
 		F0E07E292C6A453D00BD410A /* CompleteTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E07E282C6A453D00BD410A /* CompleteTestViewController.swift */; };
 		F0EAC6DD2C674A10006DE3E1 /* TitleBgColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EAC6DC2C674A10006DE3E1 /* TitleBgColorButton.swift */; };
 		F0EAC6DF2C674A2A006DE3E1 /* OnboardingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EAC6DE2C674A2A006DE3E1 /* OnboardingImageView.swift */; };
+		F0FF6F282CAB591B0030FF73 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF6F272CAB591B0030FF73 /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -197,6 +198,7 @@
 		F0E07E282C6A453D00BD410A /* CompleteTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTestViewController.swift; sourceTree = "<group>"; };
 		F0EAC6DC2C674A10006DE3E1 /* TitleBgColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBgColorButton.swift; sourceTree = "<group>"; };
 		F0EAC6DE2C674A2A006DE3E1 /* OnboardingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingImageView.swift; sourceTree = "<group>"; };
+		F0FF6F272CAB591B0030FF73 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -382,6 +384,7 @@
 				F0DD68EF2C68CECA00C11ECF /* OnboardingRegister */,
 				18ED7A092C67DF6C000F03C3 /* Register */,
 				182B5BF12C60D30E00F7E85D /* Test */,
+				F0FF6F272CAB591B0030FF73 /* ChatViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -1115,6 +1118,7 @@
 				F0D38DD82C69FDA3007E35ED /* DetectProblemViewController.swift in Sources */,
 				18DBDF7F2CA3465800A8705A /* RegisterService.swift in Sources */,
 				18BC5C4F2CA1EFA200401955 /* RegisterModel.swift in Sources */,
+				F0FF6F282CAB591B0030FF73 /* ChatViewController.swift in Sources */,
 				1859808D2C94577000455BEB /* SkinProblemItemModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
