@@ -41,6 +41,10 @@ class OTPViewController: UIViewController {
         stackView.setCustomSpacing(32, after: logoLabel)
         setupUI()
         setupActions()
+        viewModel.onSuccess = { [weak self] in
+            self?.presentLoginViewController()
+        }
+
     }
     private func setupUI(){
         view.addSubview(stackView)
@@ -66,7 +70,11 @@ class OTPViewController: UIViewController {
         OTPTextField.textField.addTarget(self, action: #selector(didTapOTPCodeValidate), for: .editingChanged)
         submitButton.addTarget(self, action: #selector(didTapOTPCodeButton), for: .touchUpInside)
     }
-    
+    private func presentLoginViewController() {
+        let loginVC = LoginViewController()
+        loginVC.modalPresentationStyle = .fullScreen
+        present(loginVC, animated: true, completion: nil)
+    }
     @objc
     private func didTapEmailValidate() {
         if !isValidEmail(email: emailTextField.textField.text ?? "" ) {
@@ -89,11 +97,35 @@ class OTPViewController: UIViewController {
     }
     @objc
     private func didTapOTPCodeButton(){
+        validState(textField: emailTextField)
+        validState(textField: OTPTextField)
+        let isEmailValid = validateEmail()
+        let isOTPCodeValid = validateOTPCode()
         guard let email = emailTextField.textField.text else {return}
         guard let otpCode = OTPTextField.textField.text else {return}
-        viewModel.otpCode(email: email, otpCode: otpCode) { error in
-            print(error, "Hello OTP error")
+        if isEmailValid && isOTPCodeValid {
+            viewModel.otpCode(email: email, otpCode: otpCode) { error in
+                print(error, "Hello OTP error")
+            }
         }
+    }
+    func validateEmail() -> Bool {
+        guard let email = emailTextField.textField.text, !email.isEmpty else {
+            UIView.animate(withDuration: 0.2) { [self] in
+                inValidState(textField: emailTextField, errorMessage: "Invalid email")
+            }
+            return false
+        }
+        return true
+    }
+    func validateOTPCode() -> Bool {
+        guard let otpCode = OTPTextField.textField.text, !otpCode.isEmpty else {
+            UIView.animate(withDuration: 0.2) { [self] in
+                inValidState(textField: OTPTextField, errorMessage: "Invalid OTP code")
+            }
+            return false
+        }
+        return true
     }
     func isValidEmail(email: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"

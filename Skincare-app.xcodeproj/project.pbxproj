@@ -81,6 +81,9 @@
 		18BC5C4F2CA1EFA200401955 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC5C4E2CA1EFA200401955 /* RegisterModel.swift */; };
 		18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD65192C63AA250071C597 /* CustomTextField.swift */; };
 		18C53DBA2C6A9346004FA52B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C53DB92C6A9346004FA52B /* HomeViewController.swift */; };
+		18D932122CB3C86B00FA3F5B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D932112CB3C86B00FA3F5B /* LoginViewModel.swift */; };
+		18D932152CB3C8A100FA3F5B /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D932142CB3C8A100FA3F5B /* LoginService.swift */; };
+		18D932172CB3C97700FA3F5B /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D932162CB3C97700FA3F5B /* LoginModel.swift */; };
 		18DBDF772CA3394B00A8705A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 18DBDF762CA3394B00A8705A /* Alamofire */; };
 		18DBDF7A2CA33E4C00A8705A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBDF792CA33E4100A8705A /* NetworkManager.swift */; };
 		18DBDF7F2CA3465800A8705A /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DBDF7E2CA3465200A8705A /* RegisterService.swift */; };
@@ -180,6 +183,9 @@
 		18BC5C4E2CA1EFA200401955 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterModel.swift; path = "Skincare-app/Screens/Register/View/RegisterModel.swift"; sourceTree = SOURCE_ROOT; };
 		18BD65192C63AA250071C597 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		18C53DB92C6A9346004FA52B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "Skincare-app/Screens/Login/View/HomeViewController.swift"; sourceTree = SOURCE_ROOT; };
+		18D932112CB3C86B00FA3F5B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = "Skincare-app/Services/OTP/LoginViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		18D932142CB3C8A100FA3F5B /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		18D932162CB3C97700FA3F5B /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginModel.swift; path = "Skincare-app/Services/Login/LoginModel.swift"; sourceTree = SOURCE_ROOT; };
 		18DBDF792CA33E4100A8705A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		18DBDF7E2CA3465200A8705A /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
 		18DE779C2C6DEBFE000B321C /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
@@ -259,6 +265,7 @@
 		181FEA5E2C69116100B9AAE6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				18D932112CB3C86B00FA3F5B /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -274,6 +281,7 @@
 		181FEA602C69116D00B9AAE6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18D932162CB3C97700FA3F5B /* LoginModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -741,6 +749,14 @@
 			path = CustomTabbar;
 			sourceTree = "<group>";
 		};
+		18D932132CB3C88B00FA3F5B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				18D932142CB3C8A100FA3F5B /* LoginService.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		18DBDF782CA339A400A8705A /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -752,6 +768,7 @@
 		18DBDF7B2CA345A200A8705A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				18D932132CB3C88B00FA3F5B /* Login */,
 				18916AD32CA99B34005C50D7 /* OTP */,
 				18DBDF7C2CA345D000A8705A /* Register */,
 			);
@@ -1082,6 +1099,7 @@
 				1886EB5A2C77515D00EBAD95 /* ConsultationFilterViewController.swift in Sources */,
 				1883F84A2C6B3B62005ED089 /* ConsultationViewController.swift in Sources */,
 				182B5BAB2C60A9E900F7E85D /* AppDelegate.swift in Sources */,
+				18D932122CB3C86B00FA3F5B /* LoginViewModel.swift in Sources */,
 				182EB55A2C9CCAD300C4A40C /* AccordionTableViewCell.swift in Sources */,
 				18ED7A0E2C67DFA6000F03C3 /* RegisterViewModel.swift in Sources */,
 				F0E07E292C6A453D00BD410A /* CompleteTestViewController.swift in Sources */,
@@ -1120,6 +1138,8 @@
 				18BC5C4F2CA1EFA200401955 /* RegisterModel.swift in Sources */,
 				F0FF6F282CAB591B0030FF73 /* ChatViewController.swift in Sources */,
 				1859808D2C94577000455BEB /* SkinProblemItemModel.swift in Sources */,
+				18D932172CB3C97700FA3F5B /* LoginModel.swift in Sources */,
+				18D932152CB3C8A100FA3F5B /* LoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

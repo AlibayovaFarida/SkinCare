@@ -170,6 +170,7 @@ class RegisterViewController: UIViewController {
         btn.setTitle(NSLocalizedString("submit", comment: ""), for: .normal)
         btn.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 14)
         btn.tintColor = .white
+        btn.isEnabled = true
         return btn
     }()
     override func viewDidLoad() {
@@ -203,8 +204,8 @@ class RegisterViewController: UIViewController {
          emailTextField,
          passwordTextField,
          passwordTestTextField,
-         titleBirthDateStackView,
-         genderStackView
+//         titleBirthDateStackView,
+//         genderStackView
         ].forEach(formStackView.addArrangedSubview)
         
         [
@@ -254,6 +255,7 @@ class RegisterViewController: UIViewController {
         contentViewInScroll.snp.makeConstraints { make in
             make.edges.equalToSuperview()
             make.width.equalToSuperview()
+            make.bottom.equalTo(submitButton.snp.bottom).offset(35)
         }
 
         formStackView.snp.makeConstraints { make in
@@ -261,9 +263,8 @@ class RegisterViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
         submitButton.snp.makeConstraints { make in
-            make.top.equalTo(formStackView.snp.bottom).offset(68)
             make.trailing.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview().inset(35)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(35)
             make.width.equalTo(106)
             make.height.equalTo(44)
         }
@@ -374,16 +375,76 @@ class RegisterViewController: UIViewController {
     }
     @objc
     private func didTapRegisterButton(){
+        validState(textField: nameTextField)
+        validState(textField: surnameTextField)
+        validState(textField: emailTextField)
+        validState(textField: passwordTextField)
+        validState(textField: passwordTestTextField)
+        let isNameValid = validateName()
+        let isSurnameValid = validateSurname()
+        let isEmailValid = validateEmail()
+        let isPasswordValid = validatePassword()
+        let isConfirmPasswordValid = validateConfirmPassword()
         guard let name = nameTextField.textField.text else {return}
         guard let surname = surnameTextField.textField.text else {return}
         guard let email = emailTextField.textField.text else {return}
         guard let password = passwordTextField.textField.text else {return}
         guard let rePassword = passwordTestTextField.textField.text else {return}
-        viewModel.register(name: name, surname: surname, email: email, password: password, rePassword: rePassword) { error in
-            print(error, "Hello Register error")
+        if isNameValid && isSurnameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid {
+            viewModel.register(name: name, surname: surname, email: email, password: password, rePassword: rePassword) { error in
+                print(error, "Hello Register error")
+            }
         }
 
     }
+    func validateName() -> Bool {
+        guard let name = nameTextField.textField.text, !name.isEmpty else {
+            UIView.animate(withDuration: 0.2) { [self] in
+                inValidState(textField: nameTextField, errorMessage: "Invalid name")
+            }
+            return false
+        }
+        return true
+    }
+
+    func validateSurname() -> Bool {
+        guard let surname = surnameTextField.textField.text, !surname.isEmpty else {
+            UIView.animate(withDuration: 0.2) { [self] in
+                inValidState(textField: surnameTextField, errorMessage: "Invalid surname")
+            }
+            return false
+        }
+        return true
+    }
+
+    func validateEmail() -> Bool {
+        guard let email = emailTextField.textField.text, !email.isEmpty else {
+            UIView.animate(withDuration: 0.2) { [self] in
+                inValidState(textField: emailTextField, errorMessage: "Invalid email")
+            }
+            return false
+        }
+        return true
+    }
+    func validatePassword() -> Bool {
+        guard let password = passwordTextField.textField.text, !password.isEmpty else {
+            UIView.animate(withDuration: 0.2) { [self] in
+                inValidState(textField: passwordTextField, errorMessage: "Invalid password")
+            }
+            return false
+        }
+        return true
+    }
+    func validateConfirmPassword() -> Bool {
+        guard let rePassword = passwordTestTextField.textField.text, !rePassword.isEmpty else {
+            UIView.animate(withDuration: 0.2) { [self] in
+                inValidState(textField: passwordTestTextField, errorMessage: "Invalid confirm password")
+            }
+            return false
+        }
+        return true
+    }
+    
     private func presentOTPViewController() {
            let otpVC = OTPViewController()
            otpVC.sheetPresentationController?.detents = [.medium()]
@@ -415,6 +476,7 @@ class RegisterViewController: UIViewController {
     }
 
     func validState(textField: CustomTextField) {
+        
         textField.errorLabel.isHidden = true
         textField.errorLabel.text = ""
         textField.textFieldView.layer.borderWidth = 1

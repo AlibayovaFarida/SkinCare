@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 class LoginViewController: UIViewController {
+    private let viewModel: LoginViewModel = LoginViewModel()
     private let scrollView: UIScrollView = {
         let sv = UIScrollView()
         return sv
@@ -51,8 +52,10 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setupUI()
         setupActions()
+        viewModel.onSuccess = { [weak self] in
+            self?.presentHomeViewController()
+        }
     }
-    
     
     override func viewWillAppear(_ animated: Bool)
     {
@@ -125,8 +128,47 @@ class LoginViewController: UIViewController {
     private func setupActions() {
         emailTextField.textField.addTarget(self, action: #selector(didTapEmailValidate), for: .editingChanged)
         passwordTextField.textField.addTarget(self, action: #selector(didTapPasswordValidate), for: .editingChanged)
+        loginButton.action = { [weak self] in
+            self?.didTapLoginButton()
+        }
     }
-
+    private func presentHomeViewController() {
+        let homeVc = CustomTabBarController()
+        homeVc.modalPresentationStyle = .fullScreen
+        present(homeVc, animated: true, completion: nil)
+    }
+    @objc
+    private func didTapLoginButton(){
+        validState(textField: emailTextField)
+        validState(textField: passwordTextField)
+        let isEmailValid = validateEmail()
+        let isPasswordValid = validatePassword()
+        guard let email = emailTextField.textField.text else {return}
+        guard let password = passwordTextField.textField.text else {return}
+        if isEmailValid && isPasswordValid{
+            viewModel.login(email: email, password: password) { error in
+                print(error, "Hello login error")
+            }
+        }
+    }
+    func validateEmail() -> Bool {
+        guard let email = emailTextField.textField.text, !email.isEmpty else {
+            UIView.animate(withDuration: 0.2) { [self] in
+                inValidState(textField: emailTextField, errorMessage: "Invalid email")
+            }
+            return false
+        }
+        return true
+    }
+    func validatePassword() -> Bool {
+        guard let password = passwordTextField.textField.text, !password.isEmpty else {
+            UIView.animate(withDuration: 0.2) { [self] in
+                inValidState(textField: passwordTextField, errorMessage: "Invalid password")
+            }
+            return false
+        }
+        return true
+    }
     @objc
     private func didTapEmailValidate() {
         if !isValidEmail(email: emailTextField.textField.text ?? "" ) {
@@ -164,6 +206,8 @@ class LoginViewController: UIViewController {
     func inValidState(textField: CustomTextField, errorMessage: String) {
         textField.errorLabel.isHidden = true
         textField.errorLabel.text = errorMessage
+        textField.textField.attributedPlaceholder =
+        NSAttributedString(string: errorMessage, attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
         textField.textFieldView.layer.borderWidth = 1
         textField.textFieldView.layer.borderColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1).cgColor
     }

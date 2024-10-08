@@ -57,6 +57,7 @@ class ConsultationFilterViewController: UIViewController {
     private let closeButton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(named: "close"), for: .normal)
+        btn.isEnabled = true
         btn.addTarget(nil, action: #selector(didTapCloseFilterView), for: .touchUpInside)
         return btn
     }()
