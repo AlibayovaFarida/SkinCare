@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let accessToken = UserDefaults.standard.string(forKey: "accessToken"){
             window?.rootViewController = CustomTabBarController();
         } else {
-            let navVC = UINavigationController(rootViewController: OnboardingLoginViewController())
+            let navVC = UINavigationController(rootViewController: OnboardingRegisterViewController())
             window?.rootViewController = navVC;
         }
         window?.makeKeyAndVisible();

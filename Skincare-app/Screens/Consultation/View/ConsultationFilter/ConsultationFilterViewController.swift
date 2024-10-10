@@ -217,6 +217,8 @@ class ConsultationFilterViewController: UIViewController {
         contentViewInScroll.snp.makeConstraints { make in
             make.edges.equalToSuperview()
             make.width.equalToSuperview()
+            make.top.equalTo(generalStackView.snp.top).offset(24)
+            make.bottom.equalTo(generalStackView.snp.bottom).offset(24)
         }
         generalStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(17)
