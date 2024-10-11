@@ -105,7 +105,7 @@ class OTPViewController: UIViewController {
         guard let otpCode = OTPTextField.textField.text else {return}
         if isEmailValid && isOTPCodeValid {
             viewModel.otpCode(email: email, otpCode: otpCode) { error in
-                print(error, "Hello OTP error")
+                self.showAlert(message: error.localizedDescription)
             }
         }
     }

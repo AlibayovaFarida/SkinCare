@@ -43,6 +43,7 @@
 		1859808B2C944FF700455BEB /* SkinProblemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859808A2C944FF700455BEB /* SkinProblemCollectionViewCell.swift */; };
 		1859808D2C94577000455BEB /* SkinProblemItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859808C2C94577000455BEB /* SkinProblemItemModel.swift */; };
 		1865506E2C9C2CDC003C002A /* SkinProblemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865506D2C9C2CDC003C002A /* SkinProblemDetailsViewController.swift */; };
+		1880DFFB2CB92C1F008A0832 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880DFFA2CB92C1F008A0832 /* UIViewController+Ext.swift */; };
 		1883F8382C6B3A79005ED089 /* CustomTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F8372C6B3A79005ED089 /* CustomTabbarController.swift */; };
 		1883F8462C6B3B44005ED089 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F8452C6B3B44005ED089 /* ProductsViewController.swift */; };
 		1883F84A2C6B3B62005ED089 /* ConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F8492C6B3B62005ED089 /* ConsultationViewController.swift */; };
@@ -145,6 +146,7 @@
 		1859808A2C944FF700455BEB /* SkinProblemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemCollectionViewCell.swift; sourceTree = "<group>"; };
 		1859808C2C94577000455BEB /* SkinProblemItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemItemModel.swift; sourceTree = "<group>"; };
 		1865506D2C9C2CDC003C002A /* SkinProblemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemDetailsViewController.swift; sourceTree = "<group>"; };
+		1880DFFA2CB92C1F008A0832 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		1883F8372C6B3A79005ED089 /* CustomTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarController.swift; sourceTree = "<group>"; };
 		1883F8452C6B3B44005ED089 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		1883F8492C6B3B62005ED089 /* ConsultationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationViewController.swift; sourceTree = "<group>"; };
@@ -376,23 +378,23 @@
 		182B5BF02C60D2DE00F7E85D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				18916ACB2CA987BA005C50D7 /* OTP */,
-				186550672C9C2C6A003C002A /* SkinProblemDetails */,
-				F020F6912C963F0A00058F37 /* MoreSkinProblems */,
-				F020F68C2C96312700058F37 /* Info */,
-				F0D635B42CA9FCE90047EB2B /* ProductDetails */,
-				18AD81772C8F0834002A7272 /* Profile */,
-				1883F83B2C6B3AF4005ED089 /* Consultation */,
-				1883F8392C6B3AD3005ED089 /* Products */,
-				18C53DB52C6A9324004FA52B /* Home */,
+				1880DFFC2CB93A5E008A0832 /* Chat */,
 				F0E07E242C6A44F500BD410A /* CompleteTest */,
+				1883F83B2C6B3AF4005ED089 /* Consultation */,
 				F0D38DD32C69FD55007E35ED /* DetectProblem */,
+				18C53DB52C6A9324004FA52B /* Home */,
+				F020F68C2C96312700058F37 /* Info */,
 				181FEA5D2C69115B00B9AAE6 /* Login */,
+				F020F6912C963F0A00058F37 /* MoreSkinProblems */,
 				F0DD68E72C68CA7D00C11ECF /* OnboardingLogin */,
 				F0DD68EF2C68CECA00C11ECF /* OnboardingRegister */,
+				18916ACB2CA987BA005C50D7 /* OTP */,
+				F0D635B42CA9FCE90047EB2B /* ProductDetails */,
+				1883F8392C6B3AD3005ED089 /* Products */,
+				18AD81772C8F0834002A7272 /* Profile */,
 				18ED7A092C67DF6C000F03C3 /* Register */,
+				186550672C9C2C6A003C002A /* SkinProblemDetails */,
 				182B5BF12C60D30E00F7E85D /* Test */,
-				F0FF6F272CAB591B0030FF73 /* ChatViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -490,6 +492,38 @@
 				182EB5562C9CC5EA00C4A40C /* MainProblemCardTableViewCell.swift */,
 			);
 			path = MainProblemCardCell;
+			sourceTree = "<group>";
+		};
+		1880DFFC2CB93A5E008A0832 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				1880DFFF2CB93A71008A0832 /* Model */,
+				1880DFFE2CB93A6C008A0832 /* View */,
+				1880DFFD2CB93A64008A0832 /* ViewModel */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		1880DFFD2CB93A64008A0832 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1880DFFE2CB93A6C008A0832 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0FF6F272CAB591B0030FF73 /* ChatViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1880DFFF2CB93A71008A0832 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		1883F8392C6B3AD3005ED089 /* Products */ = {
@@ -799,6 +833,7 @@
 				18DE779F2C6DF98E000B321C /* UIView+Ext.swift */,
 				18DE77A12C6E0A0F000B321C /* UIResponder+Ext.swift */,
 				18AD817D2C8F2EFB002A7272 /* UILabel+Ext.swift */,
+				1880DFFA2CB92C1F008A0832 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1139,6 +1174,7 @@
 				F0FF6F282CAB591B0030FF73 /* ChatViewController.swift in Sources */,
 				1859808D2C94577000455BEB /* SkinProblemItemModel.swift in Sources */,
 				18D932172CB3C97700FA3F5B /* LoginModel.swift in Sources */,
+				1880DFFB2CB92C1F008A0832 /* UIViewController+Ext.swift in Sources */,
 				18D932152CB3C8A100FA3F5B /* LoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

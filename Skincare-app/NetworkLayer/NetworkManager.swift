@@ -15,6 +15,10 @@ enum CustomNetworkErrorEnum: Error {
     case unexpectedResponse
 }
 
+struct CustomNetworkError: Error{
+    let code: String
+    let message: String
+}
 class NetworkManager {
     static let shared = NetworkManager()
     

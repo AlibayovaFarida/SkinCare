@@ -25,7 +25,7 @@ class ConsultationViewController: UIViewController {
         .init(name: "Stanford", profession: "Dermatologist", rating: 4.2, patientCount: 100, price: 20, experience: 5, image: "youngMan"),
         .init(name: "Stanford", profession: "Dermatologist", rating: 4.2, patientCount: 100, price: 20, experience: 5, image: "youngMan"),
         .init(name: "Stanford", profession: "Dermatologist", rating: 4.2, patientCount: 100, price: 20, experience: 5, image: "youngMan"),]
-    
+    private var filteredItems: [DermatologistModel] = []
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.setImage(UIImage(named: "Search"), for: .search, state: .normal)
@@ -111,6 +111,9 @@ class ConsultationViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupViews()
+        searchBar.delegate = self
+        
+        filteredItems = items
         setupConstraints()
         setLeftAlignTitleView(font: UIFont(name: "Montserrat-SemiBold", size: 20)!, text: NSLocalizedString("consultationScreenTitle", comment: ""), textColor: .black)
         
@@ -152,6 +155,7 @@ class ConsultationViewController: UIViewController {
         dermatologistCollectionView.dataSource = self
         dermatologistCollectionView.delegate = self
         filterCollectionView.dataSource = self
+        
     }
     
     private func setupConstraints() {
@@ -211,7 +215,7 @@ class ConsultationViewController: UIViewController {
 extension ConsultationViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == dermatologistCollectionView {
-            return items.count
+            return filteredItems.count
         }
         if collectionView == filterCollectionView {
             return filterItems.count
@@ -222,14 +226,14 @@ extension ConsultationViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == dermatologistCollectionView{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ConsultationCollectionViewCell", for: indexPath) as! ConsultationCollectionViewCell
-            if !items[indexPath.row].isAnimatedDone {
+            if !filteredItems[indexPath.row].isAnimatedDone {
                 cell.alpha = 0
                 UIView.animate(withDuration: 0.3, delay: 0.3*Double(indexPath.row),animations: {
                     cell.alpha = 1
                 })
-                items[indexPath.row].isAnimatedDone = true
+                filteredItems[indexPath.row].isAnimatedDone = true
             }
-            cell.configure(items[indexPath.row])
+            cell.configure(filteredItems[indexPath.row])
             return cell
         }
         if collectionView == filterCollectionView {
@@ -258,5 +262,19 @@ extension ConsultationViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: collectionView.frame.width - 15, height: 213)
         }
         return CGSize()
+    }
+}
+
+extension ConsultationViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty{
+            filteredItems = items
+        } else {
+            print(searchText,"hello")
+            filteredItems = items.filter({ item in
+                item.name.lowercased().contains(searchText.lowercased())
+            })
+        }
+        dermatologistCollectionView.reloadData()
     }
 }

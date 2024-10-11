@@ -392,7 +392,7 @@ class RegisterViewController: UIViewController {
         guard let rePassword = passwordTestTextField.textField.text else {return}
         if isNameValid && isSurnameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid {
             viewModel.register(name: name, surname: surname, email: email, password: password, rePassword: rePassword) { error in
-                print(error, "Hello Register error")
+                self.showAlert(message: error.localizedDescription)
             }
         }
 

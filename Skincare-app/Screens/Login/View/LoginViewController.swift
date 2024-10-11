@@ -147,7 +147,7 @@ class LoginViewController: UIViewController {
         guard let password = passwordTextField.textField.text else {return}
         if isEmailValid && isPasswordValid{
             viewModel.login(email: email, password: password) { error in
-                print(error, "Hello login error")
+                self.showAlert(message: error.localizedDescription)
             }
         }
     }
