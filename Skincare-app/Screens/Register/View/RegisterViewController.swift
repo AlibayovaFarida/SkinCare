@@ -446,10 +446,12 @@ class RegisterViewController: UIViewController {
     }
     
     private func presentOTPViewController() {
-           let otpVC = OTPViewController()
-           otpVC.sheetPresentationController?.detents = [.medium()]
-           present(otpVC, animated: true, completion: nil)
-       }
+//        let otpVc = OTPViewController()
+        let loginVC = LoginViewController()
+//        otpVc.sheetPresentationController?.detents = [.medium()]
+        loginVC.modalPresentationStyle = .fullScreen
+        present(loginVC, animated: true, completion: nil)
+    }
     func isValidNameSurname(name: String) -> Bool {
         let nameRegex = "^[A-Za-z\\s-]+$"
         let namePredicate = NSPredicate(format: "SELF MATCHES %@", nameRegex)

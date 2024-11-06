@@ -17,7 +17,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene);
-//        UserDefaults.standard.removeObject(forKey: "accessToken")
+        if let tokenDate = UserDefaults.standard.object(forKey: "tokenExpiredDate") as? Date {
+            let currentDate = Date()
+            let diffs = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: tokenDate, to: currentDate)
+
+            if diffs.year ?? 0 > 0 || diffs.month ?? 0 > 0 || diffs.day ?? 0 > 0 || diffs.hour ?? 0 >= 1 {
+                // Token müddəti keçib, məlumatları sil
+                UserDefaults.standard.removeObject(forKey: "tokenExpiredDate")
+                UserDefaults.standard.removeObject(forKey: "accessToken")
+                UserDefaults.standard.removeObject(forKey: "refreshToken")
+            }
+        } else {
+            // Token mövcud deyil, tətbiq giriş səhifəsinə yönləndirilə bilər
+            print("Token mövcud deyil, istifadəçi giriş etməlidir.")
+        }
         if let accessToken = UserDefaults.standard.string(forKey: "accessToken"){
             window?.rootViewController = CustomTabBarController();
         } else {

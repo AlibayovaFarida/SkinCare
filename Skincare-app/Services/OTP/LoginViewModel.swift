@@ -17,6 +17,7 @@ class LoginViewModel {
             case .success(let data):
                 UserDefaults.standard.setValue(data.accessToken, forKey: "accessToken")
                 UserDefaults.standard.setValue(data.refreshToken, forKey: "refreshToken")
+                UserDefaults.standard.setValue(Date(), forKey: "tokenExpiredDate")
                 self.onSuccess?()
             case .failure(let error):
                 completion(error)
