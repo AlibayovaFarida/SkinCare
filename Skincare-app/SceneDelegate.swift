@@ -19,9 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene);
         if let tokenDate = UserDefaults.standard.object(forKey: "tokenExpiredDate") as? Date {
             let currentDate = Date()
-            let diffs = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: tokenDate, to: currentDate)
+            let diffs = Calendar.current.dateComponents([.year, .month, .day], from: tokenDate, to: currentDate)
 
-            if diffs.year ?? 0 > 0 || diffs.month ?? 0 > 0 || diffs.day ?? 0 > 0 || diffs.hour ?? 0 >= 1 {
+            if diffs.year ?? 0 > 0 || diffs.month ?? 0 > 0 || diffs.day ?? 0 > 1 {
                 // Token müddəti keçib, məlumatları sil
                 UserDefaults.standard.removeObject(forKey: "tokenExpiredDate")
                 UserDefaults.standard.removeObject(forKey: "accessToken")

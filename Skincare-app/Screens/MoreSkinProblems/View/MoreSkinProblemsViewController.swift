@@ -138,7 +138,8 @@ extension MoreSkinProblemsViewController: UICollectionViewDataSource, UICollecti
 
 extension MoreSkinProblemsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 147, height: 161)
+        let screenWidth = UIScreen.main.bounds.width
+        return CGSize(width: (screenWidth - 81)/2, height: 161)
     }
 }
 
