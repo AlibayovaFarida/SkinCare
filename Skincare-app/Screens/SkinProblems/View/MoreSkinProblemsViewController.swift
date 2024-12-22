@@ -2,13 +2,14 @@
 //  MoreSkinProblemsViewController.swift
 //  Skincare-app
 //
-//  Created by Umman on 15.09.24.
+//  Created by Apple on 05.12.24.
 //
 
 import UIKit
 
 class MoreSkinProblemsViewController: UIViewController
 {
+    private let viewModel: SkinProblemsViewModel = SkinProblemsViewModel()
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -18,7 +19,7 @@ class MoreSkinProblemsViewController: UIViewController
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         collectionView.alwaysBounceVertical = true
-        collectionView.register(SkinProblemCollectionViewCell.self, forCellWithReuseIdentifier: "SkinProblemCollectionViewCell")
+        collectionView.register(MoreSkinProblemsCollectionViewCell.self, forCellWithReuseIdentifier: MoreSkinProblemsCollectionViewCell.identifier)
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
@@ -48,20 +49,8 @@ class MoreSkinProblemsViewController: UIViewController
         searchBar.layer.backgroundColor = UIColor.white.cgColor
         return searchBar
     }()
-    
-    private let allItems: [SkinProblemItemModel] =
-    [
-        SkinProblemItemModel(image: "rosacea", title: "Rosacea"),
-        SkinProblemItemModel(image: "acne", title: "Akne"),
-        SkinProblemItemModel(image: "melazma", title: "Melazma"),
-        SkinProblemItemModel(image: "ekzema", title: "Ekzema"),
-        SkinProblemItemModel(image: "seboreik", title: "Seboreik"),
-        SkinProblemItemModel(image: "skinCancer", title: "Dəri xərçəngi"),
-        SkinProblemItemModel(image: "redSkin", title: "Qızartı"),
-        SkinProblemItemModel(image: "Vitiligo", title: "Vitiliqo"),
-    ]
-    
-    private var filteredItems: [SkinProblemItemModel] = []
+    private var allItems: [SkinProblemsModel.SkinProblem] = []
+    private var filteredItems: [SkinProblemsModel.SkinProblem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +79,10 @@ class MoreSkinProblemsViewController: UIViewController
         searchBar.delegate = self
         
         filteredItems = allItems
+        
+        viewModel.delegate = self
     }
+    
     
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
@@ -100,6 +92,9 @@ class MoreSkinProblemsViewController: UIViewController
         view.addSubview(searchBar)
         view.addSubview(collectionView)
         
+        viewModel.skinProblems { error in
+            self.showAlert(message: error.localizedDescription)
+        }
     }
     
     private func setupConstraints() {
@@ -125,13 +120,13 @@ extension MoreSkinProblemsViewController: UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SkinProblemCollectionViewCell", for: indexPath) as! SkinProblemCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoreSkinProblemsCollectionViewCell", for: indexPath) as! MoreSkinProblemsCollectionViewCell
         let item = filteredItems[indexPath.item]
         cell.configure(item)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = SkinProblemDetailsViewController(problemName: allItems[indexPath.row].title)
+        let vc = SkinProblemDetailsViewController(problemName: filteredItems[indexPath.row].title, problemId: filteredItems[indexPath.row].id)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -153,5 +148,13 @@ extension MoreSkinProblemsViewController: UISearchBarDelegate {
             }
         }
         collectionView.reloadData()
+    }
+}
+extension MoreSkinProblemsViewController: SkinProblemsDelegate{
+    
+    func didFetchSkinProblems(data: [SkinProblemsModel.SkinProblem]) {
+        self.allItems = data.map { SkinProblemsModel.SkinProblem(id: $0.id, title: $0.title, imageIds: $0.imageIds) }
+        self.filteredItems = allItems
+        self.collectionView.reloadData()
     }
 }

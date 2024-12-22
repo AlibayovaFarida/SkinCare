@@ -1,19 +1,21 @@
 //
-//  AccordionTableViewCell.swift
+//  ProductAccordionTableViewCell.swift
 //  Skincare-app
 //
-//  Created by Apple on 20.09.24.
+//  Created by Apple on 19.12.24.
 //
 
 import UIKit
 
-protocol AccordionTableViewCellDelegate: AnyObject {
-    func didTapAccordionButton(in cell: AccordionTableViewCell)
+import UIKit
+
+protocol ProductAccordionTableViewCellDelegate: AnyObject {
+    func didTapAccordionButton(in cell: ProductAccordionTableViewCell)
 }
 
-class AccordionTableViewCell: UITableViewCell {
+class ProductAccordionTableViewCell: UITableViewCell {
     private var isExpanded: Bool = false
-    weak var delegate: AccordionTableViewCellDelegate?
+    weak var delegate: ProductAccordionTableViewCellDelegate?
     private let bgView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(named: "accordionCellBgBlue")
@@ -116,7 +118,7 @@ class AccordionTableViewCell: UITableViewCell {
             make.height.equalTo(1)
         }
     }
-    func configure(_ item: AccordionCellModel){
+    func configure(_ item: ProductDetailsModel.Information){
         headerLabel.text = item.question
         detailsLabel.text = item.answer
     }

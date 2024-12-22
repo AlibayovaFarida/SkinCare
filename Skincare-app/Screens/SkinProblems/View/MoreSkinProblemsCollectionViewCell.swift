@@ -1,14 +1,14 @@
 //
-//  SkinProblemCollectionViewCell.swift
+//  MoreSkinProblemsCollectionViewCell.swift
 //  Skincare-app
 //
-//  Created by Apple on 13.09.24.
+//  Created by Apple on 05.12.24.
 //
 
 import UIKit
 import Alamofire
 
-class SkinProblemCollectionViewCell: UICollectionViewCell {
+class MoreSkinProblemsCollectionViewCell: UICollectionViewCell {
     private let bgView: UIView = {
         let view = UIView()
         view.layer.borderWidth = 1
@@ -109,6 +109,5 @@ class SkinProblemCollectionViewCell: UICollectionViewCell {
                 self.problemImageView.image = image
             }
         problemTitleLabel.text = item.title
-        
     }
 }

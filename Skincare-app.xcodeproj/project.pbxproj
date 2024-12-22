@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18091DC82D0B6A5E0005BE8E /* SkinProblemDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18091DC72D0B6A5E0005BE8E /* SkinProblemDetailsModel.swift */; };
 		181FEA622C69118700B9AAE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181FEA612C69118700B9AAE6 /* LoginViewController.swift */; };
 		182B5BAB2C60A9E900F7E85D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B5BAA2C60A9E900F7E85D /* AppDelegate.swift */; };
 		182B5BAD2C60A9E900F7E85D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B5BAC2C60A9E900F7E85D /* SceneDelegate.swift */; };
@@ -36,19 +37,31 @@
 		182B5BEF2C60BCA800F7E85D /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BDD2C60BCA800F7E85D /* Montserrat-SemiBoldItalic.ttf */; };
 		182B5BFE2C60DC8900F7E85D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 182B5BFC2C60DC8900F7E85D /* Localizable.strings */; };
 		182EB5572C9CC5EA00C4A40C /* MainProblemCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182EB5562C9CC5EA00C4A40C /* MainProblemCardTableViewCell.swift */; };
-		182EB55A2C9CCAD300C4A40C /* AccordionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182EB5592C9CCAD300C4A40C /* AccordionTableViewCell.swift */; };
+		182EB55A2C9CCAD300C4A40C /* SkinProblemAccordionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182EB5592C9CCAD300C4A40C /* SkinProblemAccordionTableViewCell.swift */; };
+		183AC5E62D14048B0030C996 /* ProductDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AC5E52D14048B0030C996 /* ProductDetailsModel.swift */; };
+		183AC5E92D1406380030C996 /* ProductAccordionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AC5E82D1406380030C996 /* ProductAccordionTableViewCell.swift */; };
+		183AC5F12D1447140030C996 /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AC5F02D1447140030C996 /* ProductsTableViewCell.swift */; };
+		183AC5F42D14494E0030C996 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AC5F32D14494E0030C996 /* ProductCollectionViewCell.swift */; };
 		183CF81D2CA3EF9300D341A7 /* Encodable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CF81C2CA3EF8A00D341A7 /* Encodable+Ext.swift */; };
-		1848393D2C9D8B97000558B2 /* AccordionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848393C2C9D8B97000558B2 /* AccordionCellModel.swift */; };
+		184D5FE52D01BBC30011E02A /* SkinProblemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D5FE32D01BBC30011E02A /* SkinProblemsViewModel.swift */; };
+		184D5FEE2D01C0420011E02A /* SkinProblemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D5FED2D01C0420011E02A /* SkinProblemsModel.swift */; };
+		184D5FF42D01C3AF0011E02A /* MoreSkinProblemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D5FF32D01C3AF0011E02A /* MoreSkinProblemsViewController.swift */; };
+		184D5FF62D01E07E0011E02A /* MoreSkinProblemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D5FF52D01E07E0011E02A /* MoreSkinProblemsCollectionViewCell.swift */; };
 		185980882C9441C700455BEB /* SkinProblemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185980872C9441C700455BEB /* SkinProblemsTableViewCell.swift */; };
 		1859808B2C944FF700455BEB /* SkinProblemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859808A2C944FF700455BEB /* SkinProblemCollectionViewCell.swift */; };
 		1859808D2C94577000455BEB /* SkinProblemItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859808C2C94577000455BEB /* SkinProblemItemModel.swift */; };
 		1865506E2C9C2CDC003C002A /* SkinProblemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865506D2C9C2CDC003C002A /* SkinProblemDetailsViewController.swift */; };
+		187CCB1F2D133B0A00000CE7 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CCB1E2D133B0A00000CE7 /* ProductDetailsViewController.swift */; };
+		187CCB222D13580700000CE7 /* ProductDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CCB212D13580700000CE7 /* ProductDetailsService.swift */; };
+		187CCB292D1359DF00000CE7 /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CCB282D1359DF00000CE7 /* ProductDetailsViewModel.swift */; };
 		1880DFFB2CB92C1F008A0832 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880DFFA2CB92C1F008A0832 /* UIViewController+Ext.swift */; };
 		1883F8382C6B3A79005ED089 /* CustomTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F8372C6B3A79005ED089 /* CustomTabbarController.swift */; };
-		1883F8462C6B3B44005ED089 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F8452C6B3B44005ED089 /* ProductsViewController.swift */; };
+		1883F8462C6B3B44005ED089 /* MoreProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F8452C6B3B44005ED089 /* MoreProductsViewController.swift */; };
 		1883F84A2C6B3B62005ED089 /* ConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1883F8492C6B3B62005ED089 /* ConsultationViewController.swift */; };
 		1884E9A92C6C89BC00E40A3D /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884E9A82C6C89BC00E40A3D /* HeaderTableViewCell.swift */; };
 		1884E9AC2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884E9AB2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift */; };
+		1885A3B02D0B6E98005A55DB /* SkinProblemDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885A3AF2D0B6E98005A55DB /* SkinProblemDetailsService.swift */; };
+		1885A3B22D0B72A2005A55DB /* SkinProblemDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885A3B12D0B72A2005A55DB /* SkinProblemDetailsViewModel.swift */; };
 		1886EB5A2C77515D00EBAD95 /* ConsultationFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886EB592C77515D00EBAD95 /* ConsultationFilterViewController.swift */; };
 		1886EB5D2C77683A00EBAD95 /* ConsultationFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886EB5C2C77683A00EBAD95 /* ConsultationFilterCollectionViewCell.swift */; };
 		1886EB5F2C776E6200EBAD95 /* ConsultationFilterItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886EB5E2C776E6200EBAD95 /* ConsultationFilterItemModel.swift */; };
@@ -81,6 +94,11 @@
 		18AD817E2C8F2EFB002A7272 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AD817D2C8F2EFB002A7272 /* UILabel+Ext.swift */; };
 		18BC5C4F2CA1EFA200401955 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC5C4E2CA1EFA200401955 /* RegisterModel.swift */; };
 		18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD65192C63AA250071C597 /* CustomTextField.swift */; };
+		18C502EB2D06E0290067BD4D /* SkinProblemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C502EA2D06E0290067BD4D /* SkinProblemsService.swift */; };
+		18C502F42D06E1030067BD4D /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C502F32D06E1030067BD4D /* ProductsService.swift */; };
+		18C502F62D06E4C60067BD4D /* ProductsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C502F52D06E4C60067BD4D /* ProductsModel.swift */; };
+		18C502F82D06E80D0067BD4D /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C502F72D06E80D0067BD4D /* ProductsViewModel.swift */; };
+		18C502FA2D06EA870067BD4D /* MoreProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C502F92D06EA870067BD4D /* MoreProductCollectionViewCell.swift */; };
 		18C53DBA2C6A9346004FA52B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C53DB92C6A9346004FA52B /* HomeViewController.swift */; };
 		18D932122CB3C86B00FA3F5B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D932112CB3C86B00FA3F5B /* LoginViewModel.swift */; };
 		18D932152CB3C8A100FA3F5B /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D932142CB3C8A100FA3F5B /* LoginService.swift */; };
@@ -109,6 +127,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18091DC72D0B6A5E0005BE8E /* SkinProblemDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SkinProblemDetailsModel.swift; path = "Skincare-app/Screens/Products/View/SkinProblemDetailsModel.swift"; sourceTree = SOURCE_ROOT; };
 		181FEA612C69118700B9AAE6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		182B5BA72C60A9E900F7E85D /* Skincare-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Skincare-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		182B5BAA2C60A9E900F7E85D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,19 +158,31 @@
 		182B5BFD2C60DC8900F7E85D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		182B5BFF2C60DC8C00F7E85D /* az */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = az; path = az.lproj/Localizable.strings; sourceTree = "<group>"; };
 		182EB5562C9CC5EA00C4A40C /* MainProblemCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProblemCardTableViewCell.swift; sourceTree = "<group>"; };
-		182EB5592C9CCAD300C4A40C /* AccordionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionTableViewCell.swift; sourceTree = "<group>"; };
+		182EB5592C9CCAD300C4A40C /* SkinProblemAccordionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemAccordionTableViewCell.swift; sourceTree = "<group>"; };
+		183AC5E52D14048B0030C996 /* ProductDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsModel.swift; sourceTree = "<group>"; };
+		183AC5E82D1406380030C996 /* ProductAccordionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAccordionTableViewCell.swift; sourceTree = "<group>"; };
+		183AC5F02D1447140030C996 /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
+		183AC5F32D14494E0030C996 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		183CF81C2CA3EF8A00D341A7 /* Encodable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Ext.swift"; sourceTree = "<group>"; };
-		1848393C2C9D8B97000558B2 /* AccordionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionCellModel.swift; sourceTree = "<group>"; };
+		184D5FE32D01BBC30011E02A /* SkinProblemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemsViewModel.swift; sourceTree = "<group>"; };
+		184D5FED2D01C0420011E02A /* SkinProblemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemsModel.swift; sourceTree = "<group>"; };
+		184D5FF32D01C3AF0011E02A /* MoreSkinProblemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSkinProblemsViewController.swift; sourceTree = "<group>"; };
+		184D5FF52D01E07E0011E02A /* MoreSkinProblemsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSkinProblemsCollectionViewCell.swift; sourceTree = "<group>"; };
 		185980872C9441C700455BEB /* SkinProblemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemsTableViewCell.swift; sourceTree = "<group>"; };
 		1859808A2C944FF700455BEB /* SkinProblemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemCollectionViewCell.swift; sourceTree = "<group>"; };
 		1859808C2C94577000455BEB /* SkinProblemItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemItemModel.swift; sourceTree = "<group>"; };
 		1865506D2C9C2CDC003C002A /* SkinProblemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemDetailsViewController.swift; sourceTree = "<group>"; };
+		187CCB1E2D133B0A00000CE7 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		187CCB212D13580700000CE7 /* ProductDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsService.swift; sourceTree = "<group>"; };
+		187CCB282D1359DF00000CE7 /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
 		1880DFFA2CB92C1F008A0832 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		1883F8372C6B3A79005ED089 /* CustomTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarController.swift; sourceTree = "<group>"; };
-		1883F8452C6B3B44005ED089 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		1883F8452C6B3B44005ED089 /* MoreProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreProductsViewController.swift; sourceTree = "<group>"; };
 		1883F8492C6B3B62005ED089 /* ConsultationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationViewController.swift; sourceTree = "<group>"; };
 		1884E9A82C6C89BC00E40A3D /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		1884E9AB2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectProblemTableViewCell.swift; sourceTree = "<group>"; };
+		1885A3AF2D0B6E98005A55DB /* SkinProblemDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemDetailsService.swift; sourceTree = "<group>"; };
+		1885A3B12D0B72A2005A55DB /* SkinProblemDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SkinProblemDetailsViewModel.swift; path = "Skincare-app/Services/SkinProblemDetails/SkinProblemDetailsViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		1886EB592C77515D00EBAD95 /* ConsultationFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFilterViewController.swift; sourceTree = "<group>"; };
 		1886EB5C2C77683A00EBAD95 /* ConsultationFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		1886EB5E2C776E6200EBAD95 /* ConsultationFilterItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConsultationFilterItemModel.swift; path = "Skincare-app/Screens/Consultation/View/ConsultationFilter/ConsultationFilterItemModel.swift"; sourceTree = SOURCE_ROOT; };
@@ -184,6 +215,11 @@
 		18AD817D2C8F2EFB002A7272 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 		18BC5C4E2CA1EFA200401955 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterModel.swift; path = "Skincare-app/Screens/Register/View/RegisterModel.swift"; sourceTree = SOURCE_ROOT; };
 		18BD65192C63AA250071C597 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		18C502EA2D06E0290067BD4D /* SkinProblemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemsService.swift; sourceTree = "<group>"; };
+		18C502F32D06E1030067BD4D /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
+		18C502F52D06E4C60067BD4D /* ProductsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductsModel.swift; path = "Skincare-app/Services/Products/ProductsModel.swift"; sourceTree = SOURCE_ROOT; };
+		18C502F72D06E80D0067BD4D /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductsViewModel.swift; path = "Skincare-app/Services/Products/ProductsViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		18C502F92D06EA870067BD4D /* MoreProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		18C53DB92C6A9346004FA52B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "Skincare-app/Screens/Login/View/HomeViewController.swift"; sourceTree = SOURCE_ROOT; };
 		18D932112CB3C86B00FA3F5B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = "Skincare-app/Services/OTP/LoginViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		18D932142CB3C8A100FA3F5B /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -217,26 +253,10 @@
 			);
 			target = 182B5BA62C60A9E900F7E85D /* Skincare-app */;
 		};
-		F020F6952C963F1800058F37 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				View/MoreSkinProblemsViewController.swift,
-			);
-			target = 182B5BA62C60A9E900F7E85D /* Skincare-app */;
-		};
-		F0D635B52CA9FCF60047EB2B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				ProductDetailsViewController.swift,
-			);
-			target = 182B5BA62C60A9E900F7E85D /* Skincare-app */;
-		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F020F68C2C96312700058F37 /* Info */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (F020F6902C96314900058F37 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Info; sourceTree = "<group>"; };
-		F020F6912C963F0A00058F37 /* MoreSkinProblems */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (F020F6952C963F1800058F37 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = MoreSkinProblems; sourceTree = "<group>"; };
-		F0D635B42CA9FCE90047EB2B /* ProductDetails */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (F0D635B52CA9FCF60047EB2B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ProductDetails; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,6 +398,8 @@
 		182B5BF02C60D2DE00F7E85D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				187CCB232D13598300000CE7 /* ProductDetails */,
+				184D5FEF2D01C07B0011E02A /* SkinProblems */,
 				1880DFFC2CB93A5E008A0832 /* Chat */,
 				F0E07E242C6A44F500BD410A /* CompleteTest */,
 				1883F83B2C6B3AF4005ED089 /* Consultation */,
@@ -385,11 +407,9 @@
 				18C53DB52C6A9324004FA52B /* Home */,
 				F020F68C2C96312700058F37 /* Info */,
 				181FEA5D2C69115B00B9AAE6 /* Login */,
-				F020F6912C963F0A00058F37 /* MoreSkinProblems */,
 				F0DD68E72C68CA7D00C11ECF /* OnboardingLogin */,
 				F0DD68EF2C68CECA00C11ECF /* OnboardingRegister */,
 				18916ACB2CA987BA005C50D7 /* OTP */,
-				F0D635B42CA9FCE90047EB2B /* ProductDetails */,
 				1883F8392C6B3AD3005ED089 /* Products */,
 				18AD81772C8F0834002A7272 /* Profile */,
 				18ED7A092C67DF6C000F03C3 /* Register */,
@@ -415,14 +435,38 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
-		182EB5582C9CCAAA00C4A40C /* AccordionCell */ = {
+		182EB5582C9CCAAA00C4A40C /* SkinProblemAccordionCell */ = {
 			isa = PBXGroup;
 			children = (
-				182EB5592C9CCAD300C4A40C /* AccordionTableViewCell.swift */,
-				1848393C2C9D8B97000558B2 /* AccordionCellModel.swift */,
+				182EB5592C9CCAD300C4A40C /* SkinProblemAccordionTableViewCell.swift */,
 				F0D635B02CA9E71A0047EB2B /* ProblemDescriptionModel.swift */,
 			);
-			path = AccordionCell;
+			path = SkinProblemAccordionCell;
+			sourceTree = "<group>";
+		};
+		183AC5E72D1405FD0030C996 /* ProductAccordionCell */ = {
+			isa = PBXGroup;
+			children = (
+				183AC5E82D1406380030C996 /* ProductAccordionTableViewCell.swift */,
+			);
+			path = ProductAccordionCell;
+			sourceTree = "<group>";
+		};
+		183AC5EF2D1446DF0030C996 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				183AC5F22D1449150030C996 /* ProductCollectionCell */,
+				183AC5F02D1447140030C996 /* ProductsTableViewCell.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		183AC5F22D1449150030C996 /* ProductCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				183AC5F32D14494E0030C996 /* ProductCollectionViewCell.swift */,
+			);
+			path = ProductCollectionCell;
 			sourceTree = "<group>";
 		};
 		184CBD5C2C7DD5AD00D6F515 /* Cells */ = {
@@ -432,6 +476,41 @@
 				F05804302C7518FA003AE03E /* ConsultationCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		184D5FEF2D01C07B0011E02A /* SkinProblems */ = {
+			isa = PBXGroup;
+			children = (
+				184D5FF22D01C0950011E02A /* Model */,
+				184D5FF12D01C08F0011E02A /* View */,
+				184D5FF02D01C0870011E02A /* ViewModel */,
+			);
+			path = SkinProblems;
+			sourceTree = "<group>";
+		};
+		184D5FF02D01C0870011E02A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				184D5FE32D01BBC30011E02A /* SkinProblemsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		184D5FF12D01C08F0011E02A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				184D5FF32D01C3AF0011E02A /* MoreSkinProblemsViewController.swift */,
+				184D5FF52D01E07E0011E02A /* MoreSkinProblemsCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		184D5FF22D01C0950011E02A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				184D5FED2D01C0420011E02A /* SkinProblemsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		185980832C9440DB00455BEB /* SkinProblems */ = {
@@ -465,6 +544,7 @@
 		186550682C9C2C85003C002A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1885A3B12D0B72A2005A55DB /* SkinProblemDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -472,7 +552,7 @@
 		186550692C9C2C8D003C002A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				182EB5582C9CCAAA00C4A40C /* AccordionCell */,
+				182EB5582C9CCAAA00C4A40C /* SkinProblemAccordionCell */,
 				1865506F2C9C3D81003C002A /* MainProblemCardCell */,
 				1865506D2C9C2CDC003C002A /* SkinProblemDetailsViewController.swift */,
 			);
@@ -482,6 +562,7 @@
 		1865506A2C9C2C94003C002A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18091DC72D0B6A5E0005BE8E /* SkinProblemDetailsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -492,6 +573,49 @@
 				182EB5562C9CC5EA00C4A40C /* MainProblemCardTableViewCell.swift */,
 			);
 			path = MainProblemCardCell;
+			sourceTree = "<group>";
+		};
+		187CCB202D1357E300000CE7 /* ProductDetails */ = {
+			isa = PBXGroup;
+			children = (
+				187CCB212D13580700000CE7 /* ProductDetailsService.swift */,
+			);
+			path = ProductDetails;
+			sourceTree = "<group>";
+		};
+		187CCB232D13598300000CE7 /* ProductDetails */ = {
+			isa = PBXGroup;
+			children = (
+				187CCB262D1359AF00000CE7 /* Model */,
+				187CCB252D1359A800000CE7 /* View */,
+				187CCB242D1359A000000CE7 /* ViewModel */,
+			);
+			path = ProductDetails;
+			sourceTree = "<group>";
+		};
+		187CCB242D1359A000000CE7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				187CCB282D1359DF00000CE7 /* ProductDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		187CCB252D1359A800000CE7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				183AC5E72D1405FD0030C996 /* ProductAccordionCell */,
+				187CCB1E2D133B0A00000CE7 /* ProductDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		187CCB262D1359AF00000CE7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				183AC5E52D14048B0030C996 /* ProductDetailsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		1880DFFC2CB93A5E008A0832 /* Chat */ = {
@@ -549,6 +673,7 @@
 		1883F83C2C6B3AFD005ED089 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				18C502F72D06E80D0067BD4D /* ProductsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -556,7 +681,8 @@
 		1883F83D2C6B3B05005ED089 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1883F8452C6B3B44005ED089 /* ProductsViewController.swift */,
+				1883F8452C6B3B44005ED089 /* MoreProductsViewController.swift */,
+				18C502F92D06EA870067BD4D /* MoreProductCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -564,6 +690,7 @@
 		1883F83E2C6B3B0A005ED089 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18C502F52D06E4C60067BD4D /* ProductsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -597,6 +724,7 @@
 		1884E9A62C6C899800E40A3D /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				183AC5EF2D1446DF0030C996 /* Products */,
 				185980832C9440DB00455BEB /* SkinProblems */,
 				18DE779E2C6DEC04000B321C /* SearchCell */,
 				1884E9AA2C6C938C00E40A3D /* DetectProblemCell */,
@@ -619,6 +747,14 @@
 				1884E9AB2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift */,
 			);
 			path = DetectProblemCell;
+			sourceTree = "<group>";
+		};
+		1885A3AE2D0B6E67005A55DB /* SkinProblemDetails */ = {
+			isa = PBXGroup;
+			children = (
+				1885A3AF2D0B6E98005A55DB /* SkinProblemDetailsService.swift */,
+			);
+			path = SkinProblemDetails;
 			sourceTree = "<group>";
 		};
 		1886EB5B2C7764AD00EBAD95 /* ConsultationFilter */ = {
@@ -742,6 +878,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		18C502F12D06E0550067BD4D /* SkinProblems */ = {
+			isa = PBXGroup;
+			children = (
+				18C502EA2D06E0290067BD4D /* SkinProblemsService.swift */,
+			);
+			path = SkinProblems;
+			sourceTree = "<group>";
+		};
+		18C502F22D06E0DE0067BD4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18C502F32D06E1030067BD4D /* ProductsService.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
 		18C53DB52C6A9324004FA52B /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -802,6 +954,10 @@
 		18DBDF7B2CA345A200A8705A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				187CCB202D1357E300000CE7 /* ProductDetails */,
+				1885A3AE2D0B6E67005A55DB /* SkinProblemDetails */,
+				18C502F22D06E0DE0067BD4D /* Products */,
+				18C502F12D06E0550067BD4D /* SkinProblems */,
 				18D932132CB3C88B00FA3F5B /* Login */,
 				18916AD32CA99B34005C50D7 /* OTP */,
 				18DBDF7C2CA345D000A8705A /* Register */,
@@ -1124,22 +1280,24 @@
 				18ED7A062C67DEE9000F03C3 /* DropdownButtonView.swift in Sources */,
 				182B5BAF2C60A9E900F7E85D /* ViewController.swift in Sources */,
 				18A1EBA92C766B81008AAD5F /* DermatologistModel.swift in Sources */,
+				18C502F82D06E80D0067BD4D /* ProductsViewModel.swift in Sources */,
 				F0EAC6DF2C674A2A006DE3E1 /* OnboardingImageView.swift in Sources */,
 				1883F8382C6B3A79005ED089 /* CustomTabbarController.swift in Sources */,
 				181FEA622C69118700B9AAE6 /* LoginViewController.swift in Sources */,
 				18ED7A102C67DFBB000F03C3 /* RegisterViewController.swift in Sources */,
 				F0273E392C9603810069EDE7 /* ProfileTableViewCell.swift in Sources */,
 				18C53DBA2C6A9346004FA52B /* HomeViewController.swift in Sources */,
-				1848393D2C9D8B97000558B2 /* AccordionCellModel.swift in Sources */,
+				1885A3B02D0B6E98005A55DB /* SkinProblemDetailsService.swift in Sources */,
 				1886EB5A2C77515D00EBAD95 /* ConsultationFilterViewController.swift in Sources */,
 				1883F84A2C6B3B62005ED089 /* ConsultationViewController.swift in Sources */,
 				182B5BAB2C60A9E900F7E85D /* AppDelegate.swift in Sources */,
 				18D932122CB3C86B00FA3F5B /* LoginViewModel.swift in Sources */,
-				182EB55A2C9CCAD300C4A40C /* AccordionTableViewCell.swift in Sources */,
+				182EB55A2C9CCAD300C4A40C /* SkinProblemAccordionTableViewCell.swift in Sources */,
 				18ED7A0E2C67DFA6000F03C3 /* RegisterViewModel.swift in Sources */,
 				F0E07E292C6A453D00BD410A /* CompleteTestViewController.swift in Sources */,
 				185980882C9441C700455BEB /* SkinProblemsTableViewCell.swift in Sources */,
 				18936EC72C62B637006A8683 /* IconTitleBgColorButton.swift in Sources */,
+				184D5FF62D01E07E0011E02A /* MoreSkinProblemsCollectionViewCell.swift in Sources */,
 				1865506E2C9C2CDC003C002A /* SkinProblemDetailsViewController.swift in Sources */,
 				18DE77A22C6E0A0F000B321C /* UIResponder+Ext.swift in Sources */,
 				1859808B2C944FF700455BEB /* SkinProblemCollectionViewCell.swift in Sources */,
@@ -1147,31 +1305,47 @@
 				F0D635B12CA9E71A0047EB2B /* ProblemDescriptionModel.swift in Sources */,
 				F0DD68EE2C68CAF200C11ECF /* OnboardingLoginViewController.swift in Sources */,
 				F0DD68F42C68CF0700C11ECF /* OnboardingRegisterViewController.swift in Sources */,
+				183AC5E92D1406380030C996 /* ProductAccordionTableViewCell.swift in Sources */,
 				1886EB5F2C776E6200EBAD95 /* ConsultationFilterItemModel.swift in Sources */,
 				18916AD52CA99BA9005C50D7 /* OTPService.swift in Sources */,
 				182B5BAD2C60A9E900F7E85D /* SceneDelegate.swift in Sources */,
 				18DBDF7A2CA33E4C00A8705A /* NetworkManager.swift in Sources */,
+				184D5FF42D01C3AF0011E02A /* MoreSkinProblemsViewController.swift in Sources */,
 				18AD817E2C8F2EFB002A7272 /* UILabel+Ext.swift in Sources */,
 				1886EB5D2C77683A00EBAD95 /* ConsultationFilterCollectionViewCell.swift in Sources */,
 				18916AD72CA99BC5005C50D7 /* OTPViewModel.swift in Sources */,
 				1884E9AC2C6C93AB00E40A3D /* DetectProblemTableViewCell.swift in Sources */,
+				184D5FE52D01BBC30011E02A /* SkinProblemsViewModel.swift in Sources */,
 				18ED7A032C67DEC8000F03C3 /* Cell+Ext.swift in Sources */,
 				18DE779D2C6DEBFF000B321C /* SearchTableViewCell.swift in Sources */,
+				184D5FEE2D01C0420011E02A /* SkinProblemsModel.swift in Sources */,
+				1885A3B22D0B72A2005A55DB /* SkinProblemDetailsViewModel.swift in Sources */,
+				183AC5E62D14048B0030C996 /* ProductDetailsModel.swift in Sources */,
+				187CCB222D13580700000CE7 /* ProductDetailsService.swift in Sources */,
 				18BD651A2C63AA250071C597 /* CustomTextField.swift in Sources */,
+				187CCB1F2D133B0A00000CE7 /* ProductDetailsViewController.swift in Sources */,
 				F05804312C7518FA003AE03E /* ConsultationCollectionViewCell.swift in Sources */,
+				18C502F42D06E1030067BD4D /* ProductsService.swift in Sources */,
+				183AC5F42D14494E0030C996 /* ProductCollectionViewCell.swift in Sources */,
+				18C502FA2D06EA870067BD4D /* MoreProductCollectionViewCell.swift in Sources */,
+				18C502EB2D06E0290067BD4D /* SkinProblemsService.swift in Sources */,
 				188931D42C7C6B3400088C9E /* FilterItemCollectionViewCell.swift in Sources */,
 				18916AD22CA98800005C50D7 /* OTPViewController.swift in Sources */,
 				F0EAC6DD2C674A10006DE3E1 /* TitleBgColorButton.swift in Sources */,
 				18DE77A02C6DF98E000B321C /* UIView+Ext.swift in Sources */,
+				183AC5F12D1447140030C996 /* ProductsTableViewCell.swift in Sources */,
 				183CF81D2CA3EF9300D341A7 /* Encodable+Ext.swift in Sources */,
+				18C502F62D06E4C60067BD4D /* ProductsModel.swift in Sources */,
 				18916AD92CA9A061005C50D7 /* OTPModel.swift in Sources */,
-				1883F8462C6B3B44005ED089 /* ProductsViewController.swift in Sources */,
+				1883F8462C6B3B44005ED089 /* MoreProductsViewController.swift in Sources */,
 				1884E9A92C6C89BC00E40A3D /* HeaderTableViewCell.swift in Sources */,
 				18AD817C2C8F0A6A002A7272 /* ProfileViewController.swift in Sources */,
 				F0D38DD82C69FDA3007E35ED /* DetectProblemViewController.swift in Sources */,
 				18DBDF7F2CA3465800A8705A /* RegisterService.swift in Sources */,
+				18091DC82D0B6A5E0005BE8E /* SkinProblemDetailsModel.swift in Sources */,
 				18BC5C4F2CA1EFA200401955 /* RegisterModel.swift in Sources */,
 				F0FF6F282CAB591B0030FF73 /* ChatViewController.swift in Sources */,
+				187CCB292D1359DF00000CE7 /* ProductDetailsViewModel.swift in Sources */,
 				1859808D2C94577000455BEB /* SkinProblemItemModel.swift in Sources */,
 				18D932172CB3C97700FA3F5B /* LoginModel.swift in Sources */,
 				1880DFFB2CB92C1F008A0832 /* UIViewController+Ext.swift in Sources */,

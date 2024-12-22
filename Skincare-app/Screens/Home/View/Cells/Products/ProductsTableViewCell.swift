@@ -1,4 +1,11 @@
 //
+//  ProductsTableViewCell.swift
+//  Skincare-app
+//
+//  Created by Apple on 19.12.24.
+//
+
+//
 //  SkinProblemsTableViewCell.swift
 //  Skincare-app
 //
@@ -7,16 +14,16 @@
 
 import UIKit
 
-protocol SkinProblemsTableViewCellDelegate: AnyObject {
-    func didTapMoreButton()
+protocol ProductsTableViewCellDelegate: AnyObject {
+    func didTapProductsMoreButton()
 //    func skinProblemsTableViewCell(_ cell: SkinProblemsTableViewCell, didSelectItem item: SkinProblemsModel.SkinProblem)
 }
 
-class SkinProblemsTableViewCell: UITableViewCell {
+class ProductsTableViewCell: UITableViewCell {
     
-    weak var delegate: SkinProblemsTableViewCellDelegate?
+    weak var delegate: ProductsTableViewCellDelegate?
     
-    private var skinProblems: [SkinProblemsModel.SkinProblem] = []
+    private var products: [ProductsModel.Product] = []
     private let headerStackView: UIStackView = {
         let sv = UIStackView()
         sv.axis = .horizontal
@@ -41,7 +48,7 @@ class SkinProblemsTableViewCell: UITableViewCell {
         btn.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 12)
         return btn
     }()
-    private let skinProblemsCollectionView: UICollectionView = {
+    private let productsCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 16
@@ -50,13 +57,13 @@ class SkinProblemsTableViewCell: UITableViewCell {
         layout.itemSize = .init(width: 147, height: 161)
         layout.sectionInset = .init(top: 0, left: 16, bottom: 0, right: 16)
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.register(SkinProblemCollectionViewCell.self, forCellWithReuseIdentifier: SkinProblemCollectionViewCell.identifier)
+        cv.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
         cv.showsHorizontalScrollIndicator = false
         return cv
     }()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        skinProblemsCollectionView.dataSource = self
+        productsCollectionView.dataSource = self
         selectionStyle = .none
         setupUI()
     }
@@ -67,7 +74,7 @@ class SkinProblemsTableViewCell: UITableViewCell {
     
     private func setupUI(){
         contentView.addSubview(headerStackView)
-        contentView.addSubview(skinProblemsCollectionView)
+        contentView.addSubview(productsCollectionView)
         [
             headerTitle,
             moreButton
@@ -80,7 +87,7 @@ class SkinProblemsTableViewCell: UITableViewCell {
             make.leading.trailing.equalToSuperview().inset(16)
         }
         
-        skinProblemsCollectionView.snp.makeConstraints { make in
+        productsCollectionView.snp.makeConstraints { make in
             make.top.equalTo(headerStackView.snp.bottom).offset(12)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().inset(16)
@@ -88,24 +95,25 @@ class SkinProblemsTableViewCell: UITableViewCell {
         }
     }
     
-    func configure(_ item: [SkinProblemsModel.SkinProblem]){
-        skinProblems = item
-        skinProblemsCollectionView.reloadData()
+    func configure(_ item: [ProductsModel.Product]){
+        products = item
+        productsCollectionView.reloadData()
     }
     
     @objc private func moreButtonTapped() {
-           delegate?.didTapMoreButton()
+        delegate?.didTapProductsMoreButton()
         print("More button tapped")
        }
 }
 
-extension SkinProblemsTableViewCell: UICollectionViewDataSource{
+extension ProductsTableViewCell: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return skinProblems.count
+        return products.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SkinProblemCollectionViewCell.identifier, for: indexPath) as! SkinProblemCollectionViewCell
-        cell.configure(skinProblems[indexPath.row])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.identifier, for: indexPath) as! ProductCollectionViewCell
+        cell.configure(products[indexPath.row])
         return cell
     }
 }
+

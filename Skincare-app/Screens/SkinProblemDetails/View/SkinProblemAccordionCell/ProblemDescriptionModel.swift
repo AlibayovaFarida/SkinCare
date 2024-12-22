@@ -9,6 +9,7 @@ import Foundation
 
 struct DescriptionModel
 {
-    let imageName: String
+    let id: Int
+    let imageIds: Int
     let description: String
 }

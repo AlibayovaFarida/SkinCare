@@ -31,7 +31,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
 //    }()
     
     private let productsNavVc: UINavigationController = {
-        let vc = UINavigationController(rootViewController: ProductsViewController())
+        let vc = UINavigationController(rootViewController: MoreProductsViewController())
         vc.tabBarItem.image = UIImage(named: "Products")
         vc.tabBarItem.selectedImage = UIImage(named: "ProductsSelected")?.withRenderingMode(.alwaysOriginal)
         vc.tabBarItem.title = NSLocalizedString("products", comment: "")

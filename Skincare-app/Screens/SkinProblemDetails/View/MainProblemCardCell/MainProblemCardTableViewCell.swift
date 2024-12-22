@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainProblemCardTableViewCell: UITableViewCell {
 
@@ -52,9 +53,16 @@ class MainProblemCardTableViewCell: UITableViewCell {
     }
     
     func configure(with model: DescriptionModel) {
-            problemImageView.image = UIImage(named: model.imageName)
-            problemDescriptionLabel.text = model.description
+        guard let token = UserDefaults.standard.string(forKey: "accessToken") else {return}
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(token)"
+        ]
+        NetworkManager.shared.getImage(url: "http://localhost:8080/api/skin-problem/photo/", imageId: model.imageIds, headers: headers) { image in
+            self.problemImageView.image = image
         }
+        problemDescriptionLabel.text = model.description
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

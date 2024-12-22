@@ -1,14 +1,14 @@
 //
-//  SkinProblemCollectionViewCell.swift
+//  ProductCollectionViewCell.swift
 //  Skincare-app
 //
-//  Created by Apple on 13.09.24.
+//  Created by Apple on 19.12.24.
 //
 
 import UIKit
 import Alamofire
 
-class SkinProblemCollectionViewCell: UICollectionViewCell {
+class ProductCollectionViewCell: UICollectionViewCell {
     private let bgView: UIView = {
         let view = UIView()
         view.layer.borderWidth = 1
@@ -16,7 +16,7 @@ class SkinProblemCollectionViewCell: UICollectionViewCell {
         view.layer.cornerRadius = 16
         return view
     }()
-    private let problemImageView: UIImageView = {
+    private let productImageView: UIImageView = {
         let iv = UIImageView()
         iv.clipsToBounds = true
         iv.layer.cornerRadius = 16
@@ -34,7 +34,7 @@ class SkinProblemCollectionViewCell: UICollectionViewCell {
         sv.distribution = .equalSpacing
         return sv
     }()
-    private let problemTitleLabel: UILabel = {
+    private let productTitleLabel: UILabel = {
         let lb = UILabel()
         lb.font = UIFont(name: "Montserrat-SemiBold", size: 14)
         lb.setLineHeight(21)
@@ -61,11 +61,11 @@ class SkinProblemCollectionViewCell: UICollectionViewCell {
     
     private func setupUI(){
         contentView.addSubview(bgView)
-        bgView.addSubview(problemImageView)
+        bgView.addSubview(productImageView)
         bgView.addSubview(blueView)
         blueView.addSubview(titleDirectionStackView)
         [
-            problemTitleLabel,
+            productTitleLabel,
             directionButton
         ].forEach(titleDirectionStackView.addArrangedSubview)
         
@@ -73,7 +73,7 @@ class SkinProblemCollectionViewCell: UICollectionViewCell {
             make.edges.equalToSuperview()
         }
         
-        problemImageView.snp.makeConstraints { make in
+        productImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
             let screenWidth = UIScreen.main.bounds.width
             make.width.equalTo((screenWidth-64)/2-2)
@@ -97,7 +97,7 @@ class SkinProblemCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configure(_ item: SkinProblemsModel.SkinProblem){
+    func configure(_ item: ProductsModel.Product){
         guard let token = UserDefaults.standard.string(forKey: "accessToken") else {
             return
         }
@@ -105,10 +105,10 @@ class SkinProblemCollectionViewCell: UICollectionViewCell {
             "Content-Type": "application/json",
             "Authorization": "Bearer \(token)"
         ]
-        NetworkManager.shared.getImage(url: "http://localhost:8080/api/skin-problem/photo/", imageId: item.imageIds[0], headers: headers) { image in
-                self.problemImageView.image = image
+        NetworkManager.shared.getImage(url: "http://localhost:8080/api/product/photo/", imageId: item.imageIds[0], headers: headers) { image in
+                self.productImageView.image = image
             }
-        problemTitleLabel.text = item.title
+        productTitleLabel.text = item.title
         
     }
 }

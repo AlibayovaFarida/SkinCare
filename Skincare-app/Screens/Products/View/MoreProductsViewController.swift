@@ -1,5 +1,5 @@
 //
-//  ProductsViewController.swift
+//  MoreProductsViewController.swift
 //  Skincare-app
 //
 //  Created by Apple on 13.08.24.
@@ -7,8 +7,9 @@
 
 import UIKit
 
-class ProductsViewController: UIViewController
+class MoreProductsViewController: UIViewController
 {
+    private let viewModel: ProductsViewModel = ProductsViewModel()
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -18,7 +19,7 @@ class ProductsViewController: UIViewController
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         collectionView.alwaysBounceVertical = true
-        collectionView.register(SkinProblemCollectionViewCell.self, forCellWithReuseIdentifier: "SkinProblemCollectionViewCell")
+        collectionView.register(MoreProductCollectionViewCell.self, forCellWithReuseIdentifier: MoreProductCollectionViewCell.identifier)
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
@@ -49,19 +50,8 @@ class ProductsViewController: UIViewController
         return searchBar
     }()
     
-    private let allItems: [SkinProblemItemModel] =
-    [
-        SkinProblemItemModel(image: "cleansers", title: "Cleansers"),
-        SkinProblemItemModel(image: "tonikler", title: "Toniklər"),
-        SkinProblemItemModel(image: "skrablar", title: "Skrablar"),
-        SkinProblemItemModel(image: "serumlar", title: "Serumlar"),
-        SkinProblemItemModel(image: "nemlendirici", title: "Nəmləndirici"),
-        SkinProblemItemModel(image: "spf", title: "SPF"),
-        SkinProblemItemModel(image: "maskalar", title: "Maskalar"),
-        SkinProblemItemModel(image: "baxim-yaglari", title: "Baxım yağları"),
-    ]
-    
-    private var filteredItems: [SkinProblemItemModel] = []
+    private var allItems: [ProductsModel.Product] = []
+    private var filteredItems: [ProductsModel.Product] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +75,7 @@ class ProductsViewController: UIViewController
         searchBar.delegate = self
         
         filteredItems = allItems
+        viewModel.delegate = self
     }
     
     @objc private func backButtonTapped() {
@@ -95,6 +86,9 @@ class ProductsViewController: UIViewController
         view.addSubview(searchBar)
         view.addSubview(collectionView)
         
+        viewModel.products { error in
+            self.showAlert(message: error.localizedDescription)
+        }
     }
     
     private func setupConstraints() {
@@ -114,32 +108,32 @@ class ProductsViewController: UIViewController
     }
 }
 
-extension ProductsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension MoreProductsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filteredItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SkinProblemCollectionViewCell", for: indexPath) as! SkinProblemCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MoreProductCollectionViewCell.identifier, for: indexPath) as! MoreProductCollectionViewCell
         let item = filteredItems[indexPath.item]
         cell.configure(item)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = ProductDetailsViewController(problemName: allItems[indexPath.row].title)
+        let vc = ProductDetailsViewController(problemName: allItems[indexPath.row].title, problemId: filteredItems[indexPath.row].id)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 
-extension ProductsViewController: UICollectionViewDelegateFlowLayout {
+extension MoreProductsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = UIScreen.main.bounds.width
         return CGSize(width: (screenWidth - 81)/2 , height: 161)
     }
 }
 
-extension ProductsViewController: UISearchBarDelegate {
+extension MoreProductsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             filteredItems = allItems
@@ -152,3 +146,11 @@ extension ProductsViewController: UISearchBarDelegate {
     }
 }
 
+extension MoreProductsViewController: ProductsDelegate {
+    func didFetchProducts(data: [ProductsModel.Product]) {
+        self.allItems = data.map {
+            ProductsModel.Product(id: $0.id, title: $0.title, imageIds: $0.imageIds) }
+        self.filteredItems = allItems
+        self.collectionView.reloadData()
+    }
+}

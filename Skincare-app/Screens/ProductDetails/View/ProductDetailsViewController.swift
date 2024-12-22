@@ -1,25 +1,26 @@
 //
-//  SkinProblemDetailsViewController.swift
+//  ProductDetailsViewController.swift
 //  Skincare-app
 //
-//  Created by Apple on 19.09.24.
+//  Created by Umman on 30.09.24.
 //
 
 import UIKit
 
-class SkinProblemDetailsViewController: UIViewController {
+class ProductDetailsViewController: UIViewController {
     private var problemName: String? = ""
     private var problemId: Int? = 0
-    private var viewModel: SkinProblemDetailsViewModel!
-    private var datas: [SkinProblemDetailsModel.Information] = []
+    private var viewModel: ProductDetailsViewModel!
+    private var datas: [ProductDetailsModel.Information] = []
     private var problemDescriptionData: DescriptionModel?
+    
     private let tableView: UITableView = {
         let tv = UITableView()
         tv.backgroundColor = UIColor(named: "customBgBlue")
         tv.clipsToBounds = true
         tv.layer.cornerRadius = 16
         tv.register(MainProblemCardTableViewCell.self, forCellReuseIdentifier: MainProblemCardTableViewCell.identifier)
-        tv.register(SkinProblemAccordionTableViewCell.self, forCellReuseIdentifier: SkinProblemAccordionTableViewCell.identifier)
+        tv.register(ProductAccordionTableViewCell.self, forCellReuseIdentifier: ProductAccordionTableViewCell.identifier)
         tv.separatorStyle = .none
         tv.showsVerticalScrollIndicator = false
         return tv
@@ -46,7 +47,7 @@ class SkinProblemDetailsViewController: UIViewController {
         tableView.delegate = self
         viewModel.delegate = self
         setupUI()
-        viewModel.skinProblemDetails { error in
+        viewModel.productDetails { error in
             self.showAlert(message: error.localizedDescription)
         }
     }
@@ -54,7 +55,7 @@ class SkinProblemDetailsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self.problemName = problemName
         self.problemId = problemId
-        self.viewModel = SkinProblemDetailsViewModel(id: problemId)
+        self.viewModel = ProductDetailsViewModel(id: problemId)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -72,8 +73,7 @@ class SkinProblemDetailsViewController: UIViewController {
     
     
 }
-extension SkinProblemDetailsViewController: UITableViewDataSource, UITableViewDelegate, SkinProblemAccordionTableViewCellDelegate{
-    
+extension ProductDetailsViewController: UITableViewDataSource, UITableViewDelegate, ProductAccordionTableViewCellDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datas.count + 1
     }
@@ -86,14 +86,14 @@ extension SkinProblemDetailsViewController: UITableViewDataSource, UITableViewDe
             }
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: SkinProblemAccordionTableViewCell.identifier) as! SkinProblemAccordionTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: ProductAccordionTableViewCell.identifier) as! ProductAccordionTableViewCell
             cell.configure(datas[indexPath.row-1])
             cell.delegate = self
             return cell
         }
     }
     
-    func didTapAccordionButton(in cell: SkinProblemAccordionTableViewCell) {
+    func didTapAccordionButton(in cell: ProductAccordionTableViewCell) {
         guard tableView.indexPath(for: cell) != nil else { return }
         
         tableView.beginUpdates()
@@ -103,12 +103,13 @@ extension SkinProblemDetailsViewController: UITableViewDataSource, UITableViewDe
         return UITableView.automaticDimension
     }
 }
-extension SkinProblemDetailsViewController: SkinProblemDetailsDelegate {
-    
-    func didFetchSkinProblemDetails(data: SkinProblemDetailsModel.SkinProblemDetail) {
+extension ProductDetailsViewController: ProductDetailsDelegate {
+    func didFetchProductDetails(data: ProductDetailsModel.ProductDetail) {
         self.problemId = data.id
         self.datas = data.information
         self.problemDescriptionData = .init(id: data.id, imageIds: data.imageIds[0], description: data.detail)
         self.tableView.reloadData()
     }
 }
+
+
