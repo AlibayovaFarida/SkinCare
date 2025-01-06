@@ -49,7 +49,7 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
 //    }()
     
     private let consultationNavVc: UINavigationController = {
-        let vc = UINavigationController(rootViewController: ConsultationViewController())
+        let vc = UINavigationController(rootViewController: ConsultationViewController(query: [:]))
         vc.tabBarItem.image = UIImage(named: "Consultation")
         vc.tabBarItem.selectedImage = UIImage(named: "ConsultationSelected")?.withRenderingMode(.alwaysOriginal)
         vc.tabBarItem.title = NSLocalizedString("consultation", comment: "")

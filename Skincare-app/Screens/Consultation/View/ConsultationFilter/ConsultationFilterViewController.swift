@@ -10,17 +10,17 @@ import UIKit
 class ConsultationFilterViewController: UIViewController {
     var onApplyFilters: (([ConsultationFilterItemModel]) -> Void)?
     private var filterList: [ConsultationFilterItemModel] = [
-        .init(title: NSLocalizedString("filterChoise1", comment: "")),
-        .init(title: NSLocalizedString("filterChoise2", comment: "")),
+//        .init(title: NSLocalizedString("filterChoise1", comment: "")),
+//        .init(title: NSLocalizedString("filterChoise2", comment: "")),
         .init(title: NSLocalizedString("filterChoise3", comment: "")),
         .init(title: NSLocalizedString("filterChoise4", comment: "")),
-        .init(title: NSLocalizedString("filterChoise5", comment: ""))
+//        .init(title: NSLocalizedString("filterChoise5", comment: ""))
     ]{
         didSet{
             filterCollectionView.reloadData()
         }
     }
-    private var selectedFilter: [ConsultationFilterItemModel] = []{
+    private var selectedFilter: ConsultationFilterItemModel?{
         didSet{
             filterCollectionView.reloadData()
         }
@@ -149,10 +149,17 @@ class ConsultationFilterViewController: UIViewController {
     }()
     @objc
     private func applyFilters() {
-        let selectedFilterTitles = selectedFilter.map { $0.title }
-        UserDefaults.standard.set(selectedFilterTitles, forKey: "selectedFilters")
-        onApplyFilters?(selectedFilter)
+        guard let minPrice = minPriceTextField.text else {return}
+        guard let maxPrice = maxPriceTextField.text else {return}
+        UserDefaults.standard.set(minPrice, forKey: "minPrice")
+        UserDefaults.standard.set(maxPrice, forKey: "maxPrice")
+        guard let selectedFilter = selectedFilter else { return }
+        UserDefaults.standard.set(selectedFilter.title, forKey: "selectedFilters")
+        onApplyFilters?([selectedFilter])
         dismiss(animated: true)
+        print(UserDefaults.standard.string(forKey: "selectedFilters") ?? "")
+        print(UserDefaults.standard.object(forKey: "minPrice") ?? "")
+        print(UserDefaults.standard.object(forKey: "maxPrice") ?? "")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -163,11 +170,11 @@ class ConsultationFilterViewController: UIViewController {
         filterCollectionView.delegate = self
         
         if let savedFilters = UserDefaults.standard.array(forKey: "selectedFilters") as? [String] {
-            for (index, var item) in filterList.enumerated() {
+            for (index, item) in filterList.enumerated() {
                 if savedFilters.contains(item.title) {
-                    item.isSelected = true
-                    selectedFilter.append(item)
-                    filterList[index] = item
+                    filterList[index].isSelected = true
+                    selectedFilter = item
+                    break
                 }
             }
         }
@@ -258,23 +265,23 @@ extension ConsultationFilterViewController: UICollectionViewDataSource{
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ConsultationFilterCollectionViewCell.identifier, for: indexPath) as! ConsultationFilterCollectionViewCell
-        cell.configure(filterList[indexPath.row])
+        cell.configure(filterList[indexPath.row], isSelected: selectedFilter?.title == filterList[indexPath.row].title)
+
         return cell
     }
 }
 
 extension ConsultationFilterViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        filterList[indexPath.row].isSelected = !filterList[indexPath.row].isSelected
-        if filterList[indexPath.row].isSelected {
-            if !selectedFilter.contains(where: { $0.title == filterList[indexPath.row].title }) {
-                            selectedFilter.append(filterList[indexPath.row])
-                        }
+        let selectedItem = filterList[indexPath.row]
+                
+        if selectedFilter?.title == selectedItem.title {
+                    // Eyni element seçilibsə, seçimi təmizləyin
+            selectedFilter = nil
+        } else {
+                    // Yeni elementi seçin
+            selectedFilter = selectedItem
         }
-        else {
-            selectedFilter.removeAll { $0.title ==  filterList[indexPath.row].title }
-        }
-//        print("//////////////////////////////", selectedFilter)
     }
 }
 

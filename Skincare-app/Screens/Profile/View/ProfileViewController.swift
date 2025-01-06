@@ -9,7 +9,8 @@ import UIKit
 import SnapKit
 
 class ProfileViewController: UIViewController {
-    
+    private var viewModel: ProfileViewModel!
+    private var profileData: ProfileModel.Profile = .init(name: "", surname: "", email: "")
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.showsVerticalScrollIndicator = false
@@ -27,6 +28,11 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = ProfileViewModel()
+        viewModel.delegate = self
+        viewModel.profile { error in
+            self.showAlert(message: error.localizedDescription)
+        }
         configureViewController()
         setupTableView()
     }
@@ -80,9 +86,7 @@ class ProfileViewController: UIViewController {
         imageView.layer.cornerRadius = 37
         imageView.clipsToBounds = true
         headerView.addSubview(imageView)
-        
         let nameLabel = UILabel()
-        nameLabel.text = "Huseynova Ayla"
         nameLabel.font = UIFont(name: "Montserrat-Medium", size: 16)
         nameLabel.textColor = .black
         headerView.addSubview(nameLabel)
@@ -98,6 +102,7 @@ class ProfileViewController: UIViewController {
             make.centerY.equalTo(imageView.snp.centerY)
             make.trailing.equalTo(headerView.snp.trailing).offset(-16)
         }
+        nameLabel.text = "\(String(describing: profileData.name)) \(String(describing: profileData.surname))"
     }
     
     private func setupNormalHeaderView(_ headerView: UIView, for section: Int) {
@@ -189,5 +194,16 @@ extension ProfileViewController: UITableViewDelegate {
         
         let isFirstInSection = indexPath.row == 0
         cell.contentView.customSeperatorView(isFirstInSection: isFirstInSection, section: indexPath.section)
+    }
+}
+
+extension ProfileViewController: ProfileDelegate {
+    func didFetchProfile(data: ProfileModel.Profile) {
+        print(data, "hello data")
+        
+        self.profileData = data
+        DispatchQueue.main.async {
+            self.tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+        }
     }
 }

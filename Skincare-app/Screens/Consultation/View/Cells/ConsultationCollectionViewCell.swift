@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Alamofire
 
 class ConsultationCollectionViewCell: UICollectionViewCell {
     
@@ -164,7 +165,7 @@ class ConsultationCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    private let patientCountOvalView: UIView = {
+    private let reviewCountOvalView: UIView = {
         let view = UIView()
         view.backgroundColor = .patientBlue
         view.layer.cornerRadius = 5
@@ -172,7 +173,7 @@ class ConsultationCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    private let patientCountLabel: UILabel = {
+    private let reviewCountLabel: UILabel = {
         let label = UILabel()
         label.text = "100+"
         label.font = UIFont(name: "Montserrat-Regular", size: 8)
@@ -220,11 +221,11 @@ class ConsultationCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(namePositionStackView)
         
         contentView.addSubview(ratingCircleView)
-        contentView.addSubview(patientCountOvalView)
+        contentView.addSubview(reviewCountOvalView)
         
         ratingCircleView.addSubview(ratingLabel)
         ratingCircleView.addSubview(starImageView)
-        patientCountOvalView.addSubview(patientCountLabel)
+        reviewCountOvalView.addSubview(reviewCountLabel)
         
         setupConstraints()
     }
@@ -310,26 +311,33 @@ class ConsultationCollectionViewCell: UICollectionViewCell {
         
         starImageView.transform = CGAffineTransform(translationX: 0, y: -4)
         
-        patientCountOvalView.snp.makeConstraints { make in
+        reviewCountOvalView.snp.makeConstraints { make in
             make.top.equalTo(ratingCircleView.snp.bottom).offset(-12)
             make.centerX.equalTo(ratingCircleView)
             make.height.equalTo(14)
             make.width.equalTo(27)
         }
         
-        patientCountLabel.snp.makeConstraints { make in
-            make.edges.equalTo(patientCountOvalView).inset(4)
+        reviewCountLabel.snp.makeConstraints { make in
+            make.edges.equalTo(reviewCountOvalView).inset(4)
         }
     }
     
-    func configure(_ item: DermatologistModel) {
+    func configure(_ item: DermatologistModel.Dermatologist) {
+        guard let token = UserDefaults.standard.string(forKey: "accessToken") else {return}
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(token)"
+        ]
+        NetworkManager.shared.getImage(url: "http://localhost:8080/api/consultation/photo/", imageId: item.imageIds[0], headers: headers) { image in
+            self.backgroundImageView.image = image
+        }
         nameTitle.text = "Dr. \(item.name)"
-        positionTitle.text = item.profession
+        positionTitle.text = item.speciality
         ratingLabel.text = "\(item.rating)"
-        patientCountLabel.text = "\(item.patientCount)"
-        priceLabel2.text = "\(item.price)"
+        reviewCountLabel.text = "\(item.review)"
+        priceLabel2.text = "\(item.perHourPrice)"
         experienceLabel1.text = "\(item.experience)"
-        backgroundImageView.image = UIImage(named: item.image)
     }
 }
 
