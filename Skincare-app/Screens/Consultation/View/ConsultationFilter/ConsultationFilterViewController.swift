@@ -7,20 +7,21 @@
 
 import UIKit
 
+
 class ConsultationFilterViewController: UIViewController {
     var onApplyFilters: (([ConsultationFilterItemModel]) -> Void)?
     private var filterList: [ConsultationFilterItemModel] = [
-//        .init(title: NSLocalizedString("filterChoise1", comment: "")),
-//        .init(title: NSLocalizedString("filterChoise2", comment: "")),
+        .init(title: NSLocalizedString("filterChoise1", comment: "")),
+        .init(title: NSLocalizedString("filterChoise2", comment: "")),
         .init(title: NSLocalizedString("filterChoise3", comment: "")),
         .init(title: NSLocalizedString("filterChoise4", comment: "")),
-//        .init(title: NSLocalizedString("filterChoise5", comment: ""))
+        .init(title: NSLocalizedString("filterChoise5", comment: ""))
     ]{
         didSet{
             filterCollectionView.reloadData()
         }
     }
-    private var selectedFilter: ConsultationFilterItemModel?{
+    private var selectedFilter: [ConsultationFilterItemModel] = []{
         didSet{
             filterCollectionView.reloadData()
         }
@@ -149,17 +150,21 @@ class ConsultationFilterViewController: UIViewController {
     }()
     @objc
     private func applyFilters() {
-        guard let minPrice = minPriceTextField.text else {return}
-        guard let maxPrice = maxPriceTextField.text else {return}
-        UserDefaults.standard.set(minPrice, forKey: "minPrice")
-        UserDefaults.standard.set(maxPrice, forKey: "maxPrice")
-        guard let selectedFilter = selectedFilter else { return }
-        UserDefaults.standard.set(selectedFilter.title, forKey: "selectedFilters")
-        onApplyFilters?([selectedFilter])
+        let selectedFilterTitles = selectedFilter.map { $0.title }
+        UserDefaults.standard.set(selectedFilterTitles, forKey: "selectedFilters")
+        onApplyFilters?(selectedFilter)
+        if let minPrice = minPriceTextField.text, !minPrice.isEmpty,
+               let maxPrice = maxPriceTextField.text, !maxPrice.isEmpty {
+                UserDefaults.standard.set(minPrice, forKey: "minPrice")
+                UserDefaults.standard.set(maxPrice, forKey: "maxPrice")
+                
+                let userInfo: [String: Any] = [
+                    "minPrice": Int(minPrice) ??  Int(UserDefaults.standard.integer(forKey: "minPrice")),
+                    "maxPrice": Int(maxPrice) ?? Int(UserDefaults.standard.integer(forKey: "maxPrice")),
+                ]
+                NotificationCenter.default.post(name: .filterValuesDidUpdate, object: nil, userInfo: userInfo)
+            }
         dismiss(animated: true)
-        print(UserDefaults.standard.string(forKey: "selectedFilters") ?? "")
-        print(UserDefaults.standard.object(forKey: "minPrice") ?? "")
-        print(UserDefaults.standard.object(forKey: "maxPrice") ?? "")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -170,11 +175,11 @@ class ConsultationFilterViewController: UIViewController {
         filterCollectionView.delegate = self
         
         if let savedFilters = UserDefaults.standard.array(forKey: "selectedFilters") as? [String] {
-            for (index, item) in filterList.enumerated() {
+            for (index, var item) in filterList.enumerated() {
                 if savedFilters.contains(item.title) {
-                    filterList[index].isSelected = true
-                    selectedFilter = item
-                    break
+                    item.isSelected = true
+                    selectedFilter.append(item)
+                    filterList[index] = item
                 }
             }
         }
@@ -265,23 +270,24 @@ extension ConsultationFilterViewController: UICollectionViewDataSource{
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ConsultationFilterCollectionViewCell.identifier, for: indexPath) as! ConsultationFilterCollectionViewCell
-        cell.configure(filterList[indexPath.row], isSelected: selectedFilter?.title == filterList[indexPath.row].title)
-
+        cell.configure(filterList[indexPath.row])
         return cell
     }
 }
 
 extension ConsultationFilterViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedItem = filterList[indexPath.row]
-                
-        if selectedFilter?.title == selectedItem.title {
-                    // Eyni element seçilibsə, seçimi təmizləyin
-            selectedFilter = nil
-        } else {
-                    // Yeni elementi seçin
-            selectedFilter = selectedItem
+
+        for index in filterList.indices {
+            filterList[index].isSelected = false
         }
+
+        filterList[indexPath.row].isSelected = true
+
+        selectedFilter.removeAll()
+        selectedFilter.append(filterList[indexPath.row])
+
+        collectionView.reloadData()
     }
 }
 

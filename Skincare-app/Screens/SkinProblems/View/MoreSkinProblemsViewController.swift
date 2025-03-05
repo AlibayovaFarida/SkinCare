@@ -49,6 +49,12 @@ class MoreSkinProblemsViewController: UIViewController
         searchBar.layer.backgroundColor = UIColor.white.cgColor
         return searchBar
     }()
+    private let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.color = UIColor(named: "customSearchBlue")
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
     private var allItems: [SkinProblemsModel.SkinProblem] = []
     private var filteredItems: [SkinProblemsModel.SkinProblem] = []
     
@@ -59,7 +65,7 @@ class MoreSkinProblemsViewController: UIViewController
         
         title = "Dəri Problemləri"
         view.backgroundColor = UIColor(named: "customWhite")
-        
+        activityIndicator.startAnimating()
         if let navigationController = navigationController {
             let titleTextAttributes: [NSAttributedString.Key: Any] =
             [
@@ -91,9 +97,16 @@ class MoreSkinProblemsViewController: UIViewController
     private func setupViews() {
         view.addSubview(searchBar)
         view.addSubview(collectionView)
-        
-        viewModel.skinProblems { error in
-            self.showAlert(message: error.localizedDescription)
+        view.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints { make in
+                make.center.equalTo(view)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.skinProblems { error in
+                self.showAlert(message: error.localizedDescription)
+                self.activityIndicator.stopAnimating()
+            }
         }
     }
     
@@ -156,5 +169,6 @@ extension MoreSkinProblemsViewController: SkinProblemsDelegate{
         self.allItems = data.map { SkinProblemsModel.SkinProblem(id: $0.id, title: $0.title, imageIds: $0.imageIds) }
         self.filteredItems = allItems
         self.collectionView.reloadData()
+        self.activityIndicator.stopAnimating()
     }
 }

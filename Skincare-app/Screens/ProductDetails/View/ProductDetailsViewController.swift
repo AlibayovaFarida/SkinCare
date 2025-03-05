@@ -25,11 +25,17 @@ class ProductDetailsViewController: UIViewController {
         tv.showsVerticalScrollIndicator = false
         return tv
     }()
-    
+    private let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.color = UIColor(named: "customSearchBlue")
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = problemName
+        activityIndicator.startAnimating()
         if let navigationController = navigationController {
             let titleTextAttributes: [NSAttributedString.Key: Any] =
             [
@@ -49,6 +55,7 @@ class ProductDetailsViewController: UIViewController {
         setupUI()
         viewModel.productDetails { error in
             self.showAlert(message: error.localizedDescription)
+            self.activityIndicator.stopAnimating()
         }
     }
     init(problemName: String, problemId: Int){
@@ -65,6 +72,10 @@ class ProductDetailsViewController: UIViewController {
     }
     private func setupUI(){
         view.addSubview(tableView)
+        view.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints { make in
+                make.center.equalTo(view)
+        }
         tableView.snp.makeConstraints { make in
             make.top.bottom.equalTo(view.safeAreaLayoutGuide).inset(12)
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
@@ -109,6 +120,7 @@ extension ProductDetailsViewController: ProductDetailsDelegate {
         self.datas = data.information
         self.problemDescriptionData = .init(id: data.id, imageIds: data.imageIds[0], description: data.detail)
         self.tableView.reloadData()
+        self.activityIndicator.stopAnimating()
     }
 }
 

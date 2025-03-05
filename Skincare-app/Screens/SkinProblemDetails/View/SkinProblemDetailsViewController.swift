@@ -24,11 +24,17 @@ class SkinProblemDetailsViewController: UIViewController {
         tv.showsVerticalScrollIndicator = false
         return tv
     }()
-    
+    private let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.color = UIColor(named: "customSearchBlue")
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = problemName
+        activityIndicator.startAnimating()
         if let navigationController = navigationController {
             let titleTextAttributes: [NSAttributedString.Key: Any] =
             [
@@ -46,8 +52,9 @@ class SkinProblemDetailsViewController: UIViewController {
         tableView.delegate = self
         viewModel.delegate = self
         setupUI()
-        viewModel.skinProblemDetails { error in
+        self.viewModel.skinProblemDetails { error in
             self.showAlert(message: error.localizedDescription)
+            self.activityIndicator.stopAnimating()
         }
     }
     init(problemName: String, problemId: Int){
@@ -64,9 +71,13 @@ class SkinProblemDetailsViewController: UIViewController {
     }
     private func setupUI(){
         view.addSubview(tableView)
+        view.addSubview(activityIndicator)
         tableView.snp.makeConstraints { make in
             make.top.bottom.equalTo(view.safeAreaLayoutGuide).inset(12)
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
+        }
+        activityIndicator.snp.makeConstraints { make in
+                make.center.equalTo(view)
         }
     }
     
@@ -110,5 +121,6 @@ extension SkinProblemDetailsViewController: SkinProblemDetailsDelegate {
         self.datas = data.information
         self.problemDescriptionData = .init(id: data.id, imageIds: data.imageIds[0], description: data.detail)
         self.tableView.reloadData()
+        self.activityIndicator.stopAnimating()
     }
 }

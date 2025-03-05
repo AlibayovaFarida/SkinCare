@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		18091DC82D0B6A5E0005BE8E /* SkinProblemDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18091DC72D0B6A5E0005BE8E /* SkinProblemDetailsModel.swift */; };
+		180D9CAD2D2DB5AB00E149C1 /* ConsultationFilterItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180D9CAC2D2DB5AB00E149C1 /* ConsultationFilterItemModel.swift */; };
+		181645942D2EFB3C00526989 /* Notification+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181645932D2EFB3C00526989 /* Notification+Ext.swift */; };
 		181FEA622C69118700B9AAE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181FEA612C69118700B9AAE6 /* LoginViewController.swift */; };
 		182B387B2D2C3E5300BF5D15 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B387A2D2C3E5300BF5D15 /* ProfileService.swift */; };
 		182B387D2D2C3EF500BF5D15 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B387C2D2C3EF500BF5D15 /* ProfileModel.swift */; };
@@ -67,7 +69,6 @@
 		1885A3B22D0B72A2005A55DB /* SkinProblemDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885A3B12D0B72A2005A55DB /* SkinProblemDetailsViewModel.swift */; };
 		1886EB5A2C77515D00EBAD95 /* ConsultationFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886EB592C77515D00EBAD95 /* ConsultationFilterViewController.swift */; };
 		1886EB5D2C77683A00EBAD95 /* ConsultationFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886EB5C2C77683A00EBAD95 /* ConsultationFilterCollectionViewCell.swift */; };
-		1886EB5F2C776E6200EBAD95 /* ConsultationFilterItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886EB5E2C776E6200EBAD95 /* ConsultationFilterItemModel.swift */; };
 		1886EBA92C777B1A00EBAD95 /* DMSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB612C777B1700EBAD95 /* DMSans-Italic.ttf */; };
 		1886EBAA2C777B1A00EBAD95 /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB622C777B1700EBAD95 /* DMSans-Medium.ttf */; };
 		1886EBB22C777B1A00EBAD95 /* DMSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1886EB6A2C777B1800EBAD95 /* DMSans-ExtraLight.ttf */; };
@@ -93,8 +94,6 @@
 		18916AD92CA9A061005C50D7 /* OTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18916AD82CA9A049005C50D7 /* OTPModel.swift */; };
 		18936EC72C62B637006A8683 /* IconTitleBgColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18936EC62C62B637006A8683 /* IconTitleBgColorButton.swift */; };
 		18A1EBA92C766B81008AAD5F /* DermatologistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A1EBA82C766B81008AAD5F /* DermatologistModel.swift */; };
-		18A3A34A2D26F998000EA9F4 /* ConsultationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A3A3492D26F998000EA9F4 /* ConsultationService.swift */; };
-		18A3A34C2D26FF40000EA9F4 /* ConsultationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A3A34B2D26FF40000EA9F4 /* ConsultationViewModel.swift */; };
 		18AD817C2C8F0A6A002A7272 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AD817B2C8F0A6A002A7272 /* ProfileViewController.swift */; };
 		18AD817E2C8F2EFB002A7272 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AD817D2C8F2EFB002A7272 /* UILabel+Ext.swift */; };
 		18BC5C4F2CA1EFA200401955 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC5C4E2CA1EFA200401955 /* RegisterModel.swift */; };
@@ -133,6 +132,8 @@
 
 /* Begin PBXFileReference section */
 		18091DC72D0B6A5E0005BE8E /* SkinProblemDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SkinProblemDetailsModel.swift; path = "Skincare-app/Screens/Products/View/SkinProblemDetailsModel.swift"; sourceTree = SOURCE_ROOT; };
+		180D9CAC2D2DB5AB00E149C1 /* ConsultationFilterItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFilterItemModel.swift; sourceTree = "<group>"; };
+		181645932D2EFB3C00526989 /* Notification+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Ext.swift"; sourceTree = "<group>"; };
 		181FEA612C69118700B9AAE6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		182B387A2D2C3E5300BF5D15 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		182B387C2D2C3EF500BF5D15 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileModel.swift; path = "Skincare-app/Services/Profile/ProfileModel.swift"; sourceTree = SOURCE_ROOT; };
@@ -193,7 +194,6 @@
 		1885A3B12D0B72A2005A55DB /* SkinProblemDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SkinProblemDetailsViewModel.swift; path = "Skincare-app/Services/SkinProblemDetails/SkinProblemDetailsViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		1886EB592C77515D00EBAD95 /* ConsultationFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFilterViewController.swift; sourceTree = "<group>"; };
 		1886EB5C2C77683A00EBAD95 /* ConsultationFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationFilterCollectionViewCell.swift; sourceTree = "<group>"; };
-		1886EB5E2C776E6200EBAD95 /* ConsultationFilterItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConsultationFilterItemModel.swift; path = "Skincare-app/Screens/Consultation/View/ConsultationFilter/ConsultationFilterItemModel.swift"; sourceTree = SOURCE_ROOT; };
 		1886EB612C777B1700EBAD95 /* DMSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Italic.ttf"; sourceTree = "<group>"; };
 		1886EB622C777B1700EBAD95 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
 		1886EB6A2C777B1800EBAD95 /* DMSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -219,8 +219,6 @@
 		18916AD82CA9A049005C50D7 /* OTPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPModel.swift; sourceTree = "<group>"; };
 		18936EC62C62B637006A8683 /* IconTitleBgColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTitleBgColorButton.swift; sourceTree = "<group>"; };
 		18A1EBA82C766B81008AAD5F /* DermatologistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DermatologistModel.swift; path = "Skincare-app/Screens/Home/View/Cells/PopularProblems/PopularCollectionCell/DermatologistModel.swift"; sourceTree = SOURCE_ROOT; };
-		18A3A3492D26F998000EA9F4 /* ConsultationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationService.swift; sourceTree = "<group>"; };
-		18A3A34B2D26FF40000EA9F4 /* ConsultationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConsultationViewModel.swift; path = "Skincare-app/Services/Consultation/ConsultationViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		18AD817B2C8F0A6A002A7272 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		18AD817D2C8F2EFB002A7272 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 		18BC5C4E2CA1EFA200401955 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterModel.swift; path = "Skincare-app/Screens/Register/View/RegisterModel.swift"; sourceTree = SOURCE_ROOT; };
@@ -416,8 +414,6 @@
 		182B5BF02C60D2DE00F7E85D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				187CCB232D13598300000CE7 /* ProductDetails */,
-				184D5FEF2D01C07B0011E02A /* SkinProblems */,
 				1880DFFC2CB93A5E008A0832 /* Chat */,
 				F0E07E242C6A44F500BD410A /* CompleteTest */,
 				1883F83B2C6B3AF4005ED089 /* Consultation */,
@@ -428,10 +424,12 @@
 				F0DD68E72C68CA7D00C11ECF /* OnboardingLogin */,
 				F0DD68EF2C68CECA00C11ECF /* OnboardingRegister */,
 				18916ACB2CA987BA005C50D7 /* OTP */,
+				187CCB232D13598300000CE7 /* ProductDetails */,
 				1883F8392C6B3AD3005ED089 /* Products */,
 				18AD81772C8F0834002A7272 /* Profile */,
 				18ED7A092C67DF6C000F03C3 /* Register */,
 				186550672C9C2C6A003C002A /* SkinProblemDetails */,
+				184D5FEF2D01C07B0011E02A /* SkinProblems */,
 				182B5BF12C60D30E00F7E85D /* Test */,
 			);
 			path = Screens;
@@ -716,7 +714,6 @@
 		1883F8422C6B3B27005ED089 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				18A3A34B2D26FF40000EA9F4 /* ConsultationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -735,7 +732,6 @@
 			isa = PBXGroup;
 			children = (
 				18A1EBA82C766B81008AAD5F /* DermatologistModel.swift */,
-				1886EB5E2C776E6200EBAD95 /* ConsultationFilterItemModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -781,6 +777,7 @@
 			children = (
 				1886EB592C77515D00EBAD95 /* ConsultationFilterViewController.swift */,
 				1886EB5C2C77683A00EBAD95 /* ConsultationFilterCollectionViewCell.swift */,
+				180D9CAC2D2DB5AB00E149C1 /* ConsultationFilterItemModel.swift */,
 			);
 			path = ConsultationFilter;
 			sourceTree = "<group>";
@@ -867,7 +864,6 @@
 		18992C002D1993C600438630 /* Consultation */ = {
 			isa = PBXGroup;
 			children = (
-				18A3A3492D26F998000EA9F4 /* ConsultationService.swift */,
 			);
 			path = Consultation;
 			sourceTree = "<group>";
@@ -1021,6 +1017,7 @@
 				18DE77A12C6E0A0F000B321C /* UIResponder+Ext.swift */,
 				18AD817D2C8F2EFB002A7272 /* UILabel+Ext.swift */,
 				1880DFFA2CB92C1F008A0832 /* UIViewController+Ext.swift */,
+				181645932D2EFB3C00526989 /* Notification+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1313,7 +1310,6 @@
 				18A1EBA92C766B81008AAD5F /* DermatologistModel.swift in Sources */,
 				18C502F82D06E80D0067BD4D /* ProductsViewModel.swift in Sources */,
 				F0EAC6DF2C674A2A006DE3E1 /* OnboardingImageView.swift in Sources */,
-				18A3A34C2D26FF40000EA9F4 /* ConsultationViewModel.swift in Sources */,
 				1883F8382C6B3A79005ED089 /* CustomTabbarController.swift in Sources */,
 				181FEA622C69118700B9AAE6 /* LoginViewController.swift in Sources */,
 				18ED7A102C67DFBB000F03C3 /* RegisterViewController.swift in Sources */,
@@ -1323,6 +1319,7 @@
 				1886EB5A2C77515D00EBAD95 /* ConsultationFilterViewController.swift in Sources */,
 				1883F84A2C6B3B62005ED089 /* ConsultationViewController.swift in Sources */,
 				182B5BAB2C60A9E900F7E85D /* AppDelegate.swift in Sources */,
+				180D9CAD2D2DB5AB00E149C1 /* ConsultationFilterItemModel.swift in Sources */,
 				18D932122CB3C86B00FA3F5B /* LoginViewModel.swift in Sources */,
 				182EB55A2C9CCAD300C4A40C /* SkinProblemAccordionTableViewCell.swift in Sources */,
 				18ED7A0E2C67DFA6000F03C3 /* RegisterViewModel.swift in Sources */,
@@ -1336,9 +1333,9 @@
 				182EB5572C9CC5EA00C4A40C /* MainProblemCardTableViewCell.swift in Sources */,
 				F0D635B12CA9E71A0047EB2B /* ProblemDescriptionModel.swift in Sources */,
 				F0DD68EE2C68CAF200C11ECF /* OnboardingLoginViewController.swift in Sources */,
+				181645942D2EFB3C00526989 /* Notification+Ext.swift in Sources */,
 				F0DD68F42C68CF0700C11ECF /* OnboardingRegisterViewController.swift in Sources */,
 				183AC5E92D1406380030C996 /* ProductAccordionTableViewCell.swift in Sources */,
-				1886EB5F2C776E6200EBAD95 /* ConsultationFilterItemModel.swift in Sources */,
 				18916AD52CA99BA9005C50D7 /* OTPService.swift in Sources */,
 				182B5BAD2C60A9E900F7E85D /* SceneDelegate.swift in Sources */,
 				18DBDF7A2CA33E4C00A8705A /* NetworkManager.swift in Sources */,
@@ -1365,7 +1362,6 @@
 				188931D42C7C6B3400088C9E /* FilterItemCollectionViewCell.swift in Sources */,
 				18916AD22CA98800005C50D7 /* OTPViewController.swift in Sources */,
 				F0EAC6DD2C674A10006DE3E1 /* TitleBgColorButton.swift in Sources */,
-				18A3A34A2D26F998000EA9F4 /* ConsultationService.swift in Sources */,
 				18DE77A02C6DF98E000B321C /* UIView+Ext.swift in Sources */,
 				183AC5F12D1447140030C996 /* ProductsTableViewCell.swift in Sources */,
 				183CF81D2CA3EF9300D341A7 /* Encodable+Ext.swift in Sources */,

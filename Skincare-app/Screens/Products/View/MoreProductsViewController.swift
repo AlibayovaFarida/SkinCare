@@ -50,6 +50,13 @@ class MoreProductsViewController: UIViewController
         return searchBar
     }()
     
+    private let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.color = UIColor(named: "customSearchBlue")
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
+    
     private var allItems: [ProductsModel.Product] = []
     private var filteredItems: [ProductsModel.Product] = []
     
@@ -59,6 +66,7 @@ class MoreProductsViewController: UIViewController
         setupConstraints()
         
         navigationItem.title = "Baxım məhsulları"
+        activityIndicator.startAnimating()
         if let navigationController = navigationController {
             let titleTextAttributes: [NSAttributedString.Key: Any] =
             [
@@ -85,9 +93,14 @@ class MoreProductsViewController: UIViewController
     private func setupViews() {
         view.addSubview(searchBar)
         view.addSubview(collectionView)
-        
-        viewModel.products { error in
-            self.showAlert(message: error.localizedDescription)
+        view.addSubview(activityIndicator)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.products { error in
+                self.showAlert(message: error.localizedDescription)
+                self.activityIndicator.stopAnimating()
+            }
         }
     }
     
@@ -104,6 +117,10 @@ class MoreProductsViewController: UIViewController
             make.leading.equalTo(view).offset(32)
             make.trailing.equalTo(view).offset(-32)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+        
+        activityIndicator.snp.makeConstraints { make in
+                make.center.equalTo(view)
         }
     }
 }
@@ -152,5 +169,6 @@ extension MoreProductsViewController: ProductsDelegate {
             ProductsModel.Product(id: $0.id, title: $0.title, imageIds: $0.imageIds) }
         self.filteredItems = allItems
         self.collectionView.reloadData()
+        self.activityIndicator.stopAnimating()
     }
 }

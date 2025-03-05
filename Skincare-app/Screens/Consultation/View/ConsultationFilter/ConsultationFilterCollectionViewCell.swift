@@ -45,8 +45,8 @@ class ConsultationFilterCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configure(_ item: ConsultationFilterItemModel, isSelected: Bool){
+    func configure(_ item: ConsultationFilterItemModel){
         label.text = item.title
-        view.backgroundColor = isSelected ? UIColor(named: "customLightGreen") : .clear
+        view.backgroundColor = item.isSelected ? UIColor(named: "customLightGreen") : .clear
     }
 }

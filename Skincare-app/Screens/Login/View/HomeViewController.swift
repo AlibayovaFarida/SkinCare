@@ -59,6 +59,7 @@ class HomeViewController: UIViewController, SearchTableViewCellDelegate,
         return tv
     }()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.additionalSafeAreaInsets.top = -28

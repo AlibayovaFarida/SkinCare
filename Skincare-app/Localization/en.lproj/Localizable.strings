@@ -72,7 +72,7 @@
 // Consultation
 "consultationScreenTitle" = "Choose your doctor";
 "filterTitle" = "Sort By";
-"filterChoise1" = "Location";
+"filterChoise1" = "Experience";
 "filterChoise2" = "Popularity";
 "filterChoise3" = "High price";
 "filterChoise4" = "Low price";
